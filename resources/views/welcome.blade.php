@@ -1,3 +1,3 @@
 <x-layout>
-    ciao
+    ciao a tutti
 </x-layout>
