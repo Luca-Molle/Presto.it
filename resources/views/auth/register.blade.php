@@ -1,8 +1,8 @@
 <x-layout>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
+    <div class="container mt-5 ">
+	    <div class="d-flex justify-content-center h-250 ">
+			<div class="card-header card h-100 d-inline-block">
                 <h1 class="text-center">Registrati</h1>
                 <form action="{{route('register')}}" method="POST">
                     @csrf
@@ -22,8 +22,14 @@
                         <label for="passwordInputPassword1" class="form-label">Conferma Password</label>
                         <input name="password_confirmation" type="password" class="form-control" id="password_confirmation">
                     </div>
+                    <div class="mt-3 d-flex justify-content-center align-items-center">
                 <button type="submit" class="btn btn-primary">Registrati</button>
+                    </div>
+                <div id="emailHelp" class="form-text">
+                            <a class="nav-link" href="login">Accedi</a>
+                        </div>
             </form>
+                        
             </div>
         </div>
     </div>

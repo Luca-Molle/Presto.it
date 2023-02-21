@@ -7,13 +7,14 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         @livewireStyles
         @vite(['resources/css/app.css', 'resources\js\app.js'])
+        
         <title>Presto.it</title>
     </head>
 
     <body>
         <x-nav />
 
-        <div class="min-vh-100">
+        <div class="box2 min-vh-100">
             {{ $slot }}
         </div>
 
