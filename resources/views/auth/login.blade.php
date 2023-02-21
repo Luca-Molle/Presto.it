@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-12">
                 <h1 class="">Login</h1>
-                <form action="route(login)}}" method="POST">
+                <form action="{{route('login')}}" method="POST">
                     @csrf
                     <div class="mb-3">
                         <label for="exampleInput" class="form-label">Email address</label>
@@ -19,7 +19,7 @@
                 </div>
                 <div class="mb-3 form-check">
                     <input name="remember" type="checkbox" class="form-check" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheack1"></label>
+                    <label class="form-check-label" for="exampleCheack1">Remember</label>
                 </div>
                 <button type="submit" class="btn btn-primary">Login</button>
                 </form>
