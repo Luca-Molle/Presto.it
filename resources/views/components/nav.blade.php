@@ -53,35 +53,36 @@
                         </li> --}}
 
 
-                        @endguest
-                </ul>
-                <ul class="navbar-nav  mb-2 mb-lg-0">
-                    <li class="nav-item dropdown dropdown-menu-end ">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            {{ auth()->user()->name }}
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-end">
+
+                    </ul>
+                    <ul class="navbar-nav  mb-2 mb-lg-0">
+                        <li class="nav-item dropdown dropdown-menu-end ">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                {{ auth()->user()->name }}
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end">
 
 
-                            <li>
-                                <a class="dropdown-item" href="{{ route('announcement.create') }}"> Inserisci
-                                    annuncio</a>
-                            </li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li>
-                                <form action="/logout" method="POST">
-                                    @csrf
-                                    <button type="submit" class="d-inline mx-2 border-0 bg-white">Esci</button>
-                                </form>
-                            </li>
-                        </ul>
-                    </li>
+                                <li>
+                                    <a class="dropdown-item" href="{{ route('announcement.create') }}"> Inserisci
+                                        annuncio</a>
+                                </li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li>
+                                    <form action="/logout" method="POST">
+                                        @csrf
+                                        <button type="submit" class="d-inline mx-2 border-0 bg-white">Esci</button>
+                                    </form>
+                                </li>
+                            </ul>
+                        </li>
 
-                </ul>
+                    </ul>
+                @endguest
 
                 {{-- <form class="d-flex" role="search">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
