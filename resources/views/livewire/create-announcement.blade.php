@@ -14,9 +14,10 @@
                     </div>
 
                     <div class="col-12">
-                        <select name="categories" id="categories" class="form-select" aria-label="Default select example">
+                        <select wire:model.defer="category" id="category" class="form-select" aria-label="Default select example">
+                            <option value="">Scegli la categoria</option>
                             @foreach ($categories as $category)
-                                <option value="category">{{ $category->name }}</option>
+                                <option value="{{ $category->id }}">{{ $category->name }}</option>
                             @endforeach
                         </select>
                     </div>

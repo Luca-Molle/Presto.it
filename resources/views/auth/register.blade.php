@@ -4,6 +4,17 @@
 	    <div class="d-flex justify-content-center h-250 ">
 			<div class="card-header card h-100 d-inline-block">
                 <h1 class="text-center">Registrati</h1>
+
+                <div class="col-12">
+                    @if ($errors->any())
+                    <div class="alert alert-danger">
+                        @foreach ($errors->all() as $error)
+                            {{ $error }}<br>
+                        @endforeach
+                    </div>
+                    @endif
+                </div>
+
                 <form action="{{route('register')}}" method="POST">
                     @csrf
                     <div class="mb-3">

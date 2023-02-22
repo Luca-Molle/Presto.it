@@ -15,7 +15,11 @@ class Announcement extends Model
 
     public function categories()
     {
-        return $this->BelongsTo(Category::class); 
+        return $this->belongsTo(Category::class); 
     }
 
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

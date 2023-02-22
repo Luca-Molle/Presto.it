@@ -3,6 +3,17 @@
 <div class="container mt-5 ">
 	<div class="d-flex justify-content-center h-100 ">
 			<div class="card-header card ">
+
+                <div class="col-12">
+                    @if ($errors->any())
+                    <div class="alert alert-danger">
+                        @foreach ($errors->all() as $error)
+                            {{ $error }}<br>
+                        @endforeach
+                    </div>
+                    @endif
+                </div>
+
                 <h1 class="">Login</h1>
                 <form action="{{route('login')}}" method="POST">
                     @csrf

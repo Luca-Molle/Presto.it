@@ -18,7 +18,8 @@ body{
     }
     
     .card{
-    height: 370px;
+        /* ho commentato l'altezza altrimenti se sbaglio ad inserire i dati il display degli errori va fuori dalla card */
+    /* height: 370px; */
     margin-top: auto;
     margin-bottom: auto;
     width: 400px;
