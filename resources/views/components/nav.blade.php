@@ -17,6 +17,23 @@
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="{{ route('welcome') }}">Home</a>
                     </li>
+
+                    <ul class="navbar-nav  mb-2 mb-lg-0">
+                        <li class="nav-item dropdown dropdown-menu-end ">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Categorie
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end">                                
+                                @foreach ($categories as $category)
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ route('categoryShow', $category) }}">{{ $category->name }}</a>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </li>
+
+                    </ul>
                     @guest
 
                         <li class="nav-item">
@@ -25,7 +42,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="login">Login</a>
                         </li>
-                        <li>
+                        
                         @else
                             {{-- <li class="nav-item dropdown dropdown-menu-end ">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
