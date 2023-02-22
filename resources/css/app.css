@@ -1,41 +1,41 @@
 @import 'bootstrap';
 
-.navbar{
-    /* background-color: rgb(180, 218, 247) !important; */
-    background-color: transparent !important;
+.navbar {
+    background-color: rgb(180, 218, 247) !important;
+    /* background-color: transparent !important; */
     font-size: x-large;
 }
 
-body{
+body {
     background-image: url("http://127.0.0.1:8000/img/sfondo.jpg") !important;
     font-family: 'Numans', sans-serif;
 }
-    
-    .container{
+
+.container {
     height: 100%;
     align-content: center;
-    
-    }
-    
-    .card{
-        /* ho commentato l'altezza altrimenti se sbaglio ad inserire i dati il display degli errori va fuori dalla card */
+
+}
+
+.card {
+    /* ho commentato l'altezza altrimenti se sbaglio ad inserire i dati il display degli errori va fuori dalla card */
     /* height: 370px; */
     margin-top: auto;
     margin-bottom: auto;
     width: 400px;
     background-color: rgb(180, 218, 247) !important;
     border-radius: 2% !important;
-    }
-    
-    .card-header h1{
-    color: orange;
-    
-    }
-    
-    .remember{
-    color: black;
-    }
+}
 
-.box2{
+.card-header h1 {
+    color: orange;
+
+}
+
+.remember {
+    color: black;
+}
+
+.box2 {
     margin-top: 15vh;
 }
