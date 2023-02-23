@@ -13,15 +13,15 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
-                    <li class="nav-item">
-                        <a class="nav-link active text-white" aria-current="page" href="{{ route('welcome') }}">Home</a>
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0  ">
+                    <li class="nav-item align-items-center d-flex">
+                        <a class="nav-link text-logo " aria-current="page" href="{{ route('welcome') }}">Presto.it</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link active text-white" aria-current="page" href="{{ route('index.announcements') }}">Annunci</a>
+                    <li class="nav-item align-items-center d-flex">
+                        <a class="nav-link text-white" aria-current="page" href="{{ route('index.announcements') }}">Annunci</a>
                     </li>
                     <ul class="navbar-nav  mb-2 mb-lg-0">
-                        <li class="nav-item dropdown dropdown-menu-end ">
+                        <li class="nav-item dropdown dropdown-menu-end align-items-center d-flex">
                             <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
                                 Categorie
@@ -38,41 +38,15 @@
                     </ul>
                     @guest
 
-                        <li class="nav-item">
+                        <li class="nav-item align-items-center d-flex">
                             <a class="nav-link text-white" href="{{ route('register') }}">Registrati</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item align-items-center d-flex">
                             <a class="nav-link text-white" href="{{ route('login') }}">Login</a>
                         </li>
                         
                         @else
-                            {{-- <li class="nav-item dropdown dropdown-menu-end ">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                {{ auth()->user()->name }}
-                            </a>
-                            <ul class="dropdown-menu">
-
-
-                                <li>
-                                    <a class="dropdown-item" href="{{ route('announcement.create') }}"> Inserisci
-                                        annuncio</a>
-                                </li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li>
-                                    <form action="/logout" method="POST">
-                                        @csrf
-                                        <button type="submit" class="d-inline mx-2 border-0 bg-white">Esci</button>
-                                    </form>
-                                </li>
-                            </ul>
-                        </li> --}}
-
-
-
+                       
                     </ul>
                     <ul class="navbar-nav  mb-2 mb-lg-0">
                         <li class="nav-item dropdown dropdown-menu-end ">
@@ -81,8 +55,6 @@
                                 {{ auth()->user()->name }}
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end maincolor">
-
-
                                 <li>
                                     <a class="dropdown-item text-white" href="{{ route('announcement.create') }}"> Inserisci
                                         annuncio</a>

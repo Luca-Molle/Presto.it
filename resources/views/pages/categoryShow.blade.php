@@ -1,8 +1,8 @@
 <x-layout>
-    <div class="container-flui p-5 bg-gradient bg-seccess shadow mb-4">
+    <div class="container-fluid p-5 mt-0 bg-gradient shadow mb-4 maincolor">
         <div class="row">
-            <div class="col-12 text-light p-5 text-center">
-                <h1 class="display-2">Esplora la catgoria {{ $category->name }}</h1>
+            <div class="col-12 text-light p-5 mt-5 text-center">
+                <h1 class="display-2 ">Esplora la catgoria {{ $category->name }}</h1>
             </div>
         </div>
     </div>
