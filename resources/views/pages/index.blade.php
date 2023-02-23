@@ -4,10 +4,10 @@
             <div class="col-12 text-center">
                 <h1>Presto.it</h1>
             </div>
-            <div class="row justify-content-center">
+            <div class="row justify-content-center ">
                 @foreach ($announcements as $announcement)
-                    <div class="card mx-4 my-4" style="width: 18rem;">
-                        <img src="https://picsum.photos/200" class="card-img-top rounded" alt="...">
+                    <div class="card mx-auto m-3" style="width: 20rem;">
+                        <img src="https://picsum.photos/200" class="card-img-top mt-3 rounded" alt="...">
                         <div class="card-body">
                             <h4 class="card-title">{{ $announcement->title }}</h4>
                             <p class="card-text">{{ $announcement->price }}</p>
@@ -19,7 +19,6 @@
                             <p class="card-footer">Pubblicato il: {{ $announcement->created_at->format('d/m/Y') }}</p>
                         </div>
                     </div>
-                    ciao
                 @endforeach
                 {{ $announcements->links() }}
             </div>

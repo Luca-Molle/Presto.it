@@ -1,5 +1,5 @@
 <div>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary bs-primary-text fixed-top">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary bs-primary-text fixed-top maincolor">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
                 <div class="contenitore-img">
@@ -13,23 +13,23 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{{ route('welcome') }}">Home</a>
+                        <a class="nav-link active text-white" aria-current="page" href="{{ route('welcome') }}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{{ route('index.announcements') }}">Annunci</a>
+                        <a class="nav-link active text-white" aria-current="page" href="{{ route('index.announcements') }}">Annunci</a>
                     </li>
                     <ul class="navbar-nav  mb-2 mb-lg-0">
                         <li class="nav-item dropdown dropdown-menu-end ">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
                                 Categorie
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end">                                
                                 @foreach ($categories as $category)
                                     <li class="nav-item">
-                                        <a class="nav-link" href="{{ route('categoryShow', $category) }}">{{ $category->name }}</a>
+                                        <a class="nav-link " href="{{ route('categoryShow', $category) }}">{{ $category->name }}</a>
                                     </li>
                                 @endforeach
                             </ul>
@@ -39,10 +39,10 @@
                     @guest
 
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('register') }}">Registrati</a>
+                            <a class="nav-link text-white" href="{{ route('register') }}">Registrati</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">Login</a>
+                            <a class="nav-link text-white" href="{{ route('login') }}">Login</a>
                         </li>
                         
                         @else
@@ -76,25 +76,25 @@
                     </ul>
                     <ul class="navbar-nav  mb-2 mb-lg-0">
                         <li class="nav-item dropdown dropdown-menu-end ">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
                                 {{ auth()->user()->name }}
                             </a>
-                            <ul class="dropdown-menu dropdown-menu-end">
+                            <ul class="dropdown-menu dropdown-menu-end maincolor">
 
 
                                 <li>
-                                    <a class="dropdown-item" href="{{ route('announcement.create') }}"> Inserisci
+                                    <a class="dropdown-item text-white" href="{{ route('announcement.create') }}"> Inserisci
                                         annuncio</a>
                                 </li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li><a class="dropdown-item text-white" href="#">Another action</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
                                 <li>
                                     <form action="/logout" method="POST">
                                         @csrf
-                                        <button type="submit" class="d-inline mx-2 border-0 bg-white">Esci</button>
+                                        <button type="submit" class="d-inline mx-2 border-0 text-white maincolor">Esci</button>
                                     </form>
                                 </li>
                             </ul>

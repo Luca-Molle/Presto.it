@@ -1,13 +1,43 @@
 @import 'bootstrap';
 
+/* palette di colori 
+prussian blue #003049
+white smoke #F5F3F5
+tryan purple #4C1036 */
+
+:root{
+    --main:#003049;
+    --purple:#4C1036;
+    --first:#F5F3F5;
+    --gray:rgb(230, 230, 230);
+}
+
+.textwhite{
+    color: var(--first);
+}
+
+.maincolor{
+    background-color: var(--main)!important;
+}
+
+.purple{
+    background-color: var(--purple)!important;
+}
+
+.firstcolor{
+    background-color: var(--first)!important;
+}
+
+.gray{
+    background-color: var(--gray);
+}
 .navbar {
-    background-color: rgb(180, 218, 247) !important;
     /* background-color: transparent !important; */
     font-size: x-large;
 }
 
 body {
-    background-image: url("http://127.0.0.1:8000/img/sfondo.jpg") !important;
+    background-color: var(--first) !important;
     font-family: 'Numans', sans-serif;
 }
 
@@ -23,8 +53,7 @@ body {
     margin-top: auto;
     margin-bottom: auto;
     width: 400px;
-    background-color: rgb(180, 218, 247) !important;
-    border-radius: 2% !important;
+    border-radius: 20px !important;
 }
 
 .card-header h1 {
