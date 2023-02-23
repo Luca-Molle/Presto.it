@@ -17,7 +17,9 @@
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="{{ route('welcome') }}">Home</a>
                     </li>
-
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{{ route('index.announcements') }}">Annunci</a>
+                    </li>
                     <ul class="navbar-nav  mb-2 mb-lg-0">
                         <li class="nav-item dropdown dropdown-menu-end ">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -37,10 +39,10 @@
                     @guest
 
                         <li class="nav-item">
-                            <a class="nav-link" href="register">Registrati</a>
+                            <a class="nav-link" href="{{ route('register') }}">Registrati</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="login">Login</a>
+                            <a class="nav-link" href="{{ route('login') }}">Login</a>
                         </li>
                         
                         @else

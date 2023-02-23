@@ -12,12 +12,9 @@ class AnnouncementController extends Controller
         return view('announcements.create'); 
     }
 
-    // public function store(Request $request)
-    // {
-    //     $announcement = Announcement::create(); 
-    //     $announcement->title = $request->title; 
-    //     $announcement->description = $request->description; 
-    //     $announcement->price = $request->price; 
-
-    // }
+    public function index()
+    {
+        $announcements = Announcement::paginate(6);
+        return view('pages.index', compact('announcements'));
+    }
 }

@@ -15,9 +15,13 @@ use App\Http\Controllers\FrontController;
 |
 */
 
+// Rotte per le pagine che non hanno un Autore
 Route::get('/', [FrontController::class, 'homePage'])->name('welcome');
 Route::get('/categoria/{category}', [FrontController::class, 'categoryShow'])->name('categoryShow');
+Route::get('/dettaglio/categoria/{announcement}', [FrontController::class, 'showAnnouncement'])->name('announcements.show');
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/nuovo/annuncio', [AnnouncementController::class, 'create'])->name('announcement.create');
 });
+Route::get('elenco/annunci', [AnnouncementController::class, 'index'])->name('index.announcements');
