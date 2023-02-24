@@ -1,49 +1,53 @@
 @import 'bootstrap';
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Tilt+Prism&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Pacifico&family=Tilt+Prism&display=swap%27');
+
 
 /* palette di colori 
 prussian blue #003049
 white smoke #F5F3F5
 tryan purple #4C1036 */
 
-:root{
-    --main:#003049;
-    --purple:#4C1036;
-    --first:#F5F3F5;
-    --gray:rgb(230, 230, 230);
+:root {
+    --main: #AC9969;
+    --second: #D9F4C7;
+    --first: #f6f1f6;
+    --gray: rgb(230, 230, 230);
 }
 
-.nav-item .text-white{
-    font-size: 1rem !important; 
+.nav-item .text-white {
+    font-size: 1rem !important;
 }
 
-.textwhite{
-    color: var(--first);
+.textmain {
+    color: var(--main);
 }
 
-.maincolor{
-    background-color: var(--main)!important;
+.maincolor {
+    background-color: var(--main) !important;
 }
 
-.purple{
-    background-color: var(--purple)!important;
+.second-color {
+    background-color: var(--second) !important;
 }
 
-.firstcolor{
-    background-color: var(--first)!important;
-}
+/* .firstcolor {
+    background-color: var(--first) !important;
+} */
 
-.gray{
+.gray {
     background-color: var(--gray);
 }
+
 .navbar {
     /* background-color: transparent !important; */
     font-size: x-large;
 }
 
-.text-logo{
-    font-family: 'Tilt Prism', cursive;
-    color: orange !important;
+.text-logo {
+
+    font-family: 'Pacifico', cursive;
+    /* color: orange !important; */
     /* font-size: 2rem !important; */
 }
 
@@ -58,6 +62,7 @@ body {
 
 }
 
+/* form di registrazione e login     */
 .card {
     /* ho commentato l'altezza altrimenti se sbaglio ad inserire i dati il display degli errori va fuori dalla card */
     /* height: 370px; */
@@ -76,46 +81,28 @@ body {
     color: black;
 }
 
-.category-logo{
-    font-family: 'Tilt Prism', cursive;
+
+.category-logo {
+    font-weight: bold;
     color: white;
 
 }
 
-/* .category-card{
+
+
+
+/* card annunci */
+.card-custom {
+    width: 60rem;
+
+    transition: transform .2s;
+}
+
+.card-custom:hover {
+    transform: scale(1.05);
 
 }
 
-.category-card:hover{
-
-} */
-
-/* Gallery category homepage */
-
-* {
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-  }
-  
-  
-  .gallery {
-    background: #EEE;
-  }
-  
-  .gallery-cell {
-    width: 66%;
-    height: 200px;
-    margin-right: 10px;
-    background: #8C8;
-    counter-increment: gallery-cell;
-  }
-  
-  /* cell number */
-  .gallery-cell:before {
-    display: block;
-    text-align: center;
-    content: counter(gallery-cell);
-    line-height: 200px;
-    font-size: 80px;
-    color: white;
-  }
+.box2 {
+    margin-top: 3%;
+}

@@ -1,6 +1,6 @@
 <div class="container">
-    <div class="row">
-        <div class="col-12">
+    <div class="row ">
+        <div class="col-12 mt-5">
             <h1>Inserisci Annuncio</h1>
             <form wire:submit.prevent="store">
                 <div class="row g-3">
