@@ -69,7 +69,7 @@
                                         <h5 class="card-title category-logo ">MARKET</h5>
                                         </h5>
                                         <p class="card-text">Compra e vendi qualisasi tipo di oggetto</p>
-                                        <a href="#" class="btn btn-border">Esplora</a>
+                                        <a href="#" class="btn border">Esplora</a>
                                     </div>
                                 </div>
                             </div>
@@ -117,13 +117,11 @@
                 </div>
                 <button class="carousel-control-prev me-3 " type="button" data-bs-target="#carouselExample"
                     data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon " aria-hidden="true"></span>
-                    <span class="textmain fw-bold">Previous</span>
+                    <span class="textmain visually-hidden fw-bold">Previous</span>
                 </button>
                 <button class="carousel-control-next " type="button" data-bs-target="#carouselExample"
                     data-bs-slide="next">
-                    <span class="carousel-control-next-icon " aria-hidden="true"></span>
-                    <span class="textmain fw-bold">Next</span>
+                    <span class="textmain visually-hidden fw-bold">Next</span>
                 </button>
             </div>
 
