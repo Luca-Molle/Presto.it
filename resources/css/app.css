@@ -81,7 +81,7 @@ body {
 
 /* card annunci */
 .card-custom {
-    width: 60rem;
+    /* width: 60%; */
 
     transition: transform .2s;
 }
