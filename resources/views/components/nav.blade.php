@@ -25,7 +25,12 @@
                         <li class="nav-item dropdown dropdown-menu-end align-items-center d-flex">
                             <a class="nav-link dropdown-toggle text-white" href="#" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
-                                Categorie
+                                {{-- OPZIONE RICHIAMO NOME CATEGORIA IN VIEW SHOWCATEGORY --}}
+                                @if (Route::is('categoryShow'))
+                                    {{ request()->category->name }}
+                                @else
+                                    Categorie
+                                @endif
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end maincolor">
                                 @foreach ($categories as $category)
@@ -56,10 +61,9 @@
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end maincolor">
                                 <li>
-                                    <a class=" text-white nav-link" href="{{ route('announcement.create') }}"> Inserisci
+                                    <a class=" text-white nav-link" href="{{ route('announcement.create') }}">Inserisci
                                         annuncio</a>
                                 </li>
-                                <li><a class=" text-white nav-link" href="#">Another action</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
