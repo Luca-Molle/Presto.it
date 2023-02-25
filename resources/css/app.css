@@ -90,6 +90,18 @@ body {
 }
 
 /* card annunci */
+.card-image{
+    transition: transform .2s;
+}
+
+.card-image:hover{
+    transform: scale(1.05);
+}
+
+.custom-button:hover{
+
+}
+
 .card-custom {
     /* width: 60%; */
 
