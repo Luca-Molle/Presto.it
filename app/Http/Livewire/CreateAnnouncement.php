@@ -36,6 +36,7 @@ class CreateAnnouncement extends Component
         Auth::user()->announcements()->save($announcement);
 
         session()->flash('message', 'annuncio creato correttamente'); 
+        $this->emitTo('articles-list', 'loadData');
 
         $this->clearInput(); 
     }
