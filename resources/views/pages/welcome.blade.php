@@ -51,7 +51,7 @@
                         <img src="https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/notebooks/xps-notebooks/xps-15-9520/media-gallery/black/laptop-xps-9520-t-black-gallery-4.psd?fmt=pjpg&pscan=auto&scl=1&wid=3491&hei=2077&qlt=100,1&resMode=sharp2&size=3491,2077&chrss=full&imwidth=5000" class="img-fluid card-image" alt="foto">
                         <div>
                             <h4 class="fw-bold">{{ $announcement->title }}</h6>
-                            <h5 class="">€ {{ $announcement->price }}</h5>
+                            <h5 class="textmain fw-bold">€ {{ $announcement->price }}</h5>
                             <button class="btn btn-outline-secondary shadow">Visualizza</button>
                         </div>
                     </div>
