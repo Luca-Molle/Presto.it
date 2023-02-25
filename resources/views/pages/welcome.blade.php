@@ -37,14 +37,14 @@
         </button>
     </div>
 
-    <div class="second-color text-center my-3 p-5 ">
-        <p class="text-logo fs-1">Ultimi annunci!</p>
+    <div class="bg-dark text-center my-3 p-5 shadow">
+        <p class="pacifico fs-1 text-white">Ultimi annunci!</p>
     </div>
     <div class="container">
         <div class="row">
             <div class="col-12">
                 @foreach ($announcements as $announcement)
-                <div class="card mx-auto m-3 card-custom d-flex col-6 ">
+                <div class="card mx-auto m-3 card-custom d-flex col-6 shadow ">
                     <div class="row ">
                         <div class="col-6 d-flex align-items-center ">
                             <img src="https://static.fanpage.it/wp-content/uploads/sites/6/2020/04/migliori-pc-da-gaming.jpg" class="card-img-top rounded img-fluid" alt="...">

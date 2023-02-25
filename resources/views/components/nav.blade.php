@@ -1,5 +1,5 @@
 <div>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary bs-primary-text fixed-top maincolor rounded shadow">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary bs-primary-text fixed-top shadow">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
                 <div class="contenitore-img">
@@ -14,16 +14,16 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0  ">
-                    <li class="nav-item align-items-center d-flex">
-                        <a class="nav-link text-logo " aria-current="page" href="{{ route('welcome') }}">Presto.it</a>
+                    <li class="nav-item align-items-center d-flex me-2">
+                        <a class=" text-logo fs-3 " aria-current="page" href="{{ route('welcome') }}">Presto.it</a>
                     </li>
                     <li class="nav-item align-items-center d-flex">
-                        <a class="nav-link text-white" aria-current="page"
+                        <a class="nav-link" aria-current="page"
                             href="{{ route('index.announcements') }}">Annunci</a>
                     </li>
                     <ul class="navbar-nav  mb-2 mb-lg-0">
                         <li class="nav-item dropdown dropdown-menu-end align-items-center d-flex">
-                            <a class="nav-link dropdown-toggle text-white" href="#" role="button"
+                            <a class="nav-link dropdown-toggle" href="#" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
                                 {{-- OPZIONE RICHIAMO NOME CATEGORIA IN VIEW SHOWCATEGORY --}}
                                 @if (Route::is('categoryShow'))
@@ -32,10 +32,10 @@
                                     Categorie
                                 @endif
                             </a>
-                            <ul class="dropdown-menu dropdown-menu-end maincolor">
+                            <ul class="dropdown-menu dropdown-menu-end">
                                 @foreach ($categories as $category)
                                     <li class="nav-item">
-                                        <a class="nav-link text-white "
+                                        <a class="nav-link"
                                             href="{{ route('categoryShow', $category) }}">{{ $category->name }}</a>
                                     </li>
                                 @endforeach
@@ -46,23 +46,26 @@
                     @guest
 
                         <li class="nav-item align-items-center d-flex">
-                            <a class="nav-link text-white" href="{{ route('register') }}">Registrati</a>
+                            <a class="nav-link" href="{{ route('register') }}">Registrati</a>
                         </li>
                         <li class="nav-item align-items-center d-flex">
-                            <a class="nav-link text-white" href="{{ route('login') }}">Login</a>
+                            <a class="nav-link" href="{{ route('login') }}">Login</a>
                         </li>
                     @else
                     </ul>
                     <ul class="navbar-nav  mb-2 mb-lg-0">
                         <li class="nav-item dropdown dropdown-menu-end ">
-                            <a class="nav-link dropdown-toggle text-white" href="#" role="button"
+                            <a class="nav-link dropdown-toggle" href="#" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
                                 {{ auth()->user()->name }}
                             </a>
-                            <ul class="dropdown-menu dropdown-menu-end maincolor">
+                            <ul class="dropdown-menu dropdown-menu-end">
                                 <li>
-                                    <a class=" text-white nav-link" href="{{ route('announcement.create') }}">Inserisci
+                                    <a class=" nav-link" href="{{ route('announcement.create') }}">Inserisci
                                         annuncio</a>
+                                </li>
+                                <li>
+                                    <a class=" nav-link" href="{{ route('announcement.create') }}">I miei annunci</a>
                                 </li>
                                 <li>
                                     <hr class="dropdown-divider">
@@ -71,7 +74,7 @@
                                     <form action="/logout" method="POST">
                                         @csrf
                                         <button type="submit"
-                                            class="d-inline mx-2 border-0 text-white maincolor">Esci</button>
+                                            class="d-inline mx-2 border-0 btn maincolor text-white">Esci</button>
                                     </form>
                                 </li>
                             </ul>
