@@ -1,5 +1,5 @@
 <div>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary bs-primary-text fixed-top maincolor border shadow">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary bs-primary-text fixed-top maincolor rounded shadow">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
                 <div class="contenitore-img">

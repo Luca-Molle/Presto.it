@@ -1,5 +1,5 @@
 @import 'bootstrap';
-
+/* IMPORT FONT */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Pacifico&family=Tilt+Prism&display=swap%27');
 
 
@@ -8,6 +8,7 @@ prussian blue #003049
 white smoke #F5F3F5
 tryan purple #4C1036 */
 
+/* COLORI E RELATIVE VARIABILI CSS */
 :root {
     --main: #AC9969;
     --second: #D9F4C7;
@@ -31,41 +32,28 @@ tryan purple #4C1036 */
     background-color: var(--second) !important;
 }
 
-/* .firstcolor {
-    background-color: var(--first) !important;
-} */
-
 .gray {
     background-color: var(--gray);
 }
+/* --------------------------------------- */
 
-.navbar {
-    /* background-color: transparent !important; */
-    font-size: x-large;
-}
 
-.text-logo {
-
-    font-family: 'Pacifico', cursive;
-    /* color: orange !important; */
-    /* font-size: 2rem !important; */
-}
-
+/* STILE PAGINA layout */
 body {
     background-color: var(--first) !important;
     font-family: 'Montserrat', sans-serif;
 }
 
-.container {
-    height: 100%;
-    align-content: center;
-
+.navbar {
+    font-size: x-large;
 }
 
-/* form di registrazione e login     */
+.text-logo {
+    font-family: 'Pacifico', cursive;
+}
+
+/* form di registrazione e login */
 .card {
-    /* ho commentato l'altezza altrimenti se sbaglio ad inserire i dati il display degli errori va fuori dalla card */
-    /* height: 370px; */
     margin-top: auto;
     margin-bottom: auto;
     width: 400px;
@@ -74,18 +62,16 @@ body {
 
 .card-header h1 {
     color: orange;
-
 }
 
 .remember {
     color: black;
 }
 
-
+/* sTYLE LOGO CATEGORY CARD */
 .category-logo {
     font-weight: bold;
     color: white;
-
 }
 
 

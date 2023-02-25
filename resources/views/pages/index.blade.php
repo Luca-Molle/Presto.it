@@ -9,7 +9,7 @@
 
                             <div class="row ">
                                 <div class="col-6 d-flex align-items-center ">
-                                    <img src="https://st.ilfattoquotidiano.it/wp-content/uploads/2022/09/13/Berlusconi-Peppa-690x362.jpg"
+                                    <img src="https://static.fanpage.it/wp-content/uploads/sites/6/2020/04/migliori-pc-da-gaming.jpg"
                                         class="card-img-top rounded img-fluid" alt="...">
                                 </div>
                                 <div class="col-6">
