@@ -1,5 +1,5 @@
 <x-layout>
-    <div class="container mt-5">
+    <div class="container mt-5 textmain">
         <form action="/forgot-password" method="POST" class=" mt-5">
             <div class="column g-3 pt-2">
                 <div class="col-6 mx-auto">

@@ -10,12 +10,13 @@ tryan purple #4C1036 */
 
 /* COLORI E RELATIVE VARIABILI CSS */
 :root {
-    --main:#F58B00; 
-    /* --main: #AC9969; */ 
+    --main: #F58B00;
+    /* --main: #AC9969; */
     --second: #D9F4C7;
     --first: #f6f1f6;
     --gray: rgb(230, 230, 230);
 }
+
 /* ------------------------------------- */
 
 /* NAVBAR E VARIABILI GENERALI */
@@ -52,7 +53,7 @@ body {
     /* font-size: x-large; */
 }
 
-.pacifico{
+.pacifico {
     font-family: 'Pacifico', cursive;
 }
 
@@ -62,8 +63,9 @@ body {
     text-decoration: none;
     transition: transform .2s;
 }
+
 .text-logo:hover {
-    color: var(--main)!important;
+    color: var(--main) !important;
     transform: scale(1.05);
 }
 
@@ -90,17 +92,15 @@ body {
 }
 
 /* card annunci */
-.card-image{
+.card-image {
     transition: transform .2s;
 }
 
-.card-image:hover{
+.card-image:hover {
     transform: scale(1.05);
 }
 
-.custom-button:hover{
-
-}
+.custom-button:hover {}
 
 .card-custom {
     /* width: 60%; */
