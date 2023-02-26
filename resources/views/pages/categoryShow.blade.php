@@ -1,8 +1,8 @@
 <x-layout>
-    <div class="container-fluid mx-0 second-color shadow">
+    <div class="container-fluid mx-0 bg-dark shadow">
 
-        <div class="col-12  p-5 mt-5 text-center second-color">
-            <h1 class="display-2 text-logo ">{{ $category->name }}</h1>
+        <div class="col-12  p-5 mt-5 text-center bg-dark">
+            <h1 class="display-2 pacifico textmain ">{{ $category->name }}</h1>
         </div>
 
     </div>
