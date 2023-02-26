@@ -8,8 +8,14 @@ use Illuminate\Http\Request;
 
 class FrontController extends Controller
 {
-    public function homePage()
+    public function homePage(Request $request)
     {
+        // $search = $request['search'] ?? ""; 
+        // if ($search != "") {
+        //     $announcements = Announcement::where('title', '=', $search)->get();
+        // }else {
+        //     $announcements = Announcement::take(9)->get()->sortByDesc('created_at');
+        // }
         $announcements = Announcement::take(9)->get()->sortByDesc('created_at');
         return view('pages.welcome', compact('announcements'));
     }
