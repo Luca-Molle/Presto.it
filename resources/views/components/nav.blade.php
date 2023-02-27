@@ -65,7 +65,7 @@
                                         annuncio</a>
                                 </li>
                                 <li>
-                                    <a class=" nav-link" href="{{ route('announcement.create') }}">I miei annunci</a>
+                                    <a class=" nav-link" href="{{ route('user.page') }}">I miei annunci</a>
                                 </li>
                                 <li>
                                     <hr class="dropdown-divider">

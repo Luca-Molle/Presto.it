@@ -9,24 +9,22 @@ use Livewire\Component;
 
 class CreateAnnouncement extends Component
 {
-
     public $title; 
     public $description; 
     public $price; 
     public $category;
 
     protected $rules = [
-        'title' => 'required|min:4',
+        'title' => 'required|max:15',
         'description' => 'required|max:250', 
         'price' => 'required',
         'category' => 'required',
     ]; 
 
+    // Fuzione che mi permette di salvare i dati
     public function store()
     {
-
         $this->validate(); 
-
         $category = Category::find($this->category);
         $announcement = $category->announcements()->create([
             'title' => $this->title, 
@@ -41,11 +39,13 @@ class CreateAnnouncement extends Component
         $this->clearInput(); 
     }
 
+    // Controllo validazione in tempo reale 
     public function updated($propertyName)
     {
         $this->validateOnly($propertyName);
     }
 
+    // mwtodo per pulire i campi di input del form
     public function clearInput()
     {
         $this->title = ''; 
@@ -54,6 +54,7 @@ class CreateAnnouncement extends Component
         $this->category = '';
     }
 
+    // metodo che renderizza la view livewire
     public function render()
     {
         $categories = Category::all();

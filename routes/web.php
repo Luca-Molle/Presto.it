@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AnnouncementController;
 use App\Http\Controllers\FrontController;
-use App\Http\Controllers\RevisorController;
+use App\Http\Controllers\userPageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,6 +25,7 @@ Route::get('elenco/annunci', [AnnouncementController::class, 'index'])->name('in
 //Rotte utente loggato
 Route::middleware('auth')->group(function () {
     Route::get('/nuovo/annuncio', [AnnouncementController::class, 'create'])->name('announcement.create');
+    Route::get('/user/announcements', [userPageController::class, 'index'])->name('user.page');
 });
 
 //Rotte Revisor
