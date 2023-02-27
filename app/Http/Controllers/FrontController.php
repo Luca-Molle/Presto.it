@@ -16,7 +16,7 @@ class FrontController extends Controller
         // }else {
         //     $announcements = Announcement::take(9)->get()->sortByDesc('created_at');
         // }
-        $announcements = Announcement::take(9)->get()->sortByDesc('created_at');
+        $announcements = Announcement::take(8)->get()->sortByDesc('created_at');
         return view('pages.welcome', compact('announcements'));
     }
 
