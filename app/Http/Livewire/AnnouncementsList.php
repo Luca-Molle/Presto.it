@@ -26,7 +26,7 @@ class AnnouncementsList extends Component
     // metodo richiamato al click del bottone modifica
     public function editAnnouncement($id)
     {
-        $this->emitTo('EditAnnouncement', 'edit', $id);
+        $this->emitTo('edit-announcement', 'edit', $id);
     }
 
 

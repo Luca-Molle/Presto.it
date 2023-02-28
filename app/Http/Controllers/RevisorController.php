@@ -9,8 +9,8 @@ class RevisorController extends Controller
 {
     public function index()
     {
-          $announcementsToCheck = Announcement::where('is_accepted', null)->first(); 
-          return view('revisor.index', compact('announcementsToCheck')); 
+        $announcementsToCheck = Announcement::where('is_accepted', null)->first();
+        return view('revisor.index', compact('announcementsToCheck'));
     }
 
     public function acceptAnnouncement(Announcement $announcement)
