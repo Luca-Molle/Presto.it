@@ -29,7 +29,7 @@ class EditAnnouncement extends Component
         $this->selectedCategoryName = $this->announcement->category->name;
     }
 
-    // metodo 
+    // metodo update per aggiornare gli annunci, viene passato loadData per aggiornare automaticamente la pagina di lista annunci 
     public function update()
     {
         $this->validate();
