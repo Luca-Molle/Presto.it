@@ -5,7 +5,7 @@
                 <h1 class="text-center mt-5 text-white pb-4">
                     @if ($announcements_to_check > 0)
                         <span>
-                            Hai <span class="text-danger"> {{ \App\Models\Announcement::toBeRevisionedCounter() }}</span>
+                            Hai <span class="text-danger fw-bold"> {{ \App\Models\Announcement::toBeRevisionedCounter() }}</span>
                             annunci da revisionare!
                         </span>
                     @else

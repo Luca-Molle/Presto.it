@@ -11,7 +11,7 @@ class EditAnnouncement extends Component
     public $announcement;
     protected $listeners = ['edit'];
     protected $rules = [
-        'announcement.title' => 'required|max:15',
+        'announcement.title' => 'required|max:50',
         'announcement.description' => 'required|max:250', 
         'announcement.price' => 'required',
         'announcement.category' => 'required',
@@ -34,10 +34,12 @@ class EditAnnouncement extends Component
     {
         $this->validate();
         if($this->selctedCategoryId == $this->announcement->category->id)
-        {
+        {   
+            $this->announcement->is_accepted = null; 
             $this->announcement->save();
         }else{
             $this->announcement->category_id = $this->selctedCategoryId;
+            $this->announcement->is_accepted = null; 
             $this->announcement->save();
         }
         $this->emitTo('announcements-list', 'loadData');

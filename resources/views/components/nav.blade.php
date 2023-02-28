@@ -51,11 +51,11 @@
                         <li class="nav-item align-items-center d-flex">
                             <a class="nav-link" href="{{ route('login') }}">Login</a>
                         </li>
-                        <li class="nav-item align-items-center d-flex">
-                            <a href="route('#') " class="nav-link">Lavora con noi</a>
-                        </li>
-                    @else
+                        @else
                     </ul>
+                    <li class="nav-item align-items-center d-flex me-1">
+                        <a href="{{ route('work.with.us') }}" class="nav-link">Lavora con noi</a>
+                    </li>
                     <ul class="navbar-nav  mb-2 mb-lg-0">
                         <li class="nav-item dropdown dropdown-menu-end ">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -72,11 +72,14 @@
                                 </li>
                                 @if (Auth::user()->is_revisor)
                                     <li class="nav-item">
-                                        <a href="{{ route('revisor.index') }}" aria-current="page" class="nav-link"> Zona
-                                            revisore
-                                            <span>{{ App\Models\Announcement::toBeRevisionedCounter() }}
-                                                <span>unread messages</span>
+                                        <a href="{{ route('revisor.index') }}" aria-current="page" class="nav-link"> Articoli da Revisionare
+                                            @if (App\Models\Announcement::toBeRevisionedCounter() === 0)
+                                            <span class="notify bg-secondary p-2 text-white">{{ App\Models\Announcement::toBeRevisionedCounter() }}
                                             </span>
+                                            @else
+                                                <span class="notify bg-danger p-2 text-white">{{ App\Models\Announcement::toBeRevisionedCounter() }}
+                                                </span>
+                                            @endif
                                         </a>
                                     </li>
                                 @endif

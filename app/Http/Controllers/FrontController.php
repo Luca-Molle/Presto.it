@@ -4,19 +4,15 @@ namespace App\Http\Controllers;
 
 use App\Models\Announcement;
 use App\Models\Category;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class FrontController extends Controller
 {
-    public function homePage(Request $request)
+    public function homePage()
     {
-        // $search = $request['search'] ?? ""; 
-        // if ($search != "") {
-        //     $announcements = Announcement::where('title', '=', $search)->get();
-        // }else {
-        //     $announcements = Announcement::take(9)->get()->sortByDesc('created_at');
-        // }
-        $announcements = Announcement::take(8)->get()->sortByDesc('created_at');
+        $announcements = Announcement::where('is_accepted', true)->orderBy('id', 'desc')->paginate(8);
+        // $announcements = Announcement::take(8)->get()->sortByDesc('created_at');
         return view('pages.welcome', compact('announcements'));
     }
 
@@ -28,5 +24,10 @@ class FrontController extends Controller
     public function showAnnouncement(Announcement $announcement)
     {
         return view('pages.showAnnouncement', compact('announcement'));
+    }
+
+    public function workWithUs()
+    {
+        return view('pages.workWithUs'); 
     }
 }

@@ -15,7 +15,8 @@
 
                     <div class="col-12">
                         <select wire:model.lazy="selctedCategoryId" class="form-select"
-                            aria-label="Default select example">
+                            aria-label="Default select example" 
+                            @if ($selctedCategoryId == null) disabled @endif>
                             <option value="{{ $selctedCategoryId }}">
                                 @if ($selctedCategoryId == null)
                                     Categorie

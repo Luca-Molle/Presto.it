@@ -28,6 +28,8 @@ Route::get('elenco/annunci', [AnnouncementController::class, 'index'])->name('in
 Route::middleware('auth')->group(function () {
     Route::get('/nuovo/annuncio', [AnnouncementController::class, 'create'])->name('announcement.create');
     Route::get('/user/announcements', [userPageController::class, 'index'])->name('user.page');
+    Route::get('/Lavora_con_noi', [FrontController::class, 'workWithUs'])->name('work.with.us');
+    Route::post('/richiesta/revisor/inviata', [RevisorController::class, 'becomeRevisor'])->name('become.revisor');
 });
 
 //Rotte Admin
@@ -47,3 +49,6 @@ Route::patch('/accetta/annuncio/{announcement}', [RevisorController::class, 'acc
 
 //rifiuta annuncio
 Route::patch('/rifiuta/annuncio/{announcement}', [RevisorController::class, 'rejectAnnouncement'])->name('revisor.reject_announcement');
+
+//make user revisor
+Route::get('/make/user/revisor/{revisor}', [RevisorController::class, 'makeUserRevisor'])->name('make.user.revisor'); 
