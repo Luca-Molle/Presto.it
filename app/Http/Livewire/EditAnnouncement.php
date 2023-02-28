@@ -29,10 +29,17 @@ class EditAnnouncement extends Component
         $this->selectedCategoryName = $this->announcement->category->name;
     }
 
+    // metodo 
     public function update()
     {
         $this->validate();
-        $this->announcement->save();
+        if($this->selctedCategoryId == $this->announcement->category->id)
+        {
+            $this->announcement->save();
+        }else{
+            $this->announcement->category_id = $this->selctedCategoryId;
+            $this->announcement->save();
+        }
     }
 
 

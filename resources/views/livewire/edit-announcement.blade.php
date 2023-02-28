@@ -14,10 +14,7 @@
                     </div>
 
                     <div class="col-12">
-
-                        {{-- <input type="text" class="form-control" disabled
-                            value="@if ($selectedCategoryName == null) Categorie @endif {{ $selectedCategoryName }}"> --}}
-                        <select wire:model.defer="announcement.category" id="category" class="form-select"
+                        <select wire:model.lazy="selctedCategoryId" class="form-select"
                             aria-label="Default select example">
                             <option value="{{ $selctedCategoryId }}">
                                 @if ($selctedCategoryId == null)
