@@ -40,20 +40,17 @@ class EditAnnouncement extends Component
             $this->announcement->category_id = $this->selctedCategoryId;
             $this->announcement->save();
         }
+        $this->emitTo('announcements-list', 'loadData');
+        $this->newAnnouncement();
     }
-
-
 
 
     // metodo per svuotare il form
     public function newAnnouncement()
     {
         $this->announcement = new Announcement();
+        $this->selctedCategoryId = null;
     }
-
-    
-
-
 
 
 

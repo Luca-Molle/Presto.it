@@ -19,8 +19,9 @@
                             <option value="{{ $selctedCategoryId }}">
                                 @if ($selctedCategoryId == null)
                                     Categorie
+                                @else
+                                    {{ $selectedCategoryName }}
                                 @endif
-                                {{ $selectedCategoryName }}
                             </option>
                             @foreach ($categories as $category)
                                 <option value="{{ $category->id }}">{{ $category->name }}</option>
@@ -63,9 +64,11 @@
                             @enderror
                         </div>
                     </div>
-                    
+
                     <div class="col-6 justify-content-start mb-2">
-                        <button class="btn btn-primary" type="submit" id="userSubmitBtn">Salva</button>
+
+                        <button class="btn btn-primary" type="submit" id="userSubmitBtn"
+                            @if ($selctedCategoryId == null) disabled @endif>Salva</button>
                     </div>
 
                 </div>
@@ -73,5 +76,5 @@
         </div>
     </div>
 
-    
+
 </div>
