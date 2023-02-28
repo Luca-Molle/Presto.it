@@ -5,6 +5,7 @@ use App\Http\Controllers\AnnouncementController;
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\RevisorController;
 use App\Http\Controllers\userPageController;
+use App\Models\Announcement;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,5 +30,20 @@ Route::middleware('auth')->group(function () {
     Route::get('/user/announcements', [userPageController::class, 'index'])->name('user.page');
 });
 
+//Rotte Admin
+Route::middleware('auth')->prefix('admin')->group(function () {
+});
+
 //Rotte Revisor
-Route::get('/revisor/home', [RevisorController::class, 'index'])->name('revisor.index'); 
+Route::get('/revisor/home', [RevisorController::class, 'index'])->name('revisor.index');
+
+Route::get('/revisor/rev/{announcement}', function (Announcement $announcement) {
+    return view('revisor.rev', compact('announcement'));
+})->name('announcements.rev');
+
+
+//Accetta annuncio
+Route::patch('/accetta/annuncio/{announcement}', [RevisorController::class, 'acceptAnnouncement'])->name('revisor.accept_announcement');
+
+//rifiuta annuncio
+Route::patch('/rifiuta/annuncio/{announcement}', [RevisorController::class, 'rejectAnnouncement'])->name('revisor.reject_announcement');

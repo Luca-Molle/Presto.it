@@ -18,13 +18,12 @@
                         <a class=" text-logo fs-3 " aria-current="page" href="{{ route('welcome') }}">Presto.it</a>
                     </li>
                     <li class="nav-item align-items-center d-flex">
-                        <a class="nav-link" aria-current="page"
-                            href="{{ route('index.announcements') }}">Annunci</a>
+                        <a class="nav-link" aria-current="page" href="{{ route('index.announcements') }}">Annunci</a>
                     </li>
                     <ul class="navbar-nav  mb-2 mb-lg-0">
                         <li class="nav-item dropdown dropdown-menu-end align-items-center d-flex">
-                            <a class="nav-link dropdown-toggle" href="#" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
                                 {{-- OPZIONE RICHIAMO NOME CATEGORIA IN VIEW SHOWCATEGORY --}}
                                 @if (Route::is('categoryShow'))
                                     {{ request()->category->name }}
@@ -45,18 +44,22 @@
                     </ul>
                     @guest
 
+
                         <li class="nav-item align-items-center d-flex">
                             <a class="nav-link" href="{{ route('register') }}">Registrati</a>
                         </li>
                         <li class="nav-item align-items-center d-flex">
                             <a class="nav-link" href="{{ route('login') }}">Login</a>
                         </li>
+                        <li class="nav-item align-items-center d-flex">
+                            <a href="route('#') " class="nav-link">Lavora con noi</a>
+                        </li>
                     @else
                     </ul>
                     <ul class="navbar-nav  mb-2 mb-lg-0">
                         <li class="nav-item dropdown dropdown-menu-end ">
-                            <a class="nav-link dropdown-toggle" href="#" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
                                 {{ auth()->user()->name }}
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end">
@@ -67,6 +70,17 @@
                                 <li>
                                     <a class=" nav-link" href="{{ route('user.page') }}">I miei annunci</a>
                                 </li>
+                                @if (Auth::user()->is_revisor)
+                                    <li class="nav-item">
+                                        <a href="{{ route('revisor.index') }}" aria-current="page" class="nav-link"> Zona
+                                            revisore
+                                            <span>{{ App\Models\Announcement::toBeRevisionedCounter() }}
+                                                <span>unread messages</span>
+                                            </span>
+                                        </a>
+                                    </li>
+                                @endif
+
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
@@ -80,7 +94,7 @@
                             </ul>
                         </li>
                     </ul>
-                    @endguest
+                @endguest
 
                 {{-- <form class="d-flex" role="search">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
