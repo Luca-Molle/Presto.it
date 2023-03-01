@@ -28,27 +28,30 @@ Route::get('elenco/annunci', [AnnouncementController::class, 'index'])->name('in
 Route::middleware('auth')->group(function () {
     Route::get('/nuovo/annuncio', [AnnouncementController::class, 'create'])->name('announcement.create');
     Route::get('/user/announcements', [userPageController::class, 'index'])->name('user.page');
-    Route::get('/Lavora_con_noi', [FrontController::class, 'workWithUs'])->name('work.with.us');
-    Route::post('/richiesta/revisor/inviata', [RevisorController::class, 'becomeRevisor'])->name('become.revisor');
+    
 });
 
 //Rotte Admin
 Route::middleware('auth')->prefix('admin')->group(function () {
 });
 
-//Rotte Revisor
-Route::get('/revisor/home', [RevisorController::class, 'index'])->name('revisor.index');
-
+//************ Rotte Revisore *************
+// rotta per la home del revisore, display di tutti gli annunci da revisionare
+Route::get('/revisor/home', [RevisorController::class, 'index'])->middleware('isRevisor')->name('revisor.index');
+// rotta form lavora con noi
+Route::get('/Lavora_con_noi', [FrontController::class, 'workWithUs'])->name('work.with.us');
+Route::post('/richiesta/revisor/inviata', [RevisorController::class, 'becomeRevisor'])->name('become.revisor');
+// rotta per pagina accetta o riufiuta annuncio
 Route::get('/revisor/rev/{announcement}', function (Announcement $announcement) {
     return view('revisor.rev', compact('announcement'));
-})->name('announcements.rev');
+})->middleware('isRevisor')->name('announcements.rev');
 
 
 //Accetta annuncio
-Route::patch('/accetta/annuncio/{announcement}', [RevisorController::class, 'acceptAnnouncement'])->name('revisor.accept_announcement');
+Route::patch('/accetta/annuncio/{announcement}', [RevisorController::class, 'acceptAnnouncement'])->middleware('isRevisor')->name('revisor.accept_announcement');
 
 //rifiuta annuncio
-Route::patch('/rifiuta/annuncio/{announcement}', [RevisorController::class, 'rejectAnnouncement'])->name('revisor.reject_announcement');
+Route::patch('/rifiuta/annuncio/{announcement}', [RevisorController::class, 'rejectAnnouncement'])->middleware('isRevisor')->name('revisor.reject_announcement');
 
 //make user revisor
 Route::get('/make/user/revisor/{revisor}', [RevisorController::class, 'makeUserRevisor'])->name('make.user.revisor'); 

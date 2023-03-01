@@ -6,9 +6,9 @@
                 <div class="col-12 col-lg-6 mx-auto">
                     <h1 class=" mt-5">Lavora con noi</h1>
                     
-                    {{-- @if (session()->has('success'))
-                        <div class="alert alert-success">{{ $message }}</div>
-                    @endif --}}
+                    @if (session()->has('message'))
+                        <div class="alert alert-success">{{ session('message') }}</div>
+                    @endif
 
                     <div class="col-12">
                         <label for="name">Nome</label>

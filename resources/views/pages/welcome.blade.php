@@ -1,6 +1,9 @@
 <x-layout>
     <div class="container-fluid">
         <div class="row">
+        @if (session()->has('message'))
+                        <div class="alert alert-success mt-5">{{ session('message') }}</div>
+                    @endif
             {{-- Carousel --}}
             <div id="carouselExample" class="carousel slide">
                 <div class="carousel-inner ">
