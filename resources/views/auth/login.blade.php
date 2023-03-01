@@ -3,7 +3,8 @@
     <div class="d-flex justify-content-center  container textmain  ">
         <div class="container text-center d-flex align-items-center flex-column mt-5 w-50">
             <h1 class="mx-auto pacifico">Benvenuto!</h1>
-            <p class="fs-2 mt-auto">Effettua il <span class="fw-bold">Login</span><br>per accedere ai contenuti!
+            <p class="fs-2 mt-auto">Effettua il <span class="fw-bold">Login</span> a <a class="text-logo fs-3"
+                    href="{{ route('welcome') }}">Presto.it</a> <br>per accedere ai contenuti!
             </p>
             <p class="fs-3 mt-3">Non sei ancora registrato?</p>
             <p class="fs-4 ">Crea subito il tuo account!</p>

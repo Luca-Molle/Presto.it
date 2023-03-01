@@ -5,7 +5,8 @@
             <p class="fs-4 mt-3">Crea il tuo account per iniziare a vendere e comprare in tutta Italia</p>
 
             <div class="container text-start text-dark border border-dark-subtle w-75">
-                <p class="fs-5 m-3">I vantaggi di <span class="fw-bold">Presto.it</span> </p>
+                <p class="fs-5 m-3">I vantaggi di <a class="text-logo fs-3" href="{{ route('welcome') }}">Presto.it</a>
+                </p>
                 <div class="d-flex align-items-center">
                     <img src="{{ asset('img/check.png') }}" alt="logo mancante" class="img-fluid col-2 m-3">
                     <div class="col-9">
