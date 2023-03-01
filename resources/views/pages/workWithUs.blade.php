@@ -4,7 +4,7 @@
         <div class="container">
             <div class="row ">
                 <div class="col-12 col-lg-6 mx-auto">
-                    <h1 class=" mt-5">Lavora con noi</h1>
+                    <h1 class="mt-5">Lavora con noi</h1>
                     
                     @if (session()->has('message'))
                         <div class="alert alert-success">{{ session('message') }}</div>
