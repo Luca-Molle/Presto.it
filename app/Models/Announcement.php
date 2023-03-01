@@ -6,13 +6,28 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Laravel\Scout\Searchable;
 use PhpParser\Node\Stmt\Static_;
 
 class Announcement extends Model
 {
-    use HasFactory;
-
+    use HasFactory, Searchable;
     protected $fillable = ['title', 'description', 'price'];
+
+    public function toSearchableArray()
+    {
+        $category = $this->category;
+        $array = [
+            'id' =>$this->id,
+            'title' =>$this->title,
+            'description' =>$this->description,
+            'category' => $category,
+        ];
+        return $array;
+    }
+
+
+
 
     public function category()
     {

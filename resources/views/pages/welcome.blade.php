@@ -45,17 +45,16 @@
         <div-col-12 class="col-md-6">
             <p class="pacifico fs-1 text-white">Ultimi annunci!</p>
         </div-col-12>
-        <div-col-12 class="col-md-6">
-            <form action="search" class="row"> 
-                <div class="col-6">
-                    <input type="search" name="search" id="search" placeholder="Cerca annunci"
-                        class="form-control" value="{{-- $search --}}">
+        <div class="col-md-6">
+                <div class="col-6 d-flex">
+                    <form action="{{ route('announcements.search') }}" method="GET" class="d-flex">
+                        @csrf
+                        <label for="search-input"></label>
+                        <input type="search" name="searched" class="form-control me-2" id="search-input" placeholder="Ricerca l'annuncio" aria-label="Search">
+                        <button type="submit" class="btn btn-outline-success">Cerca</button>
+                    </form>
                 </div>
-                <div class="col-6 d-flex justify-content-start">
-                    <button class="btn btn-outline-secondary">Cerca</button>
-                </div>
-            </form>
-        </div-col-12>
+        </div>
     </div>
     <div class="container">
         <div class="row">

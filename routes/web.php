@@ -23,6 +23,8 @@ Route::get('/', [FrontController::class, 'homePage'])->name('welcome');
 Route::get('/categoria/{category}', [FrontController::class, 'categoryShow'])->name('categoryShow');
 Route::get('/dettaglio/categoria/{announcement}', [FrontController::class, 'showAnnouncement'])->name('announcements.show');
 Route::get('elenco/annunci', [AnnouncementController::class, 'index'])->name('index.announcements');
+// Ricerca annuncio
+Route::get('/ricerca/annuncio', [FrontController::class, 'searchAnnouncements'])->name('announcements.search');
 
 //Rotte utente loggato
 Route::middleware('auth')->group(function () {
@@ -55,3 +57,6 @@ Route::patch('/rifiuta/annuncio/{announcement}', [RevisorController::class, 'rej
 
 //make user revisor
 Route::get('/make/user/revisor/{user}', [RevisorController::class, 'makeUserRevisor'])->name('make.user.revisor'); 
+// *********************************
+
+

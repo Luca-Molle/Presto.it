@@ -16,14 +16,22 @@ class FrontController extends Controller
         return view('pages.welcome', compact('announcements'));
     }
 
-    public function categoryShow(Category $category)
+    public function categoryShow(Category $category, Announcement $announcement)
     {
-        return view('pages.categoryShow', compact('category'));
+        $announcement->where('is_accepted', false)->get();
+        return view('pages.categoryShow', compact('category', 'announcement'));
     }
 
     public function showAnnouncement(Announcement $announcement)
     {
         return view('pages.showAnnouncement', compact('announcement'));
+    }
+
+    public function searchAnnouncements(Request $request)
+    {
+        // dd($request);
+        $announcements = Announcement::search($request->searched)->where('is_accepted', true)->paginate(10);
+        return view('pages.index', compact('announcements'));
     }
 
     public function workWithUs()
