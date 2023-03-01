@@ -43,7 +43,7 @@
                     @endforeach
                 @endif
             </div>
-            <div class="col-12 col-md-4">
+            <div class="col-12 col-md-4 shadow py-2">
                 <h3>Ultimi annunci revisionati</h3>
                 @if ($checkedAnnouncements)
                     @foreach ($checkedAnnouncements as $announcement)
