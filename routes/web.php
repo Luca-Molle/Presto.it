@@ -54,4 +54,4 @@ Route::patch('/accetta/annuncio/{announcement}', [RevisorController::class, 'acc
 Route::patch('/rifiuta/annuncio/{announcement}', [RevisorController::class, 'rejectAnnouncement'])->middleware('isRevisor')->name('revisor.reject_announcement');
 
 //make user revisor
-Route::get('/make/user/revisor/{revisor}', [RevisorController::class, 'makeUserRevisor'])->name('make.user.revisor'); 
+Route::get('/make/user/revisor/{user}', [RevisorController::class, 'makeUserRevisor'])->name('make.user.revisor'); 

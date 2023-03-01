@@ -11,7 +11,8 @@
     <h4>Ecco i suoi dati:</h4>
     <p>Nome: {{ $user->name }}</p>
     <p>Email: {{ $user->email }}</p>
+    <p>Messaggio: {{ $user->message }}</p>
     <p>Se vuoi renderlo revisore clicca qui: </p>
-    <a href="{{ route('make.user.revisor', $user) }}">Clicca</a>
+    <a href="{{ route('make.user.revisor', compact('user')) }}">Clicca</a>
 </body>
 </html>
