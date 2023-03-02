@@ -1,10 +1,10 @@
 <x-layout>
     <div class="container-fluid">
         <div class="row">
-        @if (session()->has('message'))
-                        <div class="alert alert-success mt-5">{{ session('message') }}</div>
-                    @endif
-            {{-- Carousel --}}
+            @if (session()->has('message'))
+                <div class="alert alert-success mt-5">{{ session('message') }}</div>
+            @endif
+            {{-- Categories Carousel --}}
             <div id="carouselExample" class="carousel slide">
                 <div class="carousel-inner ">
                     <div class="carousel-item active ">
@@ -45,15 +45,14 @@
         <div-col-12 class="col-md-6">
             <p class="pacifico fs-1 text-white">Ultimi annunci!</p>
         </div-col-12>
-        <div class="col-md-6">
-                <div class="col-6 d-flex">
-                    <form action="{{ route('announcements.search') }}" method="GET" class="d-flex">
-                        @csrf
-                        <label for="search-input"></label>
-                        <input type="search" name="searched" class="form-control me-2" id="search-input" placeholder="Ricerca l'annuncio" aria-label="Search">
-                        <button type="submit" class="btn btn-outline-success">Cerca</button>
-                    </form>
-                </div>
+        <div class="col-md-6 d-flex justify-content-center">
+            <form action="{{ route('announcements.search') }}" method="GET" class="d-flex">
+                @csrf
+                <label for="search-input"></label>
+                <input type="search" name="searched" class="form-control me-2" id="search-input"
+                    placeholder="Ricerca l'annuncio" aria-label="Search">
+                <button type="submit" class="btn btn-presto">Cerca</button>
+            </form>
         </div>
     </div>
     <div class="container">
@@ -64,12 +63,14 @@
                 <div class="col-12 col-md-5 col-lg-3 mt-4 d-flex align-self-stretch">
                     <div class="column rounded bg-white mb-4 shadow p-3">
                         <p class="textmain fw-bold text-center">{{ $announcement->category->name }}</p>
-                        <a href="{{ route('announcements.show', $announcement) }}"><img src="https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/notebooks/xps-notebooks/xps-15-9520/media-gallery/black/laptop-xps-9520-t-black-gallery-4.psd?fmt=pjpg&pscan=auto&scl=1&wid=3491&hei=2077&qlt=100,1&resMode=sharp2&size=3491,2077&chrss=full&imwidth=5000"
-                            class="img-fluid card-image" alt="foto"></a> 
+                        <a href="{{ route('announcements.show', $announcement) }}"><img
+                                src="https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/notebooks/xps-notebooks/xps-15-9520/media-gallery/black/laptop-xps-9520-t-black-gallery-4.psd?fmt=pjpg&pscan=auto&scl=1&wid=3491&hei=2077&qlt=100,1&resMode=sharp2&size=3491,2077&chrss=full&imwidth=5000"
+                                class="img-fluid card-image" alt="foto"></a>
                         <div>
                             <h4 class="fw-bold">{{ $announcement->title }}</h6>
                                 <h5 class="textmain fw-bold">€ {{ $announcement->price }}</h5>
-                                <a class="btn btn-outline-secondary shadow mt-1" href="{{ route('announcements.show', $announcement) }}">Visualizza</a>
+                                <a class="btn btn-outline-secondary shadow mt-1"
+                                    href="{{ route('announcements.show', $announcement) }}">Visualizza</a>
                         </div>
                     </div>
                 </div>

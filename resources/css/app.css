@@ -11,6 +11,7 @@ tryan purple #4C1036 */
 /* COLORI E RELATIVE VARIABILI CSS */
 :root {
     --main: #F58B00;
+    --darkmain:#c97201; 
     /* --main: #AC9969; */
     --second: #D9F4C7;
     --first: #f6f1f6;
@@ -60,6 +61,17 @@ body {
 .pacifico {
     font-family: 'Pacifico', cursive;
 }
+
+.btn-presto{
+    background-color: var(--main);
+    color: white;
+}
+
+.btn-presto:hover{
+   background-color: var(--darkmain);
+   color: white;
+}
+
 
 .text-logo {
     font-family: 'Pacifico', cursive;
