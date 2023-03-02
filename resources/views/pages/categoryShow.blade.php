@@ -39,7 +39,7 @@
                     @empty
                     {{-- @elseif ($announcement->is_accepted == 0 || $announcement->is_accepted == null) --}}
                     {{-- @dd($announcement->is_accepted) --}}
-                    {{$announcement}}
+                    {{-- {{$announcement}} --}}
                         <div class="col-12 mt-2">
                         <p class="h1">Non sono presenti annunci per la categoria {{ $category->name }}</p>
                         <p class="h2">Pubblicane uno: <a href="{{ route('announcement.create') }}"
