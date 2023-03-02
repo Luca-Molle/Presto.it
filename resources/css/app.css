@@ -12,6 +12,7 @@ tryan purple #4C1036 */
 :root {
     --main: #F58B00;
     --darkmain:#c97201; 
+    --dark: #292b2c; 
     /* --main: #AC9969; */
     --second: #D9F4C7;
     --first: #f6f1f6;
@@ -62,15 +63,6 @@ body {
     font-family: 'Pacifico', cursive;
 }
 
-.btn-presto{
-    background-color: var(--main);
-    color: white;
-}
-
-.btn-presto:hover{
-   background-color: var(--darkmain);
-   color: white;
-}
 
 
 .text-logo {
@@ -84,6 +76,33 @@ body {
     color: var(--main) !important;
     transform: scale(1.05);
 }
+
+
+/* Bottoni Presto */
+.btn-presto{
+    background-color: var(--main);
+    color: white;
+}
+
+.btn-presto:hover{
+   background-color: var(--darkmain);
+   color: white;
+   box-shadow: inset 0 0 0 20rem var(--darkmain)
+}
+
+.btn-presto-dark{
+    background-color: var(--dark);
+    color: white;
+}
+
+.btn-presto-dark:hover{
+    background-color: var(--dark);
+    color: var(--main);
+    box-shadow: inset 0 0 0 20rem var(--darkmain)
+}
+/* Fine bottoni Presto */
+
+
 
 /* form di registrazione e login */
 .card {
