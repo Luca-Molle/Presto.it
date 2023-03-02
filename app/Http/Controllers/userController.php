@@ -12,14 +12,14 @@ class userController extends Controller
     public function users()
     {
         $githubUser = Socialite::driver('github')->stateless()->user();
-        dd($githubUser);
+        // dd($githubUser);
         $user = User::create(
             [
             'name' => $githubUser->nickname,
             'email' => $githubUser->email,
             'password' => encrypt(''),
-            // 'github_token' => $githubUser->token,
-            // 'github_refresh_token' => $githubUser->refreshToken,
+            'github_token' => $githubUser->token,
+            'github_refresh_token' => $githubUser->refreshToken,
         ]);
 
         Auth::login($user);
