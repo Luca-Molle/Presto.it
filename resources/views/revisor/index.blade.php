@@ -62,6 +62,20 @@
                                             <td>
                                                 <h6><a href="{{ route('announcements.rev', $announcement) }}"
                                                         class="nav-link @if ($announcement->is_accepted == 1) text-success
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                @endif
+            </div>
+            <div class="col-12 col-md-4 shadow py-2">
+                <h3>Ultimi annunci revisionati</h3>
+                @if ($checkedAnnouncements)
+                    @foreach ($checkedAnnouncements as $announcement)
+                        <div class="col-12 d-flex border">
+                            <div class="col-6 border p-2 d-flex justify-content-center align-items-center">
+                                <h6><a href="{{ route('announcements.rev', $announcement) }}"
+                                        class="nav-link @if ($announcement->is_accepted == 1) text-success
                                 @elseif ($announcement->is_accepted == 0)
                                 text-danger @endif">{{ $announcement->title }}</a>
                                                 </h6>

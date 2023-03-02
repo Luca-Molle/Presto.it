@@ -25,21 +25,50 @@
                             </div>
                         </div>
                         <div class="d-flex align-items-center" style="height: 75px"><a
-                                class=" h-50 col-12 btn btn-outline-secondary shadow" href="#">
+                                class=" h-50 col-12 btn btn-outline-secondary shadow" href="{{ route('categoryShow', $announcement->category) }}">
                                 <p class="textmain fw-bold text-center">{{ $announcement->category->name }}
                                 </p>
-                            </a>
-                        </div>
+                            </a></div>
                     </div>
-                @empty
-                    <div class="col-12 mt-5">
-                        <div class="alert alert-warning py-3 shadow">
-                            <p class="lead">Non ci sono annunci per questa ricerca</p>
-                        </div>
-                    </div>
-                @endforelse
-                {{ $announcements->links() }}
+                @endforeach
             </div>
+
+
+
+
+        </div>
+
+    </div>
+    <div class="row justify-content-center ">
+        <div class="col-12 mt-5">
+            @foreach ($announcements as $announcement)
+                <div class="card mx-auto m-3 card-custom d-flex col-6 ">
+
+                    <div class="row ">
+                        <div class="col-6 d-flex align-items-center ">
+                            <img src="https://static.fanpage.it/wp-content/uploads/sites/6/2020/04/migliori-pc-da-gaming.jpg"
+                                class="card-img-top rounded img-fluid" alt="...">
+                        </div>
+                        <div class="col-6">
+                            <div class="card-body ">
+                                <h4 class="card-title">{{ $announcement->title }}</h4>
+                                <p class="card-text">{{ $announcement->price }} € </p>
+                                <a href="{{ route('announcements.show', $announcement) }}"
+                                    class="btn btn-primary shadow">Visualizza</a>
+                                <a href=""
+                                    class="border-dark pt-2 my-2 card-link shadow btn btn-success border-top">Categoria:
+                                    {{ $announcement->category->name }}</a>
+                                <p class="card-footer">Pubblicato il:
+                                    {{ $announcement->created_at->format('d/m/Y') }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            @endforeach
+            {{ $announcements->links() }}
         </div>
 
 </x-layout>

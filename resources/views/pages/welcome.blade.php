@@ -61,7 +61,7 @@
 
             {{-- Prova colonne --}}
             @foreach ($announcements as $announcement)
-                <div class="col-12 col-md-5 col-lg-3 mt-4">
+                <div class="col-12 col-md-5 col-lg-3 mt-4 d-flex align-self-stretch">
                     <div class="column rounded bg-white mb-4 shadow p-3">
                         <p class="textmain fw-bold text-center">{{ $announcement->category->name }}</p>
                         <a href="{{ route('announcements.show', $announcement) }}"><img src="https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/notebooks/xps-notebooks/xps-15-9520/media-gallery/black/laptop-xps-9520-t-black-gallery-4.psd?fmt=pjpg&pscan=auto&scl=1&wid=3491&hei=2077&qlt=100,1&resMode=sharp2&size=3491,2077&chrss=full&imwidth=5000"
