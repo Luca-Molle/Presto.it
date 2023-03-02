@@ -98,7 +98,7 @@
                             <p class=" fs-2 my-3 text-center">Oppure</p>
 
 
-                            <div class="col-3"><a href="#"><img class="img-fluid"
+                            <div class="col-3"><a href="/auth/redirect"><img class="img-fluid"
                                         src="{{ asset('img/linkedin.png') }}" alt="icona assente"></a></div>
                             <div class="col-3"> <a href="#"><img class="img-fluid"
                                         src="{{ asset('img/google.png') }}" alt="icona assente"></a></div>

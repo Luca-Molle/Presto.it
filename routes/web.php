@@ -4,9 +4,12 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AnnouncementController;
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\RevisorController;
+use App\Http\Controllers\userController;
 use App\Http\Controllers\userPageController;
 use App\Models\Announcement;
-
+use Laravel\Socialite\Facades\Socialite;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -30,7 +33,6 @@ Route::get('/ricerca/annuncio', [FrontController::class, 'searchAnnouncements'])
 Route::middleware('auth')->group(function () {
     Route::get('/nuovo/annuncio', [AnnouncementController::class, 'create'])->name('announcement.create');
     Route::get('/user/announcements', [userPageController::class, 'index'])->name('user.page');
-    
 });
 
 //Rotte Admin
@@ -56,7 +58,19 @@ Route::patch('/accetta/annuncio/{announcement}', [RevisorController::class, 'acc
 Route::patch('/rifiuta/annuncio/{announcement}', [RevisorController::class, 'rejectAnnouncement'])->middleware('isRevisor')->name('revisor.reject_announcement');
 
 //make user revisor
-Route::get('/make/user/revisor/{user}', [RevisorController::class, 'makeUserRevisor'])->name('make.user.revisor'); 
+Route::get('/make/user/revisor/{user}', [RevisorController::class, 'makeUserRevisor'])->name('make.user.revisor');
 // *********************************
 
 
+
+
+
+// Prova di login con provider esterno
+
+Route::get('/auth/redirect', function () {
+    return Socialite::driver('github')->redirect();
+});
+
+Route::get('/auth/callback', [userController::class, 'users']);
+
+// password-> ecrypt('')
