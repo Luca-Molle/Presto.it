@@ -4,7 +4,7 @@
             <h5 class="card-title category-logo ">{{ $category->name }}</h5>
             </h5>
             <p class="card-text">Compra e vendi qualisasi tipo di oggetto</p>
-            <a href="{{ route('categoryShow', $category)  }}" class="btn border">Esplora</a>
+            <a href="{{ route('categoryShow', $category)  }}" class="btn btn-presto border">Esplora</a>
         </div>
     </div>
 </div>
