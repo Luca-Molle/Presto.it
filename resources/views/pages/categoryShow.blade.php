@@ -37,7 +37,7 @@
                     </div>
                     @endif
                     @empty
-                    @elseif ($announcement->is_accepted == 0 || $announcement->is_accepted == null)
+                    {{-- @elseif ($announcement->is_accepted == 0 || $announcement->is_accepted == null) --}}
                     {{-- @dd($announcement->is_accepted) --}}
                     {{$announcement}}
                         <div class="col-12 mt-2">
