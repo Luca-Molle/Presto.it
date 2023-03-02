@@ -8,9 +8,6 @@
     </div>
     <div class="container">
         <div class="row justify-content-center">
-
-
-
             @forelse ($category->announcements as $announcement)
                     <div class="bg-white my-2 shadow p-3 mt-5 ">
                         <div class="row ">
@@ -34,6 +31,7 @@
                             </div>
                         </div>
                     </div>
+                    @endif
                     @empty
                         <div class="col-12 mt-2">
                         <p class="h1">Non sono presenti annunci per la categoria {{ $category->name }}</p>
