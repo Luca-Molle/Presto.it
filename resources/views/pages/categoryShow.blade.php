@@ -12,7 +12,6 @@
 
 
             @forelse ($category->announcements as $announcement)
-                @if ($announcement->is_accepted == true)
                     <div class="card mx-auto m-3 card-custom d-flex col-6 ">
                         <div class="row ">
                             <div class="col-6 d-flex align-items-center ">
@@ -35,11 +34,7 @@
                             </div>
                         </div>
                     </div>
-                    @endif
                     @empty
-                    {{-- @elseif ($announcement->is_accepted == 0 || $announcement->is_accepted == null) --}}
-                    {{-- @dd($announcement->is_accepted) --}}
-                    {{-- {{$announcement}} --}}
                         <div class="col-12 mt-2">
                         <p class="h1">Non sono presenti annunci per la categoria {{ $category->name }}</p>
                         <p class="h2">Pubblicane uno: <a href="{{ route('announcement.create') }}"

@@ -13,6 +13,7 @@ class Category extends Model
 
     public function announcements()
     {
-        return $this->hasMany(Announcement::class); 
+
+        return $this->hasMany(Announcement::class)->where('is_accepted', true); 
     }
 }
