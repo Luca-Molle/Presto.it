@@ -98,7 +98,7 @@ body {
 .btn-presto-dark:hover{
     background-color: var(--dark);
     color: var(--main);
-    box-shadow: inset 0 0 0 20rem var(--darkmain)
+    border: 2 rem solid var(--darkmain);
 }
 /* Fine bottoni Presto */
 

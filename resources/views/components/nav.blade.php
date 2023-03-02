@@ -54,7 +54,7 @@
                         @else
                     </ul>
                     <li class="nav-item align-items-center d-flex me-1">
-                        <a href="{{ route('work.with.us') }}" class="nav-link">Lavora con noi</a>
+                        <a href="{{ route('work.with.us') }}" class="nav-link fw-bold textmain">Lavora con noi</a>
                     </li>
                     <ul class="navbar-nav  mb-2 mb-lg-0">
                         <li class="nav-item dropdown dropdown-menu-end ">
@@ -91,7 +91,7 @@
                                     <form action="/logout" method="POST">
                                         @csrf
                                         <button type="submit"
-                                            class="d-inline mx-2 border-0 btn maincolor text-white">Esci</button>
+                                            class="d-inline mx-2 btn btn-presto">Esci</button>
                                     </form>
                                 </li>
                             </ul>
