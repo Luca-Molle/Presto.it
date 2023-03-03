@@ -7,23 +7,30 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Laravel\Socialite\Facades\Socialite;
 
-class userController extends Controller
+class googleController extends Controller
 {
+
+    public function redirect()
+    {
+        return Socialite::driver('google')->redirect();
+    }
+    
     public function users()
     {
-        $githubUser = Socialite::driver('github')->user();
-        $finduser = User::where('email', $githubUser->getEmail())->first();
+        dd('ciao');
+        $googleUser = Socialite::driver('github')->user();
+        $finduser = User::where('email', $googleUser->getEmail())->first();
         if ($finduser) {
             Auth::login($finduser);
             return view('announcements.userPage');
         } else {
             $user = User::create(
                 [
-                    'name' => $githubUser->nickname,
-                    'email' => $githubUser->email,
+                    'name' => $googleUser->nickname,
+                    'email' => $googleUser->email,
                     'password' => encrypt(''),
-                    'github_token' => $githubUser->token,
-                    'provider_id' => $githubUser->id,
+                    'github_token' => $googleUser->token,
+                    'provider_id' => $googleUser->id,
                     // 'github_refresh_token' => $githubUser->refreshToken,
                 ]
             );
