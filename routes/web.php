@@ -78,6 +78,6 @@ Route::get('/auth/callback', [userController::class, 'users']);
 
 Route::get('/auth/google/login', [googleController::class, 'redirect']);
 
-Route::get('/auth/callback', [googleController::class, 'users']);
+// Route::get('/auth/callback', [googleController::class, 'users']);
 
 // password-> ecrypt('')

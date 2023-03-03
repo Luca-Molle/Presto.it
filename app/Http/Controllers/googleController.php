@@ -14,10 +14,10 @@ class googleController extends Controller
     {
         return Socialite::driver('google')->redirect();
     }
-    
+
     public function users()
     {
-        dd('ciao');
+        // dd('ciao');
         $googleUser = Socialite::driver('github')->user();
         $finduser = User::where('email', $googleUser->getEmail())->first();
         if ($finduser) {
