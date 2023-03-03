@@ -53,9 +53,6 @@
                         </li>
                         @else
                     </ul>
-                    <li class="nav-item align-items-center d-flex me-1">
-                        <a href="{{ route('work.with.us') }}" class="nav-link fw-bold textmain">Lavora con noi</a>
-                    </li>
                     <ul class="navbar-nav  mb-2 mb-lg-0">
                         <li class="nav-item dropdown dropdown-menu-end ">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"

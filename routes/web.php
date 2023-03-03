@@ -26,24 +26,25 @@ Route::get('/', [FrontController::class, 'homePage'])->name('welcome');
 Route::get('/categoria/{category}', [FrontController::class, 'categoryShow'])->name('categoryShow');
 Route::get('/dettaglio/categoria/{announcement}', [FrontController::class, 'showAnnouncement'])->name('announcements.show');
 Route::get('elenco/annunci', [AnnouncementController::class, 'index'])->name('index.announcements');
+
 // Ricerca annuncio
 Route::get('/ricerca/annuncio', [FrontController::class, 'searchAnnouncements'])->name('announcements.search');
 
 //Rotte utente loggato
 Route::middleware('auth')->group(function () {
-    Route::get('/nuovo/annuncio', [AnnouncementController::class, 'create'])->name('announcement.create');
     Route::get('/user/announcements', [userPageController::class, 'index'])->name('user.page');
+    Route::get('/nuovo/annuncio', [AnnouncementController::class, 'create'])->name('announcement.create');
 });
 
 //Rotte Admin
-Route::middleware('auth')->prefix('admin')->group(function () {
-});
+// Route::middleware('auth')->prefix('admin')->group(function () {
+// });
 
 //************ Rotte Revisore *************
 // rotta per la home del revisore, display di tutti gli annunci da revisionare
 Route::get('/revisor/home', [RevisorController::class, 'index'])->middleware('isRevisor')->name('revisor.index');
 // rotta form lavora con noi
-Route::get('/Lavora_con_noi', [FrontController::class, 'workWithUs'])->name('work.with.us');
+Route::get('/Lavora_con_noi', [FrontController::class, 'workWithUs'])->middleware('auth')->name('work.with.us');
 Route::post('/richiesta/revisor/inviata', [RevisorController::class, 'becomeRevisor'])->name('become.revisor');
 // rotta per pagina accetta o riufiuta annuncio
 Route::get('/revisor/rev/{announcement}', function (Announcement $announcement) {
