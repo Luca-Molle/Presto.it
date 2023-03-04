@@ -20,7 +20,7 @@
                             <div class="col-4 ms-4">
                                 <div class="card-body ">
                                     <h2 class="card-title fw-bold">{{ $announcement->title }}</h2>
-                                    <h3 class="card-text textmain fw-bold text-end">{{ $announcement->price }} € </h3>
+                                    <h3 class="card-text textmain fw-bold text-end">€ {{ $announcement->price }}</h3>
                                     <p class="mt-5 card-footer">Pubblicato il:
                                         {{ $announcement->created_at->format('d/m/Y') }}
                                     </p>
