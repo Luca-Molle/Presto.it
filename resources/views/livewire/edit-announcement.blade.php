@@ -1,11 +1,11 @@
 <div class="container">
     <div class="row ">
         <div class="col-12 mt-5">
-            <h4 class="text-center fw-bold textmain">Modifica Annuncio</h4>
+            <h4 class="text-center fw-bold fs-2 textmain">Modifica Annuncio</h4>
             <form wire:submit.prevent="update">
                 <div class="row g-3">
 
-                    <div class="col-12">
+                    <div>
                         @if (session()->has('message'))
                             <div class="alert alert-success mt-4">
                                 {{ session('message') }}
@@ -13,9 +13,8 @@
                         @endif
                     </div>
 
-                    <div class="col-12">
-                        <select wire:model.lazy="selctedCategoryId" class="form-select"
-                            aria-label="Default select example" 
+                    <div>
+                        <select wire:model.lazy="selctedCategoryId" class="form-select" aria-label="Default select example"
                             @if ($selctedCategoryId == null) disabled @endif>
                             <option value="{{ $selctedCategoryId }}">
                                 @if ($selctedCategoryId == null)
@@ -30,7 +29,7 @@
                         </select>
                     </div>
 
-                    <div class="col-12">
+                    <div>
                         <label for="title">Titolo annuncio</label>
                         <input type="text" name="title" id="title"
                             class="form-control @error('title') is-invalid @enderror"
@@ -42,7 +41,7 @@
                         </div>
                     </div>
 
-                    <div class="col-12">
+                    <div>
                         <label for="description">Descrizione</label>
                         <textarea type="text" name="description" id="description" rows="10"
                             class="form-control @error('description') is-invalid @enderror" wire:model.lazy="announcement.description">
@@ -54,7 +53,7 @@
                         </div>
                     </div>
 
-                    <div class="col-12">
+                    <div class="col-6">
                         <label for="price">Prezzo</label>
                         <input type="number" name="price" id="price"
                             class="form-control @error('price') is-invalid @enderror"
@@ -66,9 +65,9 @@
                         </div>
                     </div>
 
-                    <div class="col-6 justify-content-start mb-2">
+                    <div class="mb-6 ">
 
-                        <button class="btn btn-primary" type="submit" id="userSubmitBtn"
+                        <button class="btn btn-presto" type="submit" id="userSubmitBtn"
                             @if ($selctedCategoryId == null) disabled @endif>Salva</button>
                     </div>
 

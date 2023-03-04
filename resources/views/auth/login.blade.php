@@ -17,7 +17,7 @@
 
             <div class="row mx-5 my-auto text-center w-50 p-2 justify-content-center ">
                 <p class="fs-3">or Login with</p>
-                <div class="col-3"><a href=""><img class="img-fluid" src="{{ asset('img/linkedin.png') }}"
+                <div class="col-3"><a href="#"><img class="img-fluid" src="{{ asset('img/linkedin.png') }}"
                             alt="icona assente"></a></div>
                 <div class="col-3"> <a href="#"><img class="img-fluid" src="{{ asset('img/google.png') }}"
                             alt="icona assente"></a></div>
