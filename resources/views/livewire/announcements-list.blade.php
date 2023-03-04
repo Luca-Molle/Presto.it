@@ -1,5 +1,6 @@
 <div>
-    <table class="table table-bordered">
+    <h4 class="text-center mt-5 fw-bold textmain">I Tuoi Annunci</h4>
+    <table class="table table-bordered bg-white shadow mt-3">
         <thead>
             <tr>
                 <th>Nome</th>
@@ -23,7 +24,7 @@
                     @endif
                 </td>
                 <td class="text-end">
-                    <button class="btn btn-sm btn-outline-secondary" wire:click="editAnnouncement({{ $announcement->id }})">modifica</button>
+                    <button class="btn btn-sm btn-outline-presto" wire:click="editAnnouncement({{ $announcement->id }})">modifica</button>
                     <button class="btn btn-sm btn-danger" wire:click="destroy({{ $announcement->id }})">elimina</button>
                 </td>
             </tr>

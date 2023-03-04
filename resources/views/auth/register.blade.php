@@ -88,7 +88,7 @@
                             id="password_confirmation">
                     </div>
                     <div class="mt-3 d-flex justify-content-center align-items-center">
-                        <button type="submit" class="btn btn-outline-secondary shadow  col-8">Registrati</button>
+                        <button type="submit" class="btn btn-presto-dark shadow  col-8">Registrati</button>
                     </div>
 
 
@@ -115,7 +115,7 @@
 
                         <p class="fs-3 mt-3 text-center">Hai già un account?</p>
                         <div class="d-flex justify-content-center align-items-center">
-                            <button type="submit" class="btn btn-outline-secondary shadow my-3 col-6 "><a
+                            <button type="submit" class="btn btn-presto-dark shadow my-3 col-6 "><a
                                     class="nav-link" href="login">Accedi</a></button>
                         </div>
 

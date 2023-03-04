@@ -43,8 +43,7 @@
 
                     </ul>
                     @guest
-
-
+                    
                         <li class="nav-item align-items-center d-flex">
                             <a class="nav-link" href="{{ route('register') }}">Registrati</a>
                         </li>
@@ -69,7 +68,7 @@
                                 </li>
                                 @if (Auth::user()->is_revisor)
                                     <li class="nav-item">
-                                        <a href="{{ route('revisor.index') }}" aria-current="page" class="nav-link"> Articoli da Revisionare
+                                        <a href="{{ route('revisor.index') }}" aria-current="page" class="nav-link"> Annunci da Revisionare
                                             @if (App\Models\Announcement::toBeRevisionedCounter() === 0)
                                             <span class="notify bg-secondary p-2 text-white">{{ App\Models\Announcement::toBeRevisionedCounter() }}
                                             </span>

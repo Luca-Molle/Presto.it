@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row ">
         <div class="col-12 mt-5">
-            <h4 class="text-center">Modifica Annuncio</h4>
+            <h4 class="text-center fw-bold textmain">Modifica Annuncio</h4>
             <form wire:submit.prevent="update">
                 <div class="row g-3">
 

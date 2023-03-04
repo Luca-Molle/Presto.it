@@ -32,8 +32,8 @@
                                         class="img-fluid card-image" alt="foto">
                                     <div>
                                         <h6 class="fw-bold ">{{ $announcement->title }}</h6>
-                                        <h5 class="textmain fw-bold">€ {{ $announcement->price }}</h5>
-                                        <a class="btn btn-outline-secondary shadow mt-1"
+                                        <h5 class="textmain fw-bold text-end">€ {{ $announcement->price }}</h5>
+                                        <a class="btn btn-presto shadow mt-1"
                                             href="{{ route('announcements.rev', $announcement) }}">Visualizza</a>
                                     </div>
                                 </div>
@@ -45,14 +45,14 @@
             <div class="col-6 ">
                 <div class="row justify-content-center">
                     <div class="col-12 d-flex justify-content-center">
-                        <h3>Ultimi annunci revisionati</h3>
+                        <h3 class="fw-bold textmain">Ultimi annunci revisionati</h3>
                     </div>
-                    <div class=" col-8 ">
-                        <table class="table table-bordered">
-                            <thead>
+                    <div class=" col-8">
+                        <table class="table table-bordered bg-white shadow mt-3">
+                            <thead class="p-2 text-center">
                                 <tr>
-                                    <th>Nome</th>
-                                    <th>Status</th>
+                                    <th>Titolo</th>
+                                    <th>Ultimo aggiornamento</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -61,12 +61,12 @@
                                         <tr>
                                             <td>
                                                 <h6><a href="{{ route('announcements.rev', $announcement) }}"
-                                                        class="nav-link @if ($announcement->is_accepted == 1) text-success
+                                                        class="link @if ($announcement->is_accepted == 1) text-success
                                 @elseif ($announcement->is_accepted == 0)
                                 text-danger @endif">{{ $announcement->title }}</a>
                                                 </h6>
                                             </td>
-                                            <td class="text-end">
+                                            <td class="text-center">
                                                 <p>{{ $announcement->updated_at }}</p>
                                             </td>
                                         </tr>

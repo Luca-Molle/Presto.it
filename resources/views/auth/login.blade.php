@@ -9,7 +9,7 @@
             <p class="fs-3 mt-3">Non sei ancora registrato?</p>
             <p class="fs-4 ">Crea subito il tuo account!</p>
             <div class=" d-flex justify-content-center align-items-center">
-                <button type="submit" class="btn btn-outline-secondary shadow "><a class="nav-link"
+                <button type="submit" class="btn btn-presto shadow "><a class="nav-link"
                         href="register">Registrati</a></button>
             </div>
             {{-- <h1 class="fw-bold fs-1">Login</h1> --}}
@@ -69,7 +69,7 @@
                         <label class="form-check-label col-10 " for="exampleCheack1">Remember</label>
                     </div>
                     <div class="mt-3 d-flex justify-content-center align-items-center">
-                        <button type="submit" class="btn btn-outline-secondary shadow my-3 col-3 ">Login</button>
+                        <button type="submit" class="btn btn-presto-dark shadow my-3 col-3 ">Login</button>
                     </div>
 
                 </form>

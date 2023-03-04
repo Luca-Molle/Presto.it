@@ -16,18 +16,17 @@
                             </div>
                             <div class="col-4 ms-4">
                                 <h4 class="fw-bold">{{ $announcement->title }}</h6>
-                                    <h5 class="textmain fw-bold">€ {{ $announcement->price }}</h5>
+                                    <h5 class="textmain text-end fw-bold">€ {{ $announcement->price }}</h5>
                                     <p class="mt-5 card-footer">Pubblicato il:
                                         {{ $announcement->created_at->format('d/m/Y') }}
                                     </p>
-                                    <a class="btn btn-outline-secondary shadow mt-5"
+                                    <a class="btn btn-presto d-flex justify-content-center shadow mt-5"
                                         href="{{ route('announcements.show', $announcement) }}">Visualizza</a>
                             </div>
                         </div>
-                        <div class="d-flex align-items-center" style="height: 75px"><a
-                                class=" h-50 col-12 btn btn-outline-secondary shadow" href="#">
-                                <p class="textmain fw-bold text-center">{{ $announcement->category->name }}
-                                </p>
+                        <div class="d-flex align-items-center" style="height: 75px">
+                            <a class=" h-50 col-12 btn btn-outline-presto shadow" href="{{ route('categoryShow', $announcement->category) }}">
+                                <p class="textmain fw-bold text-center">{{ $announcement->category->name }}</p>
                             </a>
                         </div>
                     </div>

@@ -33,7 +33,7 @@
                 </div>
             </div>
         </div>
-        <button class="carousel-control-prev me-3 " type="button" data-bs-target="#carouselExample"
+        <button class="carousel-control-prev me-3" type="button" data-bs-target="#carouselExample"
             data-bs-slide="prev">
             <span class="textmain visually-hidden fw-bold">Previous</span>
         </button>
