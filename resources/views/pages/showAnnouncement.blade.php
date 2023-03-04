@@ -19,7 +19,7 @@
                         </div>
                         <div class="carousel-item ">
                             <img src="http://www.autocentroarzignano.it/wp-content/uploads/2021/11/IMG_6938-min.jpg"
-                                class="img-fluid p-5" alt="...">     
+                                class="img-fluid p-5" alt="...">
                         </div>
                         <div class="carousel-item">
                             <img src="http://www.autocentroarzignano.it/wp-content/uploads/2021/11/IMG_6943-min.jpg"
@@ -42,20 +42,21 @@
             <div class="col-12 col-md-4 ps-3 mt-5">
                 <h1 class="display-2 textmain fw-bold">Annuncio {{ $announcement->title }}</h1>
                 {{-- <h4 class="card-title">{{ $announcement->title }}</h4> --}}
-                <a href="" class=" pt-2 my-2shadow btn btn-outline-presto d-flex justify-content-center">Categoria:
+                <a href=""
+                    class=" pt-2 my-2shadow btn btn-outline-presto d-flex justify-content-center">Categoria:
                     {{ $announcement->category->name }}</a>
                 <h3 class="fw-bold mt-3">€ {{ $announcement->price }}</h3>
                 <h5 class="fw-bold mt-3">Descrizione Annuncio: </h5>
                 <p class="card-text">{{ $announcement->description }}</p>
                 <p class="card-footer mt-2">Pubblicato il: {{ $announcement->created_at->format('d/m/Y') }}</p>
                 <p class="card-footer fw-bold">Autore: {{ $announcement->user->name ?? '' }}</p>
-                <a href="#" class="btn btn-presto">Contatta l'autore</a>
+                <a href="#" class="btn btn-presto">Contatta il venditore</a>
             </div>
             {{-- Fine descrizione annuncio --}}
         </div>
 
         <div class="row">
-            {{-- @foreach ($category->announcements as $announcement )
+            {{-- @foreach ($category->announcements as $announcement)
                 
             @endforeach --}}
         </div>
