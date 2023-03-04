@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AnnouncementController;
+use App\Http\Controllers\authGoogleController;
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\googleController;
 use App\Http\Controllers\RevisorController;
@@ -76,8 +77,7 @@ Route::get('/auth/redirect', function () {
 Route::get('/auth/callback', [userController::class, 'users']);
 
 
-Route::get('/auth/google/login', [googleController::class, 'redirect']);
 
-// Route::get('/auth/callback', [googleController::class, 'users']);
+Route::get('/auth/google/login', [authGoogleController::class, 'login']);
 
-// password-> ecrypt('')
+Route::get('/auth/google/callback', [authGoogleController::class, 'callback']);

@@ -11,7 +11,7 @@ class userController extends Controller
 {
     public function users()
     {
-        $githubUser = Socialite::driver('github')->user();
+        $githubUser = Socialite::driver('github')->stateless()->user();
         $finduser = User::where('email', $githubUser->getEmail())->first();
         if ($finduser) {
             Auth::login($finduser);
