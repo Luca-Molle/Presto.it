@@ -40,7 +40,7 @@
 
             {{-- Descrizione annuncio --}}
             <div class="col-12 col-md-4 ps-3 mt-5">
-                <h1 class="display-2 textmain fw-bold">Annuncio {{ $announcement->title }}</h1>
+                <h1 class="display-2 textmain fw-bold">{{ $announcement->title }}</h1>
                 {{-- <h4 class="card-title">{{ $announcement->title }}</h4> --}}
                 <a href=""
                     class=" pt-2 my-2shadow btn btn-outline-presto d-flex justify-content-center">Categoria:
