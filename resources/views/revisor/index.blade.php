@@ -5,7 +5,7 @@
                 <h1 class="text-center mt-5 text-white pb-4">
                     @if ($announcements_to_check > 0)
                         <span>
-                            Hai <span class="text-danger fw-bold">
+                            Hai <span class="textmain fw-bold">
                                 {{ \App\Models\Announcement::toBeRevisionedCounter() }}</span>
                             annunci da revisionare!
                         </span>
@@ -25,8 +25,8 @@
                 <div class="row">
                     @if ($announcementsToCheck)
                         @foreach ($announcementsToCheck as $announcement)
-                            <div class="col-4">
-                                <div class=" rounded bg-white mb-4 shadow p-3">
+                            <div class="col-4 d-flex">
+                                <div class=" rounded bg-white mb-4 shadow p-3  align-items-stretch">
                                     <p class="textmain fw-bold text-center">{{ $announcement->category->name }}</p>
                                     <img src="https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/notebooks/xps-notebooks/xps-15-9520/media-gallery/black/laptop-xps-9520-t-black-gallery-4.psd?fmt=pjpg&pscan=auto&scl=1&wid=3491&hei=2077&qlt=100,1&resMode=sharp2&size=3491,2077&chrss=full&imwidth=5000"
                                         class="img-fluid card-image" alt="foto">
