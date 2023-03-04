@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\ContactSeller;
 use App\Models\Announcement;
 use App\Models\Category;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+use PHPUnit\Metadata\Parser\AnnotationParser;
 
 class FrontController extends Controller
 {
@@ -37,5 +40,28 @@ class FrontController extends Controller
     public function workWithUs()
     {
         return view('pages.workWithUs'); 
+    }
+
+    public function contactSeller(Request $request)
+    {
+        $this->validate($request,[
+        
+            'title' => 'required',
+            'seller' => 'required',
+            'name' => 'required',
+            'email' => 'required|email',
+            'message' => 'required',
+        ]); 
+
+        $data = [
+            'seller'=> $request->seller,
+            'title' => $request->title,
+            'name' => $request->name,
+            'email' => $request->email,
+            'message' => $request->message,
+        ]; 
+
+        Mail::to($request->seller)->send(new ContactSeller($data)); 
+        return redirect()->back()->with('message', 'Richiesta inviata'); 
     }
 }
