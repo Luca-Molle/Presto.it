@@ -30,8 +30,8 @@
                             <p class="text-warning small">In attesa</p>
                         @endif
                     </td>
-                    <td class="text-end">
-                        <button class="btn btn-sm btn-outline-presto"
+                    <td class="text-end d-flex">
+                        <button class="btn btn-sm btn-outline-presto me-2"
                             wire:click="editAnnouncement({{ $announcement->id }})">Modifica</button>
                         <button class="btn btn-sm btn-danger"
                             wire:click="destroy({{ $announcement->id }})">Elimina</button>

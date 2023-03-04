@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row ">
         <div class="col-12 mt-5">
-            <h1>Inserisci Annuncio</h1>
+            <h1 class="mt-3 textmain fw-bold">Inserisci Annuncio</h1>
             <form wire:submit.prevent="store">
                 <div class="row g-3">
 
@@ -58,7 +58,7 @@
                     </div>
 
                     <div class="col-6 justify-content-start">
-                        <button class="btn btn-primary" type="submit" id="userSubmitBtn">Crea</button>
+                        <button class="btn btn-presto" type="submit" id="userSubmitBtn">Crea</button>
                     </div>
 
                 </div>

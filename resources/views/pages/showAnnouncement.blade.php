@@ -49,7 +49,7 @@
                 <h5 class="fw-bold mt-3">Descrizione Annuncio: </h5>
                 <p class="card-text">{{ $announcement->description }}</p>
                 <p class="card-footer mt-2">Pubblicato il: {{ $announcement->created_at->format('d/m/Y') }}</p>
-                <p class="card-footer fw-bold">Autore: {{ $announcement->user->name ?? '' }}</p>
+                <p class="card-footer fw-bold">Venditore: {{ $announcement->user->name ?? '' }}</p>
                 <a href="#" class="btn btn-presto">Contatta il venditore</a>
             </div>
             {{-- Fine descrizione annuncio --}}
