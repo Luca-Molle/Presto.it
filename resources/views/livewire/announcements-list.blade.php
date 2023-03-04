@@ -5,6 +5,7 @@
             <tr>
                 <th>Titolo</th>
                 <th>Prezzo</th>
+                <th>Categotia</th>
                 <th>Data pubblicazione</th>
                 <th>Status</th>
 
@@ -17,7 +18,9 @@
                 <tr>
                     <td>{{ $announcement->title }}</td>
                     <td>€ {{ $announcement->price }}</td>
+                    <td>{{ $announcement->category->name }}</td>
                     <td>{{ $announcement->created_at->format('d/m/Y') }}</td>
+
                     <td>
                         @if ($announcement->is_accepted == true)
                             <p class="text-success small">Accettato</p>
