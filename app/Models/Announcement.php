@@ -18,9 +18,9 @@ class Announcement extends Model
     {
         $category = $this->category;
         $array = [
-            'id' =>$this->id,
-            'title' =>$this->title,
-            'description' =>$this->description,
+            'id' => $this->id,
+            'title' => $this->title,
+            'description' => $this->description,
             'category' => $category,
         ];
         return $array;
@@ -41,7 +41,7 @@ class Announcement extends Model
 
     public static function toBeRevisionedCounter()
     {
-        return Announcement::where('is_accepted', null)->count();
+            return Announcement::where('is_accepted', null)->where('user_id', '!=', auth()->user()->id)->count();
     }
 
     public function setAccepted($value)

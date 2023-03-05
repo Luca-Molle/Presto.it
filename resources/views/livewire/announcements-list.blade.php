@@ -39,7 +39,8 @@
                     </td>
                     <td class="text-end d-flex">
                         <button class="btn btn-sm btn-outline-presto me-2"
-                            wire:click="editAnnouncement({{ $announcement->id }})">Modifica</button>
+                            wire:click="editAnnouncement({{ $announcement->id }})"
+                            @if ($announcement->is_accepted == 0 || $announcement->is_accepted == null) disabled @endif>Modifica</button>
                         <button class="btn btn-sm btn-danger"
                             wire:click="destroy({{ $announcement->id }})">Elimina</button>
                     </td>

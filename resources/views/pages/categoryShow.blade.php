@@ -9,7 +9,7 @@
     <div class="container">
         <div class="row justify-content-center mb-5">
             @forelse ($category->announcements as $announcement)
-                    <div class="bg-white my-2 shadow p-3 mt-5 ">
+                    <div class="bg-white my-2 shadow p-3 mt-5 " data-aos="zoom-in">
                         <div class="row ">
                             <div class="col-6 mt-4 ">
                                 <a href="{{ route('announcements.show', $announcement) }}">

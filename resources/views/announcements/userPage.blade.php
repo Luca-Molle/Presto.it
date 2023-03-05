@@ -6,15 +6,10 @@
                 <p class="fs-2">Il tuo spazio per gestire gli annunci e le tue informazioni</p>
             </div>
             <div class="col-2  m-5">
-
                 <a href=""><img class="img-fluid" src="{{ asset('img/utente.png') }}" alt="">
                 </a>
-
             </div>
-
         </div>
-
-
         <div class="row">
             <p class="fs-3">Completa il tuo profilo! Fatti conoscere ai tuoi possibili acquirenti!</p>
             <form action="##" method="POST">
@@ -28,16 +23,11 @@
                                 @if (auth()->user()) value="{{ auth()->user()->name }}"
                             @else
                                 placeholder="Nome" @endif>
-
                         </div>
-
-
-
                         <div class="mb-3">
                             <label for="" class="form-label">Indirizzo</label>
                             <input name="address" type="text" class="form-control" value="{{ old('address') }}">
                         </div>
-
                         <div class="mb-3">
                             <label for="" class="form-label">Numero di telefono</label>
                             <input name="phone" type="text" class="form-control" value="{{ old('phone') }}">

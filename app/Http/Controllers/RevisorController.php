@@ -17,6 +17,7 @@ class RevisorController extends Controller
         $announcements_to_check = Announcement::where('is_accepted', null)->count();
         $announcementsToCheck = Announcement::where('is_accepted', null)->get();
         $checkedAnnouncements = Announcement::where('is_accepted', '!=', null)->orderByDesc('updated_at')->paginate(5);
+        
         return view('revisor.index', compact('announcementsToCheck', 'announcements_to_check', 'checkedAnnouncements'));
     }
 

@@ -42,7 +42,7 @@
         </button>
     </div>
 
-    <div class="bg-dark text-center my-3 p-5 shadow row align-items-center">
+    <div class="bg-dark text-center my-3 p-5 shadow row align-items-center" data-aos="zoom-in">
         <div-col-12 class="col-md-6">
             <p class="pacifico fs-1 text-white">Ultimi annunci!</p>
         </div-col-12>
@@ -61,7 +61,7 @@
 
             {{-- Prova colonne --}}
             @foreach ($announcements as $announcement)
-                <div class="col-12 col-md-5 col-lg-3 mt-4 d-flex align-self-stretch">
+                <div class="col-12 col-md-5 col-lg-3 mt-4 d-flex align-self-stretch" data-aos="zoom-in">
                     <div class="column rounded bg-white mb-4 shadow p-3">
                         <a href="{{ route('categoryShow', $announcement->category) }}" class=" btn btn-outline-presto">{{ $announcement->category->name }}</a>
                         <a href="{{ route('announcements.show', $announcement) }}"><img
