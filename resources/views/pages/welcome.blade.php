@@ -5,6 +5,13 @@
                 <div class="alert alert-success mt-5">{{ session('message') }}</div>
             @endif
 
+            {{-- Banner --}}
+            {{-- <div class="container-fluid">
+                <div class="col-12 d-flex justify-content-center mt-3 w-100">
+                    <img src="{{ asset('img/bannero-home-logo.png') }}" class="img-fluid" alt="banner">
+                </div>
+            </div> --}}
+
             {{-- Categories Carousel --}}
             <div id="carouselExample" class="carousel slide">
                 <div class="carousel-inner ">
@@ -42,6 +49,7 @@
         </button>
     </div>
 
+    {{-- Sezione ultimi annunci --}}
     <div class="bg-dark text-center my-3 p-5 shadow row align-items-center" data-aos="zoom-in">
         <div-col-12 class="col-md-6">
             <p class="pacifico fs-1 text-white">Ultimi annunci!</p>
@@ -63,7 +71,8 @@
             @foreach ($announcements as $announcement)
                 <div class="col-12 col-md-5 col-lg-3 mt-4 d-flex align-self-stretch" data-aos="zoom-in">
                     <div class="column rounded bg-white mb-4 shadow p-3">
-                        <a href="{{ route('categoryShow', $announcement->category) }}" class=" btn btn-outline-presto">{{ $announcement->category->name }}</a>
+                        <a href="{{ route('categoryShow', $announcement->category) }}"
+                            class=" btn btn-outline-presto">{{ $announcement->category->name }}</a>
                         <a href="{{ route('announcements.show', $announcement) }}"><img
                                 src="https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/notebooks/xps-notebooks/xps-15-9520/media-gallery/black/laptop-xps-9520-t-black-gallery-4.psd?fmt=pjpg&pscan=auto&scl=1&wid=3491&hei=2077&qlt=100,1&resMode=sharp2&size=3491,2077&chrss=full&imwidth=5000"
                                 class="img-fluid card-image mt-3" alt="foto"></a>

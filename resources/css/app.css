@@ -56,8 +56,8 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
-.navbar {
-    /* font-size: x-large; */
+.banner-logo {
+    font-size: 10rem !important;
 }
 
 .pacifico {

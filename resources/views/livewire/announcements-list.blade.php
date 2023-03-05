@@ -1,6 +1,6 @@
 <div>
     <h4 class="text-center mt-5 fw-bold textmain fs-2">I Tuoi Annunci</h4>
-    <table class="table table-bordered  shadow mt-3 tab-presto">
+    <table class="table table-bordered shadow mt-3 tab-presto">
         <thead>
             <tr class="textmain">
                 <th class="fw-bold">Titolo</th>
@@ -40,7 +40,7 @@
                     <td class="text-end d-flex">
                         <button class="btn btn-sm btn-outline-presto me-2"
                             wire:click="editAnnouncement({{ $announcement->id }})"
-                            @if ($announcement->is_accepted == 0 || $announcement->is_accepted == null) disabled @endif>Modifica</button>
+                            @if ($announcement->is_accepted === null) disabled @endif>Modifica</button>
                         <button class="btn btn-sm btn-danger"
                             wire:click="destroy({{ $announcement->id }})">Elimina</button>
                     </td>
