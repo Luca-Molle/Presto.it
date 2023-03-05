@@ -73,7 +73,7 @@
                                         annuncio</a>
                                 </li>
                                 <li>
-                                    <a class=" nav-link" href="{{ route('user.page') }}">I miei annunci</a>
+                                    <a class=" nav-link" href="{{ route('user.page') }}">Il mio profilo</a>
                                 </li>
                                 @if (Auth::user()->is_revisor)
                                     <li class="nav-item">
