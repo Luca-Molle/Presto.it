@@ -41,6 +41,15 @@
                             </ul>
                         </li>
 
+                        <li class="nav-item mx-1 align-items-center d-flex ">
+                            <x-_locale lang='en' nation='gb'/>
+                        </li>
+                        <li class="nav-item mx-1 align-items-center d-flex ">
+                            <x-_locale lang='it' nation='it'/>
+                        </li>
+                        <li class="nav-item mx-1 align-items-center d-flex ">
+                            <x-_locale lang='fr' nation='fr'/>
+                        </li>
                     </ul>
                     @guest
                     
@@ -50,7 +59,7 @@
                         <li class="nav-item align-items-center d-flex">
                             <a class="nav-link" href="{{ route('login') }}">Login</a>
                         </li>
-                        @else
+                    @else
                     </ul>
                     <ul class="navbar-nav  mb-2 mb-lg-0">
                         <li class="nav-item dropdown dropdown-menu-end ">
@@ -93,12 +102,7 @@
                             </ul>
                         </li>
                     </ul>
-                @endguest
-
-                {{-- <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form> --}}
+                    @endguest
             </div>
         </div>
     </nav>

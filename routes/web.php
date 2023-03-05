@@ -27,8 +27,10 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/', [FrontController::class, 'homePage'])->name('welcome');
 Route::get('/categoria/{category}', [FrontController::class, 'categoryShow'])->name('categoryShow');
 Route::get('/dettaglio/categoria/{announcement}', [FrontController::class, 'showAnnouncement'])->name('announcements.show');
-Route::get('elenco/annunci', [AnnouncementController::class, 'index'])->name('index.announcements');
+Route::get('/elenco/annunci', [AnnouncementController::class, 'index'])->name('index.announcements');
 Route::post('/richiesta/info/annuncio', [FrontController::class, 'contactSeller'])->name('contact.seller');
+//Gestione multi-language
+Route::post('/set/language/locale', [FrontController::class, 'setLanguageLocale'])->name('set.language.locale'); 
 // Ricerca annuncio
 Route::get('/ricerca/annuncio', [FrontController::class, 'searchAnnouncements'])->name('announcements.search');
 

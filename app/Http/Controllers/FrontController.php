@@ -64,4 +64,9 @@ class FrontController extends Controller
         Mail::to($request->seller)->send(new ContactSeller($data)); 
         return redirect()->back()->with('message', 'Richiesta inviata'); 
     }
+
+    public function setLanguageLocale()
+    {
+        
+    }
 }
