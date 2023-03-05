@@ -21,7 +21,7 @@
 
     <div class="container-fluid">
         <div class="row mt-5">
-            <div class="col-6">
+            <div class="col-6 ">
                 <div class="row">
                     @if ($announcementsToCheck)
                         @foreach ($announcementsToCheck as $announcement)
@@ -48,17 +48,40 @@
                         <h3 class="fw-bold textmain">Ultimi annunci revisionati</h3>
                     </div>
                     <div class=" col-8">
-                        <table class="table table-bordered bg-white shadow mt-3">
+                        <table class="table table-bordered tab-presto shadow mt-3">
                             <thead class="p-2 text-center">
                                 <tr>
+                                    <th>Check</th>
                                     <th>Titolo</th>
                                     <th>Ultimo aggiornamento</th>
+
                                 </tr>
                             </thead>
                             <tbody>
                                 @if ($checkedAnnouncements)
                                     @foreach ($checkedAnnouncements as $announcement)
                                         <tr>
+                                            <td>
+                                                @if ($announcement->is_accepted == true)
+                                                    {{-- <p class="text-success fs-5 col-8">Accettato </p> --}}
+                                                    <div class="d-flex align-items-center justify-content-center">
+                                                        <img src="{{ asset('img/green.png') }}" alt="verde"
+                                                            class="img-fluid w-50">
+                                                    </div>
+                                                @elseif ($announcement->is_accepted === 0)
+                                                    {{-- <p class="text-danger small">Rifiutato</p> --}}
+                                                    <div class="d-flex align-items-center justify-content-center">
+                                                        <img src="{{ asset('img/red.png') }}" alt="verde"
+                                                            class="img-fluid w-50">
+                                                    </div>
+                                                @elseif ($announcement->is_accepted === null)
+                                                    {{-- <p class="text-warning small">In attesa</p> --}}
+                                                    <div class="d-flex align-items-center justify-content-center">
+                                                        <img src="{{ asset('img/orange.png') }}" alt="verde"
+                                                            class="img-fluid w-50">
+                                                    </div>
+                                                @endif
+                                            </td>
                                             <td>
                                                 <h6><a href="{{ route('announcements.rev', $announcement) }}"
                                                         class="link @if ($announcement->is_accepted == 1) text-success

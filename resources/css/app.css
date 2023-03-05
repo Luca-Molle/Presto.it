@@ -163,3 +163,11 @@ body {
 .box2 {
     margin-top: 3%;
 }
+
+/* tabella custom  */
+
+.tab-presto {
+
+    border: var(--main);
+    background-color: hsla(120, 44%, 64%, 0.3);
+}

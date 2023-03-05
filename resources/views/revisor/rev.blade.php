@@ -1,33 +1,91 @@
 <x-layout>
-    <div class="container-fluid p-5 bg-gradient maincolor shadow mb-4">
-        <div class="row">
-            <div class="col-12 text-light p-5 mt-5  text-center">
-                <h1 class="display-2 text-dark text-white">Annuncio: {{ $announcement->title }}</h1>
-            </div>
-        </div>
-    </div>
-    <div class="container">
-        <div class="row">
+
+
+    <div class="container ">
+        <div class="d-flex align-items-center">
             {{-- CAROSELLO --}}
-            <h4 class="card-title">{{ $announcement->title }}</h4>
-            <p class="card-text">{{ $announcement->price }}</p>
-            <p class="card-text">{{ $announcement->description }}</p>
-            <p class="card-text">Categoria: {{ $announcement->category->name }}</p>
-            <p class="card-footer">Pubblicato il: {{ $announcement->created_at->format('d/m/Y') }}</p>
-            <p class="card-footer">Autore: {{ $announcement->user->name ?? '' }}</p>
+            <div class="col-12 col-md-7 mt-4 me-5 d-flex align-items-center">
+                <div id="carouselExample" class="carousel slide mt-3">
+                    <div class="carousel-inner bg-white shadow rounded-3">
+                        <div class="carousel-item active">
+                            <img src="http://www.autocentroarzignano.it/wp-content/uploads/2021/11/IMG_6937-min.jpg"
+                                class="img-fluid p-5" alt="...">
+                        </div>
+                        <div class="carousel-item ">
+                            <img src="http://www.autocentroarzignano.it/wp-content/uploads/2021/11/IMG_6938-min.jpg"
+                                class="img-fluid p-5" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="http://www.autocentroarzignano.it/wp-content/uploads/2021/11/IMG_6943-min.jpg"
+                                class="img-fluid p-5" alt="...">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev me-3" type="button" data-bs-target="#carouselExample"
+                        data-bs-slide="prev">
+                        <span class="textmain visually-hidden fw-bold">Previous</span>
+                    </button>
+                    <button class="carousel-control-next " type="button" data-bs-target="#carouselExample"
+                        data-bs-slide="next">
+                        <span class="textmain visually-hidden fw-bold">Next</span>
+                    </button>
+                </div>
+            </div>
+            {{-- FINE CAROSELLO --}}
+
+            {{-- DESCRIZIONE ANNUNCIO --}}
+            <div class="col-12 col-md-4 ps-3 p-3 tab-presto">
+                <p class="display-2 fs-2 mt-2"><span class="textmain fw-bold">Titolo annuncio:</span>
+                    {{ $announcement->title }}</p>
+                {{-- <h4 class="card-title">{{ $announcement->title }}</h4> --}}
+                <p class="display-2  fs-3 mt-2"><span class="textmain fw-bold">Categoria:</span>
+                    {{ $announcement->category->name }}</p>
+
+
+
+                <p class=" mt-3 fs-4"> <span class="textmain fw-bold">Prezzo </span>€ {{ $announcement->price }}
+                </p>
+                <h5 class="fw-bold textmain mt-3">Descrizione Annuncio: </h5>
+                <p class="card-text">{{ $announcement->description }}</p>
+                <p class="card-footer mt-2 "> <span class="textmain fw-bold"> Pubblicato il:</span>
+                    {{ $announcement->created_at->format('d/m/Y') }}
+                </p>
+                <p class="card-footer fw-bold"> <span class="textmain">Venditore: </span>
+                    {{ $announcement->user->name ?? '' }}</p>
+                {{-- FINE DESCRIZIONE ANNUNCIO --}}
+
+
+
+                {{-- form di accettazione / rifiuto annuncio --}}
+
+                <div class="row mt-5">
+                    <div class="col-6">
+                        <form action="{{ route('revisor.accept_announcement', $announcement) }}" method="POST">
+                            @csrf
+                            @method('PATCH')
+                            <button type="submit" class="btn btn-outline-success">Accetta</button>
+                        </form>
+                    </div>
+                    <div class="col-6">
+                        <form action="{{ route('revisor.reject_announcement', $announcement) }}" method="POST">
+                            @csrf
+                            @method('PATCH')
+                            <button type="submit" class="btn btn-outline-danger">Rifiuta</button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+
+
         </div>
-        {{-- form di accettazione / rifiuto annuncio --}}
-        <div class="col-12 col-md-6">
-            <form action="{{ route('revisor.accept_announcement', $announcement) }}" method="POST">
-                @csrf
-                @method('PATCH')
-                <button type="submit" class="btn btn-outline-success">Accetta</button>
-            </form>
-            <form action="{{ route('revisor.reject_announcement', $announcement) }}" method="POST">
-                @csrf
-                @method('PATCH')
-                <button type="submit" class="btn btn-outline-danger">Rifiuta</button>
-            </form>
-        </div>
+
+        {{-- Altri annunci della categoria --}}
+        {{-- <div class="row">
+            @foreach ($category->announcements as $announcement)
+                
+            @endforeach
+        </div> --}}
+
     </div>
+
 </x-layout>

@@ -1,6 +1,6 @@
 <div class="container">
     <div class="row ">
-        <div class="col-12 mt-5">
+        <div class="col-12 mt-5 ">
             <h4 class="text-center fw-bold fs-2 textmain">Modifica Annuncio</h4>
             <form wire:submit.prevent="update">
                 <div class="row g-3">

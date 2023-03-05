@@ -1,6 +1,6 @@
 <div>
     <h4 class="text-center mt-5 fw-bold textmain fs-2">I Tuoi Annunci</h4>
-    <table class="table table-bordered bg-white shadow mt-3">
+    <table class="table table-bordered  shadow mt-3 tab-presto">
         <thead>
             <tr class="textmain">
                 <th class="fw-bold">Titolo</th>
@@ -8,8 +8,6 @@
                 <th class="fw-bold">Categotia</th>
                 <th class="fw-bold">Data pubblicazione</th>
                 <th class="fw-bold">Status</th>
-
-
                 <th></th>
             </tr>
         </thead>
