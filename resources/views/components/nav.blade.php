@@ -41,7 +41,7 @@
                             </ul>
                         </li>
 
-                        <li class="nav-item mx-1 align-items-center d-flex ">
+                        {{-- <li class="nav-item mx-1 align-items-center d-flex ">
                             <x-_locale lang='en' nation='gb'/>
                         </li>
                         <li class="nav-item mx-1 align-items-center d-flex ">
@@ -49,10 +49,10 @@
                         </li>
                         <li class="nav-item mx-1 align-items-center d-flex ">
                             <x-_locale lang='fr' nation='fr'/>
-                        </li>
+                        </li> --}}
                     </ul>
                     @guest
-                    
+
                         <li class="nav-item align-items-center d-flex">
                             <a class="nav-link" href="{{ route('register') }}">Registrati</a>
                         </li>
@@ -77,12 +77,15 @@
                                 </li>
                                 @if (Auth::user()->is_revisor)
                                     <li class="nav-item">
-                                        <a href="{{ route('revisor.index') }}" aria-current="page" class="nav-link"> Annunci da Revisionare
+                                        <a href="{{ route('revisor.index') }}" aria-current="page" class="nav-link">
+                                            Annunci da Revisionare
                                             @if (App\Models\Announcement::toBeRevisionedCounter() === 0)
-                                            <span class="notify bg-secondary p-2 text-white">{{ App\Models\Announcement::toBeRevisionedCounter() }}
-                                            </span>
+                                                <span
+                                                    class="notify bg-secondary p-2 text-white">{{ App\Models\Announcement::toBeRevisionedCounter() }}
+                                                </span>
                                             @else
-                                                <span class="notify bg-danger p-2 text-white">{{ App\Models\Announcement::toBeRevisionedCounter() }}
+                                                <span
+                                                    class="notify bg-danger p-2 text-white">{{ App\Models\Announcement::toBeRevisionedCounter() }}
                                                 </span>
                                             @endif
                                         </a>
@@ -95,14 +98,13 @@
                                 <li>
                                     <form action="/logout" method="POST">
                                         @csrf
-                                        <button type="submit"
-                                            class="d-inline mx-2 btn btn-presto">Esci</button>
+                                        <button type="submit" class="d-inline mx-2 btn btn-presto">Esci</button>
                                     </form>
                                 </li>
                             </ul>
                         </li>
                     </ul>
-                    @endguest
+                @endguest
             </div>
         </div>
     </nav>
