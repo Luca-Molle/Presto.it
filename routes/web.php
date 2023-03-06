@@ -31,7 +31,7 @@ Route::get('/dettaglio/categoria/{announcement}', [FrontController::class, 'show
 Route::get('/elenco/annunci', [AnnouncementController::class, 'index'])->name('index.announcements');
 Route::post('/richiesta/info/annuncio', [FrontController::class, 'contactSeller'])->name('contact.seller');
 //Gestione multi-language
-// Route::post('/set/language/locale', [FrontController::class, 'setLanguageLocale'])->name('set.language.locale');
+Route::post('/lingua/{lang}', [FrontController::class, 'setLanguage'])->name('set.language.locale');
 // Ricerca annuncio
 Route::get('/ricerca/annuncio', [FrontController::class, 'searchAnnouncements'])->name('announcements.search');
 
