@@ -65,8 +65,9 @@ class FrontController extends Controller
         return redirect()->back()->with('message', 'Richiesta inviata'); 
     }
 
-    public function setLanguageLocale()
+    public function setLanguage($lang)
     {
-        
+        session()->put('locale', $lang); 
+        return redirect()->back(); 
     }
 }

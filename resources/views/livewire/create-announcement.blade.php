@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
         <div class="mt-5">
-            <h1 class="mt-3 textmain fw-bold">Inserisci Annuncio</h1>
+            <h1 class="mt-3 textmain fw-bold">{{ __('ui.createAnnouncement') }}</h1>
             <form wire:submit.prevent="store">
                 <div class=" d-flex flex-column mb-3">
 

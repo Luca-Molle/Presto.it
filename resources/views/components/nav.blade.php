@@ -41,14 +41,36 @@
                             </ul>
                         </li>
 
+                        <li class="nav item mx-2 align-items-center d-flex">
+                            <form action="{{ route('set.language.locale', 'it') }}" method="POST">
+                                @csrf
+                                <button class="nav-link fi-it border-0">
+                                </button>
+                            </form> 
+                        </li>
+                        <li class="nav item mx-2 align-items-center d-flex">
+                            <form action="{{ route('set.language.locale', 'en') }}" method="POST">
+                                @csrf
+                                <button class="nav-link fib fi-gb border-0">
+                                </button>
+                            </form> 
+                        </li>
+                        <li class="nav item mx-2 align-items-center d-flex">
+                            <form action="{{ route('set.language.locale', 'fr') }}" method="POST">
+                                @csrf
+                                <button class="nav-link fi-fr border-0">
+                                </button>
+                            </form> 
+                        </li>
+
                         {{-- <li class="nav-item mx-1 align-items-center d-flex ">
-                            <x-_locale lang='en' nation='gb'/>
+                            <x-_locale lang='en':nation='fi-gb' />
                         </li>
                         <li class="nav-item mx-1 align-items-center d-flex ">
-                            <x-_locale lang='it' nation='it'/>
+                            <x-_locale lang='it' :nation='fi-it' />
                         </li>
                         <li class="nav-item mx-1 align-items-center d-flex ">
-                            <x-_locale lang='fr' nation='fr'/>
+                            <x-_locale lang='fr' :nation='fi-fr' />
                         </li> --}}
                     </ul>
                     @guest
