@@ -6,7 +6,7 @@
             {{-- CAROSELLO --}}
             <div class="col-12 col-md-7 mt-4 me-5 d-flex align-items-center">
                 <div id="carouselExample" class="carousel slide mt-3">
-                    @if ($announcement->immages)
+                    @if ($announcement->images)
                         <div class="carousel-inner bg-white shadow rounded-3">
                             @foreach ($announcement->images as $image)
                                 <div class="carousel-item @if ($loop->first) active @endif">

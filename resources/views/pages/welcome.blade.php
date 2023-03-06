@@ -73,10 +73,10 @@
                     <div class="column rounded bg-white mb-4 shadow p-3">
                         <a href="{{ route('categoryShow', $announcement->category) }}"
                             class=" btn btn-outline-presto">{{ $announcement->category->name }}</a>
-                        <a href="{{ route('announcements.show', $announcement) }}"><img
-                                src="https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/notebooks/xps-notebooks/xps-15-9520/media-gallery/black/laptop-xps-9520-t-black-gallery-4.psd?fmt=pjpg&pscan=auto&scl=1&wid=3491&hei=2077&qlt=100,1&resMode=sharp2&size=3491,2077&chrss=full&imwidth=5000"
-                                class="img-fluid card-image mt-3" alt="foto"></a>
-                        <div>
+                        <a href="{{ route('announcements.show', $announcement) }}">
+                            <img src="{{ !$announcement->images()->get()->isEmpty() ? Storage::url($announcement->images()->first()->path) : 'https://blumagnolia.ch/wp-content/uploads/2021/05/placeholder-126.png'}}"
+                                class="img-fluid card-image rounded shadow mt-3" alt="foto"></a>
+                        <div class="mt-2">
                             <h4 class="fw-bold">{{ $announcement->title }}</h6>
                                 <h5 class="textmain fw-bold text-end">€ {{ $announcement->price }}</h5>
                                 <a class="btn btn-presto shadow mt-1 d-flex justify-content-center"
