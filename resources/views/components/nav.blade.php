@@ -18,7 +18,7 @@
                         <a class=" text-logo fs-3 " aria-current="page" href="{{ route('welcome') }}">Presto.it</a>
                     </li>
                     <li class="nav-item align-items-center d-flex">
-                        <a class="nav-link" aria-current="page" href="{{ route('index.announcements') }}">Annunci</a>
+                        <a class="nav-link" aria-current="page" href="{{ route('index.announcements') }}">{{ __('ui.announcementsNav') }}</a>
                     </li>
                     <ul class="navbar-nav  mb-2 mb-lg-0">
                         <li class="nav-item dropdown dropdown-menu-end align-items-center d-flex">
@@ -28,7 +28,7 @@
                                 @if (Route::is('categoryShow'))
                                     {{ request()->category->name }}
                                 @else
-                                    Categorie
+                                    {{ __('ui.categoriesNav') }}
                                 @endif
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end">
@@ -91,16 +91,15 @@
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end">
                                 <li>
-                                    <a class=" nav-link" href="{{ route('announcement.create') }}">Inserisci
-                                        annuncio</a>
+                                    <a class=" nav-link" href="{{ route('announcement.create') }}"> {{ __('ui.createAnnouncement') }}</a>
                                 </li>
                                 <li>
-                                    <a class=" nav-link" href="{{ route('user.page') }}">Il mio profilo</a>
+                                    <a class=" nav-link" href="{{ route('user.page') }}"> {{ __('ui.myProfile') }} </a>
                                 </li>
                                 @if (Auth::user()->is_revisor)
                                     <li class="nav-item">
                                         <a href="{{ route('revisor.index') }}" aria-current="page" class="nav-link">
-                                            Annunci da Revisionare
+                                            {{ __('ui.announcementsToCheck') }}
                                             @if (App\Models\Announcement::toBeRevisionedCounter() === 0)
                                                 <span
                                                     class="notify bg-secondary p-2 text-white">{{ App\Models\Announcement::toBeRevisionedCounter() }}
@@ -120,7 +119,7 @@
                                 <li>
                                     <form action="/logout" method="POST">
                                         @csrf
-                                        <button type="submit" class="d-inline mx-2 btn btn-presto">Esci</button>
+                                        <button type="submit" class="d-inline mx-2 btn btn-presto"> {{ __('ui.exit') }}</button>
                                     </form>
                                 </li>
                             </ul>

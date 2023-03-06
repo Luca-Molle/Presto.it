@@ -103,13 +103,13 @@
             </form>
             <div class="col-6">
                 <div class="container text-start text-dark border border-dark-subtle rounded ">
-                    <p class="fs-5 m-3 textmain fw-bold">Alcuni consigli per il tuo annuncio </a>
+                    <p class="fs-5 m-3 textmain fw-bold">{{ __('ui.advisesTitle') }} </a>
                     </p>
                     <div class="d-flex align-items-center">
                         <img src="{{ asset('img/foto.png') }}" alt="logo mancante" class="img-fluid col-2 m-3 p-2">
                         <div class="col-9">
                             <p class="col-10">
-                            <p class="textmain fw-bold"> Scatta delle belle foto </p>Metti bene a fuoco
+                            <p class="textmain fw-bold"> {{ __('ui.photo') }} </p>Metti bene a fuoco
                             l'oggetto e
                             cerca una superficie, o uno sfondo con meno distrazioni possibili. Una bella
                             foto ti aiuterà ad attirare più persone interessate.</p>
@@ -120,7 +120,7 @@
                         <img src="{{ asset('img/prezzo.png') }}" alt="logo mancante" class="img-fluid col-2 p-2 m-3">
                         <div class="col-9">
                             <p class="col-10">
-                            <p class="textmain fw-bold"> Fai il tuo prezzo! </p>Se sei indeciso, dai
+                            <p class="textmain fw-bold"> {{ __('ui.price') }}</p>Se sei indeciso, dai
                             un'occhiata al
                             prezzo degli annunci simili al tuo.</p>
                         </div>
@@ -131,7 +131,7 @@
                         <img src="{{ asset('img/chiaro.png') }}" alt="logo mancante" class="img-fluid col-2 m-3 p-2">
                         <div class="col-9">
                             <p class="col-10">
-                            <p class="textmain fw-bold"> Scrivi un annuncio chiaro </p> Cerca di inserire
+                            <p class="textmain fw-bold"> {{ __('ui.description') }} </p> Cerca di inserire
                             tutte le
                             specifiche del prodotto che vuoi vendere con una descrizione chiara e completa.
                             </p>
@@ -143,7 +143,7 @@
                             class="img-fluid col-2 m-3 p-2">
                         <div class="col-9">
                             <p class="col-10">
-                            <p class="textmain fw-bold"> Rispondi sempre ai messaggi</p>Interagisci con gli
+                            <p class="textmain fw-bold"> {{ __('ui.mail') }}</p>Interagisci con gli
                             altri in
                             modo chiaro e rispondi tempestivamente per concludere la vendita nel modo
                             migliore!</p>
