@@ -13,9 +13,9 @@
             </div> --}}
 
             {{-- Categories Carousel --}}
-            <div id="carouselExample" class="carousel slide">
+            <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner ">
-                    <div class="carousel-item active ">
+                    <div class="carousel-item active" data-bs-interval="5000">
                         <div class="row mx-3 justify-content-center firstcolor">
                             <x-card-carousel-category :id="1" />
                             <x-card-carousel-category :id="2" />
@@ -23,7 +23,7 @@
                             <x-card-carousel-category :id="4" />
                         </div>
                     </div>
-                    <div class="carousel-item">
+                    <div class="carousel-item" data-bs-interval="5000">
                         <div class="row firstcolor mx-3 justify-content-center ">
                             <x-card-carousel-category :id="5" />
                             <x-card-carousel-category :id="6" />
@@ -31,7 +31,7 @@
                             <x-card-carousel-category :id="8" />
                         </div>
                     </div>
-                    <div class="carousel-item">
+                    <div class="carousel-item" data-bs-interval="5000">
                         <div class="row firstcolor mx-3 justify-content-center ">
                             <x-card-carousel-category :id="9" />
                             <x-card-carousel-category :id="10" />

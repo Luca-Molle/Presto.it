@@ -39,6 +39,11 @@ class Announcement extends Model
         return $this->belongsTo(User::class);
     }
 
+    public function images()
+    {
+        return $this->hasMany(Image::class);
+    }
+
     public static function toBeRevisionedCounter()
     {
             return Announcement::where('is_accepted', null)->where('user_id', '!=', auth()->user()->id)->count();
