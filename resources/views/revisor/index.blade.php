@@ -18,7 +18,6 @@
             </div>
         </div>
     </div>
-
     <div class="container-fluid">
         <div class="row mt-5">
             <div class="col-6 ">

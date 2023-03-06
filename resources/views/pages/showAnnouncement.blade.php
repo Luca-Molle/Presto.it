@@ -10,22 +10,19 @@
     <div class="container">
         <div class="row justify-content-evenly">
             {{-- CAROSELLO --}}
-            <div class="col-12 col-md-7 mt-5 me-5 d-flex align-items-center">
+            <div class="col-12 col-md-7 mt-4 me-5 d-flex align-items-center">
                 <div id="carouselExample" class="carousel slide mt-3">
-                    <div class="carousel-inner bg-white shadow rounded-3">
-                        <div class="carousel-item active">
-                            <img src="http://www.autocentroarzignano.it/wp-content/uploads/2021/11/IMG_6937-min.jpg"
-                                class="img-fluid p-5" alt="...">
+                    @if ($announcement->images)
+                        <div class="carousel-inner bg-white shadow rounded-3">
+                            @foreach ($announcement->images as $image)
+                                <div class="carousel-item @if ($loop->first) active @endif">
+                                    <img src="{{ Storage::url($image->path) }}"
+                                        class="img-fluid p-5" alt="...">
+                                </div>
+                            @endforeach
                         </div>
-                        <div class="carousel-item ">
-                            <img src="http://www.autocentroarzignano.it/wp-content/uploads/2021/11/IMG_6938-min.jpg"
-                                class="img-fluid p-5" alt="...">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="http://www.autocentroarzignano.it/wp-content/uploads/2021/11/IMG_6943-min.jpg"
-                                class="img-fluid p-5" alt="...">
-                        </div>
-                    </div>
+                    @endif
+
                     <button class="carousel-control-prev me-3" type="button" data-bs-target="#carouselExample"
                         data-bs-slide="prev">
                         <span class="textmain visually-hidden fw-bold">Previous</span>

@@ -9,6 +9,7 @@ use App\Http\Controllers\RevisorController;
 use App\Http\Controllers\userController;
 use App\Http\Controllers\userPageController;
 use App\Models\Announcement;
+use App\Models\Image;
 use Laravel\Socialite\Facades\Socialite;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
