@@ -1,6 +1,6 @@
 @import 'bootstrap';
-@import 'flag-icon-css\css\flag-icons.css';
-@import 'flag-icons\css\flag-icons.css'; 
+
+@import 'flag-icons\css\flag-icons.css';
 /* IMPORT FONT */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Pacifico&family=Tilt+Prism&display=swap%27');
 

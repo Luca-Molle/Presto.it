@@ -49,59 +49,59 @@
                 <h5 class="fw-bold mt-3">Descrizione Annuncio: </h5>
                 <p class="card-text">{{ $announcement->description }}</p>
                 <p class="card-footer mt-2">Pubblicato il: {{ $announcement->created_at->format('d/m/Y') }}</p>
+                {{-- inserire sito web e foto utente --}}
                 <p class="card-footer fw-bold">Venditore: {{ $announcement->user->name ?? '' }}</p>
                 {{-- FINE DESCRIZIONE ANNUNCIO --}}
 
                 {{-- FORM COLLAPSE CONTATTO VENDITORE  --}}
-                <button class="btn btn-presto" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Contatta il venditore</button>
+                <button class="btn btn-presto" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Contatta il
+                    venditore</button>
 
                 {{-- SEZIONE ALERT ERROR/SUCCESS --}}
                 @if (session()->has('message'))
-                <div class="alert alert-success mt-2">{{ session('message') }}</div>
+                    <div class="alert alert-success mt-2">{{ session('message') }}</div>
                 @endif
 
                 @if ($errors->any())
-                <div class="alert alert-danger mt-2">
-                    @foreach ($errors->all() as $error)
-                        {{ $error }}<br>
-                    @endforeach
-                </div>
+                    <div class="alert alert-danger mt-2">
+                        @foreach ($errors->all() as $error)
+                            {{ $error }}<br>
+                        @endforeach
+                    </div>
                 @endif
                 {{-- FINE SEZIONE ALERT ERROR/SUCCESS --}}
 
                 <div class="collapse my-3" id="collapseExample">
                     <div class="card card-body">
                         <form action="/richiesta/info/annuncio" class="column g-3" method="POST">
-                        @csrf
+                            @csrf
                             <div class="col-12 mt-2">
-                                <input type="text" id="title" name="title" hidden value="{{ $announcement->title }}">
+                                <input type="text" id="title" name="title" hidden
+                                    value="{{ $announcement->title }}">
                             </div>
                             <div class="col-12 mt-2">
-                                <input type="email" id="seller" name="seller" hidden value="{{ $announcement->user->email }}">
+                                <input type="email" id="seller" name="seller" hidden
+                                    value="{{ $announcement->user->email }}">
                             </div>
 
                             <div class="col-12 mt-2">
-                                <input type="text" id="name" name="name" class="form-control" 
-                                @if (auth()->user())
-                                    value="{{ auth()->user()->name }}"
+                                <input type="text" id="name" name="name" class="form-control"
+                                    @if (auth()->user()) value="{{ auth()->user()->name }}"
                                 @else
-                                    placeholder="Nome"
-                                @endif
-                                >
+                                    placeholder="Nome" @endif>
                             </div>
 
                             <div class="col-12 mt-2">
                                 <input type="email" id="email" name="email" class="form-control"
-                                @if (auth()->user())
-                                    value="{{ auth()->user()->email }}"
+                                    @if (auth()->user()) value="{{ auth()->user()->email }}"
                                 @else
-                                    placeholder="E-mail"
-                                @endif
-                                >
+                                    placeholder="E-mail" @endif>
                             </div>
 
                             <div class="col-12 mt-2">
-                                <textarea name="message" id="" cols="30" rows="3" placeholder="Mesaggio al venditore" class="form-control"></textarea>
+                                <textarea name="message" id="" cols="30" rows="3" placeholder="Mesaggio al venditore"
+                                    class="form-control"></textarea>
                             </div>
 
                             <div class="col-12 my-2">
@@ -114,7 +114,7 @@
 
             </div>
 
-            
+
         </div>
 
         {{-- Altri annunci della categoria --}}

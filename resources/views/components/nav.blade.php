@@ -18,7 +18,8 @@
                         <a class=" text-logo fs-3 " aria-current="page" href="{{ route('welcome') }}">Presto.it</a>
                     </li>
                     <li class="nav-item align-items-center d-flex">
-                        <a class="nav-link" aria-current="page" href="{{ route('index.announcements') }}">{{ __('ui.announcementsNav') }}</a>
+                        <a class="nav-link" aria-current="page"
+                            href="{{ route('index.announcements') }}">{{ __('ui.announcementsNav') }}</a>
                     </li>
                     <ul class="navbar-nav  mb-2 mb-lg-0">
                         <li class="nav-item dropdown dropdown-menu-end align-items-center d-flex">
@@ -41,37 +42,34 @@
                             </ul>
                         </li>
 
+
+                    </ul>
+                    <ul class=" navbar-nav  mb-2 mb-lg-0 ">
+                        <li class="dropdown-menu dropdown-menu-end">
                         <li class="nav item mx-2 align-items-center d-flex">
                             <form action="{{ route('set.language.locale', 'it') }}" method="POST">
                                 @csrf
                                 <button class="nav-link fi-it border-0">
                                 </button>
-                            </form> 
+                            </form>
                         </li>
                         <li class="nav item mx-2 align-items-center d-flex">
                             <form action="{{ route('set.language.locale', 'en') }}" method="POST">
                                 @csrf
                                 <button class="nav-link fib fi-gb border-0">
                                 </button>
-                            </form> 
+                            </form>
                         </li>
                         <li class="nav item mx-2 align-items-center d-flex">
                             <form action="{{ route('set.language.locale', 'fr') }}" method="POST">
                                 @csrf
                                 <button class="nav-link fi-fr border-0">
                                 </button>
-                            </form> 
+                            </form>
+                        </li>
                         </li>
 
-                        {{-- <li class="nav-item mx-1 align-items-center d-flex ">
-                            <x-_locale lang='en':nation='fi-gb' />
-                        </li>
-                        <li class="nav-item mx-1 align-items-center d-flex ">
-                            <x-_locale lang='it' :nation='fi-it' />
-                        </li>
-                        <li class="nav-item mx-1 align-items-center d-flex ">
-                            <x-_locale lang='fr' :nation='fi-fr' />
-                        </li> --}}
+
                     </ul>
                     @guest
 
@@ -91,7 +89,8 @@
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end">
                                 <li>
-                                    <a class=" nav-link" href="{{ route('announcement.create') }}"> {{ __('ui.createAnnouncement') }}</a>
+                                    <a class=" nav-link" href="{{ route('announcement.create') }}">
+                                        {{ __('ui.createAnnouncement') }}</a>
                                 </li>
                                 <li>
                                     <a class=" nav-link" href="{{ route('user.page') }}"> {{ __('ui.myProfile') }} </a>
@@ -119,7 +118,8 @@
                                 <li>
                                     <form action="/logout" method="POST">
                                         @csrf
-                                        <button type="submit" class="d-inline mx-2 btn btn-presto"> {{ __('ui.exit') }}</button>
+                                        <button type="submit" class="d-inline mx-2 btn btn-presto">
+                                            {{ __('ui.exit') }}</button>
                                     </form>
                                 </li>
                             </ul>
