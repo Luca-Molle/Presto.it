@@ -1,9 +1,9 @@
 <div>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary bs-primary-text fixed-top shadow">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary bs-primary-text fixed-top shadow  ">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
                 <div class="contenitore-img">
-                    <img src="{{ asset('img/logo.png') }}" height="40" class="me-2" alt="immagine non disponibile">
+                    <img src="{{ asset('img/logo.png') }}" height="35" class="me-2" alt="immagine non disponibile">
                 </div>
 
             </a>
@@ -21,7 +21,7 @@
                         <a class="nav-link" aria-current="page"
                             href="{{ route('index.announcements') }}">{{ __('ui.announcementsNav') }}</a>
                     </li>
-                    <ul class="navbar-nav  mb-2 mb-lg-0">
+                    <ul class="navbar-nav  mb-2 mb-lg-0 ">
                         <li class="nav-item dropdown dropdown-menu-end align-items-center d-flex">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
@@ -44,46 +44,20 @@
 
 
                     </ul>
-                    <ul class=" navbar-nav  mb-2 mb-lg-0 ">
-                        <li class="dropdown-menu dropdown-menu-end">
-                        <li class="nav item mx-2 align-items-center d-flex">
-                            <form action="{{ route('set.language.locale', 'it') }}" method="POST">
-                                @csrf
-                                <button class="nav-link fi-it border-0">
-                                </button>
-                            </form>
-                        </li>
-                        <li class="nav item mx-2 align-items-center d-flex">
-                            <form action="{{ route('set.language.locale', 'en') }}" method="POST">
-                                @csrf
-                                <button class="nav-link fib fi-gb border-0">
-                                </button>
-                            </form>
-                        </li>
-                        <li class="nav item mx-2 align-items-center d-flex">
-                            <form action="{{ route('set.language.locale', 'fr') }}" method="POST">
-                                @csrf
-                                <button class="nav-link fi-fr border-0">
-                                </button>
-                            </form>
-                        </li>
-                        </li>
-
-
-                    </ul>
-                    @guest
-
-                        <li class="nav-item align-items-center d-flex">
+                </ul>
+                @guest
+                    <ul class="navbar-nav  mb-2 mb-lg-0">
+                        <li class="nav-item d-flex align-items-center ">
                             <a class="nav-link" href="{{ route('register') }}">Registrati</a>
                         </li>
-                        <li class="nav-item align-items-center d-flex">
+                        <li class="nav-item d-flex align-items-center">
                             <a class="nav-link" href="{{ route('login') }}">Login</a>
                         </li>
-                    @else
                     </ul>
+                @else
                     <ul class="navbar-nav  mb-2 mb-lg-0">
-                        <li class="nav-item dropdown dropdown-menu-end ">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        <li class="nav-item dropdown dropdown-menu-end align-items-center ">
+                            <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
                                 {{ auth()->user()->name }}
                             </a>
@@ -126,6 +100,44 @@
                         </li>
                     </ul>
                 @endguest
+                {{-- selezione lingua --}}
+                <ul class=" navbar-nav  mb-2 mb-lg-0  ">
+                    <li class="nav-item dropdown dropdown-menu-end ">
+                        <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"><img
+                                src="{{ asset('img/lingua.png') }}" height="20" alt="">
+                        </a>
+
+
+                        <ul class="dropdown-menu dropdown-menu-end navleng">
+                            <li class="p-0 justify-content-end d-flex">
+                                <form action="{{ route('set.language.locale', 'it') }}" method="POST">
+                                    @csrf
+                                    <button class="nav-link fi-it border-0 m-2 ">
+                                    </button>
+                                </form>
+                            </li>
+                            <li class="p-0 justify-content-end  d-flex">
+                                <form action="{{ route('set.language.locale', 'en') }}" method="POST">
+                                    @csrf
+                                    <button class="nav-link fib fi-gb border-0 m-2">
+                                    </button>
+                                </form>
+                            </li>
+                            <li class="p-0 justify-content-end  d-flex">
+                                <form action="{{ route('set.language.locale', 'fr') }}" method="POST">
+                                    @csrf
+                                    <button class="nav-link fi-fr border-0 m-2">
+                                    </button>
+                                </form>
+                            </li>
+                        </ul>
+                    </li>
+
+
+
+
+
+                </ul>
             </div>
         </div>
     </nav>

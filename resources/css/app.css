@@ -169,3 +169,8 @@ body {
     border: var(--main);
     background-color: hsla(120, 44%, 64%, 0.3);
 }
+
+/* drop lingue*/
+.navleng {
+    width: auto !important;
+}
