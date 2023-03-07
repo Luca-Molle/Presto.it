@@ -10,9 +10,8 @@
                     <div class="bg-white my-2 shadow p-3 mt-5" data-aos="zoom-in">
                         <div class="row">
                             <div class="col-6 mt-4">
-                                <a href="{{ route('announcements.show', $announcement) }}"><img
-                                        src="https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/notebooks/xps-notebooks/xps-15-9520/media-gallery/black/laptop-xps-9520-t-black-gallery-4.psd?fmt=pjpg&pscan=auto&scl=1&wid=3491&hei=2077&qlt=100,1&resMode=sharp2&size=3491,2077&chrss=full&imwidth=5000"
-                                        class="img-fluid card-image p-2" alt="foto"></a>
+                                <a href="{{ route('announcements.show', $announcement) }}"><img src="{{ !$announcement->images()->get()->isEmpty()? Storage::url($announcement->images()->first()->path): 'https://blumagnolia.ch/wp-content/uploads/2021/05/placeholder-126.png' }}"
+                                    class="img-fluid card-image rounded shadow mt-3" alt="foto"></a>
                             </div>
                             <div class="col-4 ms-4">
                                 <h4 class="fw-bold">{{ $announcement->title }}</h6>

@@ -101,11 +101,11 @@
                                             {{ __('ui.announcementsToCheck') }}
                                             @if (App\Models\Announcement::toBeRevisionedCounter() === 0)
                                                 <span
-                                                    class="notify bg-secondary p-2 text-white">{{ App\Models\Announcement::toBeRevisionedCounter() }}
+                                                    class="notify bg-secondary p-2 text-white rounded-circle">{{ App\Models\Announcement::toBeRevisionedCounter() }}
                                                 </span>
                                             @else
                                                 <span
-                                                    class="notify bg-danger p-2 text-white">{{ App\Models\Announcement::toBeRevisionedCounter() }}
+                                                    class="notify bg-danger p-2 text-white rounded-circle">{{ App\Models\Announcement::toBeRevisionedCounter() }}
                                                 </span>
                                             @endif
                                         </a>
