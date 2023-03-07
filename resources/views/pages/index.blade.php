@@ -10,8 +10,8 @@
                     <div class="bg-white my-2 shadow p-3 mt-5" data-aos="zoom-in">
                         <div class="row">
                             <div class="col-6 mt-4">
-                                <a href="{{ route('announcements.show', $announcement) }}"><img src="{{ !$announcement->images()->get()->isEmpty()? Storage::url($announcement->images()->first()->path): 'https://blumagnolia.ch/wp-content/uploads/2021/05/placeholder-126.png' }}"
-                                    class="img-fluid card-image rounded shadow mt-3" alt="foto"></a>
+                                <img src="{{ !$announcement->images()->get()->isEmpty()? $announcement->images()->first()->getUrl(700,500) : 'https://blumagnolia.ch/wp-content/uploads/2021/05/placeholder-126.png' }}"
+                                class="img-fluid card-image rounded shadow mt-3" alt="foto"></a>
                             </div>
                             <div class="col-4 ms-4">
                                 <h4 class="fw-bold">{{ $announcement->title }}</h6>

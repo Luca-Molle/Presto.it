@@ -66,7 +66,7 @@
         </div>
     </div>
     <div class="container">
-        <div class="row justify-content-evenly">
+        <div class="row mx-auto">
 
             {{-- Prova colonne --}}
             @foreach ($announcements as $announcement)
@@ -75,7 +75,7 @@
                         <a href="{{ route('categoryShow', $announcement->category) }}"
                             class=" btn btn-outline-presto">{{ $announcement->category->name }}</a>
                         <a href="{{ route('announcements.show', $announcement) }}">
-                            <img src="{{ !$announcement->images()->get()->isEmpty()? Storage::url($announcement->images()->first()->path): 'https://blumagnolia.ch/wp-content/uploads/2021/05/placeholder-126.png' }}"
+                            <img src="{{ !$announcement->images()->get()->isEmpty()? $announcement->images()->first()->getUrl(700,500) : 'https://blumagnolia.ch/wp-content/uploads/2021/05/placeholder-126.png' }}"
                                 class="img-fluid card-image rounded shadow mt-3" alt="foto"></a>
                         <div class="mt-2">
                             <h4 class="fw-bold">{{ $announcement->title }}</h6>

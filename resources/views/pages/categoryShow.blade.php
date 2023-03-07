@@ -7,14 +7,14 @@
 
     </div>
     <div class="container">
-        <div class="row justify-content-center mb-5">
+        <div class="column justify-content-center mb-5">
             @forelse ($category->announcements as $announcement)
-                    <div class="bg-white my-2 shadow p-3 mt-5 " data-aos="zoom-in">
-                        <div class="row ">
-                            <div class="col-6 mt-4 ">
+                    <div class="bg-white my-2 shadow p-3 mt-5" data-aos="zoom-in">
+                        <div class="row justify-content-center">
+                            <div class="col-6 me-5 my-3">
                                 <a href="{{ route('announcements.show', $announcement) }}">
-                                <img src="{{ !$announcement->images()->get()->isEmpty()? Storage::url($announcement->images()->first()->path): 'https://blumagnolia.ch/wp-content/uploads/2021/05/placeholder-126.png' }}"
-                                class="img-fluid card-image rounded shadow mt-3" alt="foto">
+                                    <img src="{{ !$announcement->images()->get()->isEmpty()? $announcement->images()->first()->getUrl(700,500) : 'https://blumagnolia.ch/wp-content/uploads/2021/05/placeholder-126.png' }}"
+                                    class="img-fluid card-image rounded shadow" alt="foto">
                                 </a>
                             </div>
                             <div class="col-4 ms-4">
