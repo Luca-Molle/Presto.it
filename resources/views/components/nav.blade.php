@@ -45,10 +45,19 @@
 
                     </ul>
                 </ul>
+
+                {{-- <li class="nav-item align-items-center d-flex me-1 justify-content-center">
+                    <a href="{{ route('work.with.us') }}" class="nav-link fw-bold textmain">Lavora con noi</a>
+                </li> --}}
                 @guest
                     <ul class="navbar-nav  mb-2 mb-lg-0">
+                        <li class="nav-item align-items-center d-flex me-1 justify-content-center">
+                            <a href="{{ route('work.with.us') }}"
+                                class="nav-link fw-bold textmain">{{ __('ui.workWithUs') }}</a>
+                        </li>
+
                         <li class="nav-item d-flex align-items-center ">
-                            <a class="nav-link" href="{{ route('register') }}">Registrati</a>
+                            <a class="nav-link" href="{{ route('register') }}">{{ __('ui.SignIn') }}</a>
                         </li>
                         <li class="nav-item d-flex align-items-center">
                             <a class="nav-link" href="{{ route('login') }}">Login</a>
@@ -56,10 +65,31 @@
                     </ul>
                 @else
                     <ul class="navbar-nav  mb-2 mb-lg-0">
+                        @if (Auth::user()->is_revisor)
+                            <li class="nav-item align-items-center d-flex me-1 justify-content-center d-none">
+                                <a href="{{ route('work.with.us') }}"
+                                    class="nav-link fw-bold textmain">{{ __('ui.workWithUs') }}</a>
+                            </li>
+                        @else
+                            <li class="nav-item align-items-center d-flex me-1 justify-content-center">
+                                <a href="{{ route('work.with.us') }}"
+                                    class="nav-link fw-bold textmain">{{ __('ui.workWithUs') }}</a>
+                            </li>
+                        @endif
+
+
                         <li class="nav-item dropdown dropdown-menu-end align-items-center ">
-                            <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
+                            <a class="nav-link dropdown-toggle " role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
-                                {{ auth()->user()->name }}
+                                <span class="mx-2">
+
+                                    {{ auth()->user()->name }}
+                                </span>
+                                @if (App\Models\Announcement::toBeRevisionedCounter() != 0)
+                                    {{-- <span>{{-- class=" z-n1 position-absolute top-50 start-95 translate-middle p-2 bg-danger border border-light rounded-circle" --}}
+                                    <img src="{{ asset('img/notifica.png') }}" alt="logo mancante"
+                                        class="img-fluid col-2 p-2">
+                                @endif
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end">
                                 <li>

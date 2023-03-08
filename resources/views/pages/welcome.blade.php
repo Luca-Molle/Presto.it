@@ -40,11 +40,11 @@
                 </div>
                 <button class="carousel-control-prev me-3" type="button" data-bs-target="#carouselExample"
                     data-bs-slide="prev">
-                    <span class="textmain visually-hidden fw-bold">Previous</span>
+                    {{-- <span class="textmain visually-hidden fw-bold">Previous</span> --}}
                 </button>
                 <button class="carousel-control-next " type="button" data-bs-target="#carouselExample"
                     data-bs-slide="next">
-                    <span class="textmain visually-hidden fw-bold">Next</span>
+                    {{-- <span class="textmain visually-hidden fw-bold">Next</span> --}}
                 </button>
             </div>
         </div>
@@ -53,7 +53,7 @@
     {{-- Sezione ultimi annunci --}}
     <div class="d-flex bg-dark text-center my-3 p-5 shadow align-items-center" data-aos="zoom-in">
         <div class="col-md-6">
-            <p class="pacifico fs-1 text-white">Ultimi annunci!</p>
+            <p class="pacifico fs-1 text-white">{{ __('ui.allAnnouncements') }}!</p>
         </div>
         <div class="col-md-6 d-flex justify-content-center">
             <form action="{{ route('announcements.search') }}" method="GET" class="d-flex">
@@ -75,7 +75,7 @@
                         <a href="{{ route('categoryShow', $announcement->category) }}"
                             class=" btn btn-outline-presto">{{ $announcement->category->name }}</a>
                         <a href="{{ route('announcements.show', $announcement) }}">
-                            <img src="{{ !$announcement->images()->get()->isEmpty()? $announcement->images()->first()->getUrl(700,500) : 'https://blumagnolia.ch/wp-content/uploads/2021/05/placeholder-126.png' }}"
+                            <img src="{{ !$announcement->images()->get()->isEmpty()? $announcement->images()->first()->getUrl(700, 500): 'https://blumagnolia.ch/wp-content/uploads/2021/05/placeholder-126.png' }}"
                                 class="img-fluid card-image rounded shadow mt-3" alt="foto"></a>
                         <div class="mt-2">
                             <h4 class="fw-bold">{{ $announcement->title }}</h6>

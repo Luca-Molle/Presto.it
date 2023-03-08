@@ -62,9 +62,6 @@
                             <label for="" class="form-label">Web Site</label>
                             <input name="site" type="text" class="form-control" value="{{ old('city') }}">
                         </div>
-                        <div class=" mt-4 justify-content-end d-flex">
-                            <button class="btn btn-presto" type="submit" id="userSubmitBtn">Salva</button>
-                        </div>
 
 
 
@@ -78,6 +75,9 @@
 
 
             </form>
+            <div class=" mt-4 justify-content-end d-flex">
+                <button class="btn btn-presto" type="submit" id="userSubmitBtn">Salva</button>
+            </div>
 
         </div>
         <div class="row">
