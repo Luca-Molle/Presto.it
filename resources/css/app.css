@@ -171,6 +171,7 @@ body {
 }
 
 /* drop lingue*/
-.navleng {
-    width: auto !important;
+.navlang {
+    width: 2.5 rem !important;
+    min-width: 0% !important;
 }

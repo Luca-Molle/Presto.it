@@ -138,7 +138,7 @@
                         </a>
 
 
-                        <ul class="dropdown-menu dropdown-menu-end navleng">
+                        <ul class="dropdown-menu dropdown-menu-center navlang object-fit-scale">
                             <li class="p-0 justify-content-end d-flex">
                                 <form action="{{ route('set.language.locale', 'it') }}" method="POST">
                                     @csrf
