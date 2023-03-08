@@ -17,6 +17,7 @@ class authGoogleController extends Controller
     public function callback()
     {
         $githubUser = Socialite::driver('google')->stateless()->user();
+        // dd($githubUser);
         $finduser = User::where('email', $githubUser->getEmail())->first();
         if ($finduser) {
             Auth::login($finduser);
@@ -24,7 +25,7 @@ class authGoogleController extends Controller
         } else {
             $user = User::create(
                 [
-                    'name' => $githubUser->nickname,
+                    'name' => $githubUser->name,
                     'email' => $githubUser->email,
                     'password' => encrypt(''),
                     'github_token' => $githubUser->token,
