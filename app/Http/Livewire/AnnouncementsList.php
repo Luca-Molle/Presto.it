@@ -9,7 +9,7 @@ use Livewire\Component;
 class AnnouncementsList extends Component
 {
     public $data;
-    protected $listeners = ['loadData'];
+    protected $listeners = ['loadData', 'destroy'];
 
     // definizione del metodo di cancellazione di un annuncio
     public function destroy(Announcement $announcement)

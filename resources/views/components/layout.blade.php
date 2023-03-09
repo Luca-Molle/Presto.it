@@ -8,6 +8,7 @@
     <link rel="icon" href="img/logo.png">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.css" rel="stylesheet" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js%22%3E"></script>
     @vite(['resources/css/app.css', 'resources\js\app.js'])
     @livewireStyles
     <title>Presto.it</title>
@@ -32,6 +33,8 @@
     <script>
         AOS.init();
     </script>
+   
+    @livewire('livewire-ui-modal')
 </body>
 
 </html>

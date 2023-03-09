@@ -41,11 +41,24 @@
                         <button class="btn btn-sm btn-outline-presto me-2"
                             wire:click="editAnnouncement({{ $announcement->id }})"
                             @if ($announcement->is_accepted === null) disabled @endif>Modifica</button>
-                        <button class="btn btn-sm btn-danger"
-                            wire:click="destroy({{ $announcement->id }})">Elimina</button>
+                        <button 
+                            wire:click="destroy({{ $announcement->id }})"
+                            {{-- onclick='Livewire.emit("openModal","modal-delete", @json([$announcement]))' --}}
+                            class="btn btn-danger">Elimina
+                        </button>
+                        {{-- Collapse per conferma eliminazione --}}
+                        {{-- <div class="collapse" id="collapseExample">
+                            <div class="card card-body">
+                                <p>Confermi l'eliminazione?</p>
+                                <button wire:click="destroy({{ $announcement->id }})" class="btn btn-danger">Elimina
+                                </button>
+                            </div>
+                        </div> --}}
+                        {{-- Fine collapse per conferma eliminazione --}}
                     </td>
                 </tr>
             @endforeach
         </tbody>
     </table>
+
 </div>
