@@ -25,13 +25,13 @@
         {{ $slot }}
     </div>
 
-    <x-footer data-aos="fade-up"/>
+    <x-footer data-aos="fade-up" />
     @livewireScripts
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-        <script>
-            AOS.init();
-        </script>
+    <script>
+        AOS.init();
+    </script>
 </body>
 
 </html>

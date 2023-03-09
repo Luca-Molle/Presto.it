@@ -18,11 +18,9 @@
                     <div class="w-50 m-2">
                         <div class="mb-3 ">
                             <label for="name" class="form-label">Nome completo</label>
-                            <input name="name" type="text"class="form-control" id="name"
-                                aria-describedby="name"
-                                @if (auth()->user()) value="{{ auth()->user()->name }}"
+                            <input name="name" type="text" class="form-control" id="name" aria-describedby="name" @if (auth()->user()) value="{{ auth()->user()->name }}"
                             @else
-                                placeholder="Nome" @endif>
+                            placeholder="Nome" @endif>
                         </div>
                         <div class="mb-3">
                             <label for="" class="form-label">Indirizzo</label>
@@ -35,24 +33,15 @@
                         <div class=" d-flex mt-4">
                             <a href="/forgot-password"><button class=" btn btn-presto">Reset password</button></a>
                         </div>
-
-
-
                     </div>
-
-
                     <div class="w-50 m-2">
 
                         <div class="mb-3">
                             <label for="exampleInputEmail" class="form-label">Email address</label>
-                            <input name="email" type="email" class="form-control" id="exampleInputEmail"
-                                aria-describedby="emailHelp"
-                                @if (auth()->user()) value="{{ auth()->user()->email }}"
+                            <input name="email" type="email" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" @if (auth()->user()) value="{{ auth()->user()->email }}"
                             @else
-                                placeholder="E-mail" @endif>
+                            placeholder="E-mail" @endif>
                         </div>
-
-
                         <div class="mb-3">
                             <label for="" class="form-label">Città</label>
                             <input name="city" type="text" class="form-control" value="{{ old('city') }}">
@@ -62,18 +51,8 @@
                             <label for="" class="form-label">Web Site</label>
                             <input name="site" type="text" class="form-control" value="{{ old('city') }}">
                         </div>
-
-
-
                     </div>
-
-
                 </div>
-
-
-
-
-
             </form>
             <div class=" mt-4 justify-content-end d-flex">
                 <button class="btn btn-presto" type="submit" id="userSubmitBtn">Salva</button>
@@ -90,5 +69,5 @@
             </div>
         </div>
     </div>
-
+    
 </x-layout>
