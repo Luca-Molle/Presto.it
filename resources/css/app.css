@@ -159,6 +159,11 @@ body {
 }
 
 /* card annunci */
+.card-announcement {
+    border: solid 3px var(--main);
+    border-radius: 20px;
+}
+
 .card-image {
     transition: transform .2s;
 }

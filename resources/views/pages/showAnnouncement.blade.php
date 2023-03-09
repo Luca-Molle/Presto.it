@@ -17,7 +17,7 @@
                             @foreach ($announcement->images as $image)
                                 {{-- @dd($announcement->images) --}}
                                 <div class="carousel-item @if ($loop->first) active @endif">
-                                    <img src="{{ $image->getUrl(700,500) }}" class="img-fluid p-5" alt="immagini">
+                                    <img src="{{ $image->getUrl(700, 500) }}" class="img-fluid p-5" alt="immagini">
                                 </div>
                             @endforeach
                         </div>
@@ -69,7 +69,7 @@
                 {{-- FINE SEZIONE ALERT ERROR/SUCCESS --}}
 
                 <div class="collapse my-3" id="collapseExample">
-                    <div class="card card-body">
+                    <div class="card card-body ">
                         <form action="/richiesta/info/annuncio" class="column g-3" method="POST">
                             @csrf
                             <div class="col-12 mt-2">
