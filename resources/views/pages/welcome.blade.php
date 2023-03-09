@@ -1,5 +1,8 @@
 <x-layout>
     <div class="container-fluid">
+        <div>
+            <img class="img-fluid banner-img z-n1" src="{{ asset('img\banner-bg.png') }}" alt="">
+        </div>
         <div class="row">
             @if (session()->has('message'))
                 <div class="alert alert-success mt-5">{{ session('message') }}</div>
@@ -16,7 +19,7 @@
             <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner ">
                     <div class="carousel-item active" data-bs-interval="5000">
-                        <div class="row mx-3 justify-content-center firstcolor">
+                        <div class="row  justify-content-center firstcolor">
                             <x-card-carousel-category :id="1" />
                             <x-card-carousel-category :id="2" />
                             <x-card-carousel-category :id="3" />
@@ -24,7 +27,7 @@
                         </div>
                     </div>
                     <div class="carousel-item" data-bs-interval="5000">
-                        <div class="row firstcolor mx-3 justify-content-center ">
+                        <div class="row firstcolor  justify-content-center ">
                             <x-card-carousel-category :id="5" />
                             <x-card-carousel-category :id="6" />
                             <x-card-carousel-category :id="7" />
@@ -32,18 +35,20 @@
                         </div>
                     </div>
                     <div class="carousel-item" data-bs-interval="5000">
-                        <div class="row firstcolor mx-3 justify-content-center ">
+                        <div class="row firstcolor  justify-content-center ">
                             <x-card-carousel-category :id="9" />
                             <x-card-carousel-category :id="10" />
                         </div>
                     </div>
                 </div>
-                <button class="carousel-control-prev me-3" type="button" data-bs-target="#carouselExample"
-                    data-bs-slide="prev">
+                <button class="carousel-control-prev " style="width: 70px" type="button"
+                    data-bs-target="#carouselExample" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
                     {{-- <span class="textmain visually-hidden fw-bold">Previous</span> --}}
                 </button>
-                <button class="carousel-control-next " type="button" data-bs-target="#carouselExample"
-                    data-bs-slide="next">
+                <button class="carousel-control-next " style="width: 70px" type="button"
+                    data-bs-target="#carouselExample" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
                     {{-- <span class="textmain visually-hidden fw-bold">Next</span> --}}
                 </button>
             </div>
