@@ -1,6 +1,6 @@
 <x-layout>
 
-    <div class="d-flex justify-content-center  container textmain  ">
+    <div class="d-flex justify-content-center  container textmain mb-5 ">
         <div class="container text-center d-flex align-items-center flex-column mt-5 w-50">
             <h1 class="mx-auto pacifico">Benvenuto!</h1>
             <p class="fs-2 mt-auto">Effettua il <span class="fw-bold">Login</span> a <a class="text-logo fs-3"

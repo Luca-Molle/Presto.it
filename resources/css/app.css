@@ -28,11 +28,6 @@ tryan purple #4C1036 */
     font-size: 1rem !important;
 }
 
-.banner-img {
-    height: 20%;
-    width: 100%;
-}
-
 .textmain {
     color: var(--main);
 }
@@ -60,6 +55,26 @@ body {
 
 .banner-logo {
     font-size: 10rem !important;
+}
+
+/* immagine banner */
+.banner-img {
+    position: relative;
+    z-index: -1;
+    height: 20%;
+    width: 100%;
+}
+
+.c-cont {
+    margin-bottom: -8rem;
+}
+
+/* margine carousel */
+.m-car {
+    position: relative;
+    top: -8rem;
+    z-index: 0;
+
 }
 
 .pacifico {

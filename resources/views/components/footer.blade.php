@@ -2,7 +2,7 @@
 
     <div class="container">
         <div class="row">
-            <div class="container text-center col-6 fs-2  ">
+            <div class="container text-center col-6 fs-5 ">
 
                 <small>Copyright {{ date('y') }}&copy; Presto.it</small>
 
@@ -12,31 +12,41 @@
                     <a href="{{ route('work.with.us') }}" class="nav-link fw-bold textmain">Lavora con noi</a>
                 </li>
             </div> --}}
-        </div>
-        <div class="textmain text-center">
+            <div class="textmain text-center col-6 ">
+                <div class="row">
+                    <p>Developed by
+                    </p>
+                    <div class="col-6">
+                        <a class="text-white " href="https://www.linkedin.com/in/andrea-nicoletti-197439266/">Andrea
+                            Nicoletti</a>
+                    </div>
+                    <div class="col-6">
+                        <a class="text-white " href="https://www.linkedin.com/in/luca-molle/">Luca Molle</a>
+                    </div>
+                    <div class="col-6">
+                        <a class="text-white " href="https://www.linkedin.com/in/difino/">Francesco Emanuel
+                            Difino</a>
+                    </div>
+                    <div class="col-6">
+                        <a class="text-white " href="https://www.linkedin.com/in/giuseppe-mottola-7b917b203/">Giuseppe
+                            Mottola</a>
+                    </div>
+                </div>
 
-            <p class="fs-5">Developed by
-            </p>
-            <div class="d-flex justify-content-between">
-                <a class="text-white fs-6" href="https://www.linkedin.com/in/andrea-nicoletti-197439266/">Andrea
-                    Nicoletti</a>
 
 
-                <a class="text-white fs-6" href="https://www.linkedin.com/in/luca-molle/">Luca Molle</a>
 
 
-                <a class="text-white fs-6" href="https://www.linkedin.com/in/difino/">Francesco Emanuel Difino</a>
 
 
-                <a class="text-white fs-6" href="https://www.linkedin.com/in/giuseppe-mottola-7b917b203/">Giuseppe
-                    Mottola</a>
+
+
+
+
+
+
+
             </div>
-
-
-
-
-
-
         </div>
     </div>
 
