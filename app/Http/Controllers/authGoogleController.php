@@ -21,7 +21,7 @@ class authGoogleController extends Controller
         $finduser = User::where('email', $githubUser->getEmail())->first();
         if ($finduser) {
             Auth::login($finduser);
-            return view('announcements.userPage');
+            return redirect()->route('user.page');
         } else {
             $user = User::create(
                 [
@@ -38,6 +38,6 @@ class authGoogleController extends Controller
 
         Auth::login($user);
 
-        return view('announcements.userPage');
+        return redirect()->route('user.page');
     }
 }
