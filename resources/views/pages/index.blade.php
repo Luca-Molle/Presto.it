@@ -40,5 +40,6 @@
                 {{ $announcements->links() }}
             </div>
         </div>
+    </div>
 
 </x-layout>
