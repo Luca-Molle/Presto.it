@@ -34,7 +34,7 @@
                         </div>
                     </div>
                 </div>
-
+            </div>  
             @empty
                 <div class="col-12 mt-2">
                     <p class="h1">Non sono presenti annunci per la categoria {{ $category->name }}</p>
@@ -42,6 +42,5 @@
                             class="btn btn-presto shadow">Nuovo Annuncio</a></p>
                 </div>
         @endforelse
-    </div>
     </div>
 </x-layout>
