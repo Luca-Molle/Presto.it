@@ -17,13 +17,11 @@
 
             <div class="row mx-5 my-auto text-center w-50 p-2 justify-content-center ">
                 <p class="fs-3">or Login with</p>
-                <div class="col-3"><a href="#"><img class="img-fluid" src="{{ asset('img/linkedin.png') }}"
+                <div class="col-3"><a href="/auth/redirect"><img class="img-fluid"
+                            src="https://cdn4.iconfinder.com/data/icons/iconsimple-logotypes/512/github-512.png"
                             alt="icona assente"></a></div>
-                <div class="col-3"> <a href="#"><img class="img-fluid" src="{{ asset('img/google.png') }}"
-                            alt="icona assente"></a></div>
-                <div class="col-3"> <a href="#"><img class="img-fluid" src="{{ asset('img/Fb.png') }}"
-                            alt="icona assente"></a>
-                </div>
+                <div class="col-3"> <a href="/auth/google/login"><img class="img-fluid"
+                            src="{{ asset('img/google.png') }}" alt="icona assente"></a></div>
 
             </div>
         </div>
