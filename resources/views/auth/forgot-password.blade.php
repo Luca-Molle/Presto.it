@@ -10,7 +10,7 @@
                         <input type="email" id="email" name="email" class="form-control mt-1">
                     </div>
                     <div class="col-12 mb-2">
-                        <button class="btn btn-outline-secondary">Conferma</button>
+                        <button class="btn btn-presto">Conferma</button>
                     </div>
                 </div>
             </div>

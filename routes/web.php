@@ -39,6 +39,7 @@ Route::get('/ricerca/annuncio', [FrontController::class, 'searchAnnouncements'])
 Route::middleware('auth')->group(function () {
     Route::get('/user/announcements', [userPageController::class, 'index'])->name('user.page');
     Route::get('/nuovo/annuncio', [AnnouncementController::class, 'create'])->name('announcement.create');
+    Route::post('/user/update', [userController::class, 'usersAdditionalInfo'])->name('user.update');
 });
 
 //Rotte Admin

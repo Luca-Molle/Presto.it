@@ -12,13 +12,13 @@
         </div>
         <div class="row">
             <p class="fs-3">Completa il tuo profilo! Fatti conoscere ai tuoi possibili acquirenti!</p>
-            <form action="##" method="POST">
+            <form action="{{ route('user.update') }}" method="POST">
                 @csrf
                 <div class="d-flex flex-row ">
                     <div class="w-50 m-2">
                         <div class="mb-3 ">
                             <label for="name" class="form-label">Nome completo</label>
-                            <input name="name" type="text" class="form-control" id="name" aria-describedby="name" @if (auth()->user()) value="{{ auth()->user()->name }}"
+                            <input disabled name="name" type="text" class="form-control" id="name" aria-describedby="name" @if (auth()->user()) value="{{ auth()->user()->name }}"
                             @else
                             placeholder="Nome" @endif>
                         </div>
@@ -30,15 +30,13 @@
                             <label for="" class="form-label">Numero di telefono</label>
                             <input name="phone" type="text" class="form-control" value="{{ old('phone') }}">
                         </div>
-                        <div class=" d-flex mt-4">
-                            <a href="/forgot-password"><button class=" btn btn-presto">Reset password</button></a>
-                        </div>
+                        
                     </div>
                     <div class="w-50 m-2">
 
                         <div class="mb-3">
                             <label for="exampleInputEmail" class="form-label">Email address</label>
-                            <input name="email" type="email" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" @if (auth()->user()) value="{{ auth()->user()->email }}"
+                            <input disabled name="email" type="email" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" @if (auth()->user()) value="{{ auth()->user()->email }}"
                             @else
                             placeholder="E-mail" @endif>
                         </div>
@@ -51,12 +49,15 @@
                             <label for="" class="form-label">Web Site</label>
                             <input name="site" type="text" class="form-control" value="{{ old('city') }}">
                         </div>
+                        <div class=" mt-4 justify-content-end d-flex">
+                            <button class="btn btn-presto" type="submit" id="userSubmitBtn">Salva</button>
+                        </div>
                     </div>
                 </div>
             </form>
-            <div class=" mt-4 justify-content-end d-flex">
-                <button class="btn btn-presto" type="submit" id="userSubmitBtn">Salva</button>
-            </div>
+            {{-- <div class=" d-flex mt-4">
+                <a href="/forgot-password"><button class=" btn btn-presto">Reset password</button></a>
+            </div> --}}
 
         </div>
         <div class="row">

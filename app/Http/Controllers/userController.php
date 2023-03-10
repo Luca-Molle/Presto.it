@@ -34,4 +34,31 @@ class userController extends Controller
 
         return redirect()->route('user.page');
     }
+
+    public function usersAdditionalInfo(Request $request)
+    {
+        $this->validate($request,[
+        
+            'address' => 'nullable',
+            'phone' => 'nullable',
+            'city' => 'nullable',
+            'site' => 'nullable',
+        ]); 
+
+        $data = [
+            'address' => $request->address,
+            'phone' => $request->phone,
+            'city' => $request->city,
+            'site' => $request->site
+        ];
+
+        User::updating([
+            'address' => $data['address'],
+            'phone' => $data['phone'],
+            'city' => $data['city'],
+            'site' => $data['site'],
+        ]); 
+
+        return redirect()->back()->with('success', 'Informazioni aggiornate');
+    }
 }

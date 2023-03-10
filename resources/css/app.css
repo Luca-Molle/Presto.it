@@ -200,3 +200,10 @@ body {
     width: 2.5 rem !important;
     min-width: 0% !important;
 }
+
+/* Profilo utente */
+
+.negative-margin-top-2{
+    margin-top: -5rem;
+    margin-left: 0.5rem;
+}
