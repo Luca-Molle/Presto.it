@@ -6,14 +6,6 @@
                 <div class="row g-3">
 
                     <div>
-                        @if (session()->has('message'))
-                            <div class="alert alert-success mt-4">
-                                {{ session('message') }}
-                            </div>
-                        @endif
-                    </div>
-
-                    <div>
                         <select wire:model.lazy="selctedCategoryId" class="form-select" aria-label="Default select example"
                             @if ($selctedCategoryId == null) disabled @endif>
                             <option value="{{ $selctedCategoryId }}">
@@ -66,15 +58,26 @@
                     </div>
 
                     <div class="mb-6 ">
-
-                        <button class="btn btn-presto" type="submit" id="userSubmitBtn"
+                        <button class="btn btn-presto" type="submit" id="userSubmitBtn" data-bs-toggle="modal" data-bs-target="#exampleModal"
                             @if ($selctedCategoryId == null) disabled @endif>Salva</button>
+
                     </div>
 
                 </div>
             </form>
         </div>
     </div>
+</div>
 
 
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                Annuncio salvato correttamente
+            </div>
+        </div>
+    </div>
 </div>

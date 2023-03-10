@@ -41,24 +41,39 @@
                         <button class="btn btn-sm btn-outline-presto me-2"
                             wire:click="editAnnouncement({{ $announcement->id }})"
                             @if ($announcement->is_accepted === null) disabled @endif>Modifica</button>
-                        <button 
-                            wire:click="destroy({{ $announcement->id }})"
-                            {{-- onclick='Livewire.emit("openModal","modal-delete", @json([$announcement]))' --}}
-                            class="btn btn-danger">Elimina
-                        </button>
-                        {{-- Collapse per conferma eliminazione --}}
-                        {{-- <div class="collapse" id="collapseExample">
-                            <div class="card card-body">
-                                <p>Confermi l'eliminazione?</p>
-                                <button wire:click="destroy({{ $announcement->id }})" class="btn btn-danger">Elimina
-                                </button>
-                            </div>
-                        </div> --}}
-                        {{-- Fine collapse per conferma eliminazione --}}
+                        <button class="btn btn-sm btn-danger" data-title="{{ $announcement->title }}"
+                            data-bs-toggle="modal" data-bs-target="#modal-delete">Elimina</button>
                     </td>
                 </tr>
             @endforeach
         </tbody>
     </table>
-
+    @foreach ($announcements as $announcement)
+        @if ($announcement->id == null)
+        @else
+            {{-- Modal --}}
+            <div class="modal fade" id="modal-delete" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Conferma rimozione annuncio</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                aria-label="Close"></button>
+                        </div>
+                        <div id="modal-delete-title" class="modal-body text-start">
+                            Sei sicuro di voler rimuovere l'annuncio {{ $announcement->title }}, <br>
+                            con prezzo {{ $announcement->price }}€?
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-outline-presto btn-sm"
+                                data-bs-dismiss="modal">Annulla</button>
+                            <button class="btn btn-danger btn-sm" wire:click="destroy({{ $announcement->id }})"
+                                data-bs-dismiss="modal">Elimina</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        @endif
+    @endforeach
 </div>
