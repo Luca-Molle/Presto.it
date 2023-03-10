@@ -101,6 +101,8 @@
 
                         </div>
             </form>
+{{-- Fine form inserisci annuncio --}}
+
             <div class="col-6">
                 <div class="container text-start text-dark border border-dark-subtle rounded ">
                     <p class="fs-5 m-3 textmain fw-bold">{{ __('ui.advisesTitle') }} </a>

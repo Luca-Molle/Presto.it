@@ -8,7 +8,7 @@
                 <th class="fw-bold">Categotia</th>
                 <th class="fw-bold">Data pubblicazione</th>
                 <th class="fw-bold">Status</th>
-                <th></th>
+                <th class="fw-bold">Azioni</th>
             </tr>
         </thead>
         <tbody>
@@ -68,7 +68,7 @@
                         <div class="modal-footer">
                             <button type="button" class="btn btn-outline-presto btn-sm"
                                 data-bs-dismiss="modal">Annulla</button>
-                            <button class="btn btn-danger btn-sm" wire:click="destroy({{ $announcement->id }})"
+                            <button id="liveToastBtn" class="btn btn-danger btn-sm" wire:click="destroy({{ $announcement->id }})"
                                 data-bs-dismiss="modal">Elimina</button>
                         </div>
                     </div>
@@ -76,4 +76,16 @@
             </div>
         @endif
     @endforeach
+</div>
+{{-- Componente notifica push --}}
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+            <strong class="me-auto">Notifica</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">
+            Annuncio eliminato correttamente
+        </div>
+    </div>
 </div>

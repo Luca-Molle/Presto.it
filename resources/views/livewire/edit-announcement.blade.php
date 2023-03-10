@@ -57,8 +57,8 @@
                         </div>
                     </div>
 
-                    <div class="mb-6 ">
-                        <button class="btn btn-presto" type="submit" id="userSubmitBtn" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                    <div class="mb-3 ">
+                        <button class="btn btn-presto" type="submit" id="editBtn"
                             @if ($selctedCategoryId == null) disabled @endif>Salva</button>
 
                     </div>
@@ -69,15 +69,15 @@
     </div>
 </div>
 
-
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-body">
-                Annuncio salvato correttamente
-            </div>
+{{-- Componente notifica push --}}
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="editToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+            <strong class="me-auto">Conferma modifica annuncio</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">
+            Hai modificato correttamente l'annuncio!
         </div>
     </div>
 </div>
