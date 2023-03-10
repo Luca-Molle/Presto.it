@@ -14,25 +14,25 @@ class CreateAnnouncement extends Component
 {
     use WithFileUploads;
 
-    public $title; 
-    public $description; 
-    public $price; 
+    public $title;
+    public $description;
+    public $price;
     public $category;
     public $message;
     public $immages = [];
     public $temporary_immages;
     public $announcement;
 
-    
+
     protected $rules = [
         'title' => 'required|max:50',
-        'description' => 'required|max:250', 
+        'description' => 'required|max:250',
         'price' => 'required',
         'category' => 'required',
         'immages.*' => 'image|max:1024',
         'temporary_immages.*' => 'image|max:1024'
-    ]; 
-    
+    ];
+
     protected $messages = [
         'temporary_immages.required' => 'L\'immagine è richiesta',
         'temporary_immages.*.image' => 'I file devono essere immagini',
@@ -43,7 +43,7 @@ class CreateAnnouncement extends Component
 
     public function updatedTemporaryImmages()
     {
-        if($this->validate(['temporary_immages.*' => 'image|max:1024'])){
+        if ($this->validate(['temporary_immages.*' => 'image|max:1024'])) {
             foreach ($this->temporary_immages as $image) {
                 $this->immages[] = $image;
             }
@@ -51,31 +51,31 @@ class CreateAnnouncement extends Component
     }
 
     public function removeImage($key)
-        {
-            if(in_array($key, array_keys($this->immages))){
-                unset($this->immages[$key]);
-            }
+    {
+        if (in_array($key, array_keys($this->immages))) {
+            unset($this->immages[$key]);
         }
+    }
 
     // Fuzione che mi permette di salvare i dati
     public function store()
     {
-        $this->validate(); 
+        $this->validate();
         $this->announcement = Category::find($this->category)->announcements()->create($this->validate());
-        if(count($this->immages)){
+        if (count($this->immages)) {
             foreach ($this->immages as $key => $image) {
-            $newFileName = "announcements/{$this->announcement->id}";
-            $newImage = $this->announcement->images()->create(['path' => $image->store($newFileName, 'public')]);
+                $newFileName = "announcements/{$this->announcement->id}";
+                $newImage = $this->announcement->images()->create(['path' => $image->store($newFileName, 'public')]);
 
-            dispatch(new ResizeImage($newImage->path, 700, 500));
+                dispatch(new ResizeImage($newImage->path, 700, 500));
             }
 
             File::deleteDirectory(storage_path('/app/livewire-tmp'));
         }
         Auth::user()->announcements()->save($this->announcement);
-        session()->flash('message', 'annuncio creato correttamente'); 
+        session()->flash('message', 'Annuncio creato correttamente!');
 
-        $this->clearInput(); 
+        $this->clearInput();
     }
 
     // Controllo validazione in tempo reale 
@@ -87,8 +87,8 @@ class CreateAnnouncement extends Component
     // mwtodo per pulire i campi di input del form
     public function clearInput()
     {
-        $this->title = ''; 
-        $this->description = ''; 
+        $this->title = '';
+        $this->description = '';
         $this->price = '';
         $this->category = '';
         $this->immages = [];

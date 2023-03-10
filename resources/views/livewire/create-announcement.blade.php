@@ -5,13 +5,7 @@
             <form wire:submit.prevent="store">
                 <div class=" d-flex flex-column mb-3">
 
-                    <div class="col-12">
-                        @if (session()->has('message'))
-                            <div class="alert alert-success mt-4">
-                                {{ session('message') }}
-                            </div>
-                        @endif
-                    </div>
+
                     <div class="row">
 
 
@@ -35,9 +29,9 @@
                                             <div class="row border border-4 border-info rounded shadow py-4">
                                                 @foreach ($immages as $key => $immage)
                                                     <div class="col my-3">
-                                                        <div class="img-preview mx-auto shadow rounded"
-                                                            style="background-image: url({{ $immage->temporaryUrl() }};)">
-                                                            {{-- <img src="{{ $immage->temporaryUrl() }}" alt=""> --}}
+                                                        <div class=" mx-auto shadow rounded">
+                                                            <img class="img-fluid" src="{{ $immage->temporaryUrl() }}"
+                                                                alt="">
                                                         </div>
                                                         <button type="button"
                                                             class="btn btn-danger shadow d-block text-center mt-2 mx-auto"
@@ -49,7 +43,7 @@
                                     </div>
                                 @endif
                             </div>
-                            
+
                             {{-- dati annuncio --}}
                             <div class="col-6 mt-3">
                                 <select wire:model.defer="category" id="category" class="form-select"
@@ -98,10 +92,17 @@
                             <div class="col-6 mt-4">
                                 <button class="btn btn-presto" type="submit" id="userSubmitBtn">Crea</button>
                             </div>
+                            <div class="col-6">
+                                @if (session()->has('message'))
+                                    <div class="alert alert-success mt-4">
+                                        {{ session('message') }}
+                                    </div>
+                                @endif
+                            </div>
 
                         </div>
             </form>
-{{-- Fine form inserisci annuncio --}}
+            {{-- Fine form inserisci annuncio --}}
 
             <div class="col-6">
                 <div class="container text-start text-dark border border-dark-subtle rounded ">

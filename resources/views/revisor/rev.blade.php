@@ -9,9 +9,9 @@
                     @if ($announcement->images)
                         <div class="carousel-inner bg-white shadow rounded-3">
                             @foreach ($announcement->images as $image)
+                                {{-- @dd($announcement->images) --}}
                                 <div class="carousel-item @if ($loop->first) active @endif">
-                                    <img src="{{ Storage::url($image->path) }}"
-                                        class="img-fluid p-5" alt="...">
+                                    <img src="{{ $image->getUrl(700, 500) }}" class="img-fluid p-5" alt="immagini">
                                 </div>
                             @endforeach
                         </div>
