@@ -1,11 +1,13 @@
-<div>
+<div class="container">
     <h4 class="text-center mt-5 fw-bold textmain fs-2">I Tuoi Annunci</h4>
-    <table class="table table-bordered shadow mt-3 tab-presto">
+
+    {{-- Tabella visibile da pc --}}
+    <table class="table table-bordered shadow mt-3 tab-presto d-none d-md-block">
         <thead>
             <tr class="textmain">
                 <th class="fw-bold">Titolo</th>
                 <th class="fw-bold">Prezzo</th>
-                <th class="fw-bold">Categotia</th>
+                {{-- <th class="fw-bold d-none d-md-block">Categoria</th> --}}
                 <th class="fw-bold">Data pubblicazione</th>
                 <th class="fw-bold">Status</th>
                 <th class="fw-bold">Azioni</th>
@@ -14,9 +16,12 @@
         <tbody>
             @foreach ($announcements as $announcement)
                 <tr>
-                    <td>{{ $announcement->title }}</td>
+                    <td>
+                        <div class="col-12">{{ $announcement->title }}</div>
+                        <div class="col-12 fw-bold textmain">{{ $announcement->category->name }}</div>
+                    </td>
                     <td>€ {{ $announcement->price }}</td>
-                    <td>{{ $announcement->category->name }}</td>
+                    {{-- <td class="d-none d-md-block">{{ $announcement->category->name }}</td> --}}
                     <td>{{ $announcement->created_at->format('d/m/Y') }}</td>
 
                     <td>
@@ -48,6 +53,52 @@
             @endforeach
         </tbody>
     </table>
+    {{-- Fine tabella PC --}}
+
+    {{-- Tabella visibile da mobile --}}
+    @foreach ($announcements as $announcement)
+        <div class="col-12 d-flex justify-content-center d-block d-md-none">
+            <div class="card p-3 my-3">
+                    <div class="col-12 text-center">
+                        <a  class="textmain nav-link" href="{{ route('announcements.show', $announcement) }}">{{ $announcement->title }}</a>
+                    </div>
+                <div class="row align-items-center">
+                    <div class="col-3">
+                        @if ($announcement->is_accepted == true)
+                                {{-- <p class="text-success fs-5 col-8">Accettato </p> --}}
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <img src="{{ asset('img/green.png') }}" alt="verde" class="img-fluid w-50">
+                                </div>
+                            @elseif ($announcement->is_accepted === 0)
+                                {{-- <p class="text-danger small">Rifiutato</p> --}}
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <img src="{{ asset('img/red.png') }}" alt="verde" class="img-fluid w-50">
+                                </div>
+                            @elseif ($announcement->is_accepted === null)
+                                {{-- <p class="text-warning small">In attesa</p> --}}
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <img src="{{ asset('img/orange.png') }}" alt="verde" class="img-fluid w-50">
+                                </div>
+                            @endif
+                    </div>
+                    <div class="col-3 d-flex p-1">
+                        <button class="btn btn-sm btn-outline-presto me-2 my-2"
+                                wire:click="editAnnouncement({{ $announcement->id }})"
+                                @if ($announcement->is_accepted === null) disabled @endif>Modifica
+                        </button>
+                        <button class="btn btn-sm btn-danger me-2 my-2" 
+                            data-title="{{ $announcement->title }}"
+                            data-bs-toggle="modal" data-bs-target="#modal-delete">
+                                Elimina
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endforeach
+    {{-- Fine tabella mobile --}}
+
+
     @foreach ($announcements as $announcement)
         @if ($announcement->id == null)
         @else
