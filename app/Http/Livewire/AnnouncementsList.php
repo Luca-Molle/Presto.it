@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use App\Models\Announcement;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 
@@ -28,17 +29,14 @@ class AnnouncementsList extends Component
     public function editAnnouncement($id)
     {
         $this->emitTo('edit-announcement', 'edit', $id);
+        return redirect()->route('user.page', [ '#editForm']);
     }
-
-
-
-
-
 
     public function render()
     {
         $user = Auth::user();
         $announcements = $user->announcements;
+        // $announcements = Announcement::where(auth()->user()->id,'=',)->paginate(5);
         return view('livewire.announcements-list', compact('announcements'));
     }
 }

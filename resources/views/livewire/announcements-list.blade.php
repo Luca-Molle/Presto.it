@@ -1,13 +1,13 @@
 <div class="container">
-    <h4 class="text-center mt-5 fw-bold textmain fs-2">I Tuoi Annunci</h4>
+    <h4 class="text-center mt-5 fw-bold textmain fs-2" id="top">I Tuoi Annunci</h4>
 
     {{-- Tabella visibile da pc --}}
-    <table class="table table-bordered shadow mt-3 tab-presto d-none d-md-block">
+    {{-- <table class="table table-bordered shadow mt-3 tab-presto d-none d-md-block">
         <thead>
             <tr class="textmain">
                 <th class="fw-bold">Titolo</th>
                 <th class="fw-bold">Prezzo</th>
-                {{-- <th class="fw-bold d-none d-md-block">Categoria</th> --}}
+                <th class="fw-bold d-none d-md-block">Categoria</th>
                 <th class="fw-bold">Data pubblicazione</th>
                 <th class="fw-bold">Status</th>
                 <th class="fw-bold">Azioni</th>
@@ -21,10 +21,113 @@
                         <div class="col-12 fw-bold textmain">{{ $announcement->category->name }}</div>
                     </td>
                     <td>€ {{ $announcement->price }}</td>
-                    {{-- <td class="d-none d-md-block">{{ $announcement->category->name }}</td> --}}
+                    <td class="d-none d-md-block">{{ $announcement->category->name }}</td>
                     <td>{{ $announcement->created_at->format('d/m/Y') }}</td>
 
                     <td>
+                        @if ($announcement->is_accepted == true)
+                            <p class="text-success fs-5 col-8">Accettato </p>
+                            <div class="d-flex align-items-center justify-content-center">
+                                <img src="{{ asset('img/green.png') }}" alt="verde" class="img-fluid w-50">
+                            </div>
+                        @elseif ($announcement->is_accepted === 0)
+                            <p class="text-danger small">Rifiutato</p>
+                            <div class="d-flex align-items-center justify-content-center">
+                                <img src="{{ asset('img/red.png') }}" alt="verde" class="img-fluid w-50">
+                            </div>
+                        @elseif ($announcement->is_accepted === null)
+                            <p class="text-warning small">In attesa</p>
+                            <div class="d-flex align-items-center justify-content-center">
+                                <img src="{{ asset('img/orange.png') }}" alt="verde" class="img-fluid w-50">
+                            </div>
+                        @endif
+                    </td>
+                    <td class="text-end d-flex">
+                        <button class="btn btn-sm btn-outline-presto me-2"
+                            wire:click="editAnnouncement({{ $announcement->id }})"
+                            @if ($announcement->is_accepted === null) disabled @endif>Modifica</button>
+                        <button class="btn btn-sm btn-danger" data-title="{{ $announcement->title }}"
+                            data-bs-toggle="modal" data-bs-target="#modal-delete">Elimina</button>
+                    </td>
+                </tr>
+            @endforeach
+        </tbody>
+    </table> --}}
+    {{-- Fine tabella PC --}}
+
+    {{-- Alternativa tabella annunci con card --}}
+    @foreach ($announcements as $announcement)
+        <div class="col-12 d-flex justify-content-center d-none d-md-block mb-2 p-3 my-1 shadow bg-white">
+            
+                <div class="row align-items-center">
+                    <div class="col-6 ms-3">
+                        <a class="textmain nav-link fw-bold" href="{{ route('announcements.show', $announcement) }}">
+                            {{ $announcement->title }}
+                        </a>
+                    </div>
+                    <div class="col-4 d-flex justify-content-end ms-5">
+                        <a class="btn btn-sm btn-outline-presto " href="{{ route('categoryShow', $announcement->category) }}">
+                            {{ $announcement->category->name }}
+                        </a>
+                    </div>
+                </div>
+                <hr>
+                <div class="row align-items-center">
+                    <div class="column col-2">
+                        <div class="col-12 text-center">Status</div>
+                        <div class="col-12">
+                            @if ($announcement->is_accepted == true)
+                                {{-- <p class="text-success fs-5 col-8">Accettato </p> --}}
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <img src="{{ asset('img/green.png') }}" alt="verde" class="img-fluid w-50">
+                                </div>
+                            @elseif ($announcement->is_accepted === 0)
+                                {{-- <p class="text-danger small">Rifiutato</p> --}}
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <img src="{{ asset('img/red.png') }}" alt="verde" class="img-fluid w-50">
+                                </div>
+                            @elseif ($announcement->is_accepted === null)
+                                {{-- <p class="text-warning small">In attesa</p> --}}
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <img src="{{ asset('img/orange.png') }}" alt="verde" class="img-fluid w-50">
+                                </div>
+                            @endif
+                        </div>
+                    </div>
+                    <div class="col-3 fw-bold text-center">
+                        €  {{ $announcement->price }}
+                    </div>
+                    <div class="col-3 text-center">
+                        Creato il: {{ $announcement->created_at->format('d/m/Y') }}
+                    </div>
+                    <div class="col-3 d-flex p-1">
+                        <button class="btn btn-sm btn-outline-presto me-2 my-2"
+                            wire:click="editAnnouncement({{ $announcement->id }})"
+                            @if ($announcement->is_accepted === null) disabled @endif>Modifica
+                        </button>
+                        <button class="btn btn-sm btn-danger me-2 my-2" data-title="{{ $announcement->title }}"
+                            data-bs-toggle="modal" data-bs-target="#modal-delete">
+                            Elimina
+                        </button>
+                    </div>
+                </div>
+            
+        </div> 
+    @endforeach
+      {{-- {{ $announcements->links() }} --}}
+
+    {{-- Fine alternativa tabella annunci --}}
+  
+    {{-- Tabella visibile da mobile --}}
+    @foreach ($announcements as $announcement)
+        <div class="col-12 d-flex justify-content-center d-block d-md-none">
+            <div class="card p-3 my-1 shadow">
+                <div class="col-12 text-center">
+                    <a class="textmain nav-link"
+                        href="{{ route('announcements.show', $announcement) }}">{{ $announcement->title }}</a>
+                </div>
+                <div class="row align-items-center">
+                    <div class="col-3">
                         @if ($announcement->is_accepted == true)
                             {{-- <p class="text-success fs-5 col-8">Accettato </p> --}}
                             <div class="d-flex align-items-center justify-content-center">
@@ -41,55 +144,17 @@
                                 <img src="{{ asset('img/orange.png') }}" alt="verde" class="img-fluid w-50">
                             </div>
                         @endif
-                    </td>
-                    <td class="text-end d-flex">
-                        <button class="btn btn-sm btn-outline-presto me-2"
-                            wire:click="editAnnouncement({{ $announcement->id }})"
-                            @if ($announcement->is_accepted === null) disabled @endif>Modifica</button>
-                        <button class="btn btn-sm btn-danger" data-title="{{ $announcement->title }}"
-                            data-bs-toggle="modal" data-bs-target="#modal-delete">Elimina</button>
-                    </td>
-                </tr>
-            @endforeach
-        </tbody>
-    </table>
-    {{-- Fine tabella PC --}}
-
-    {{-- Tabella visibile da mobile --}}
-    @foreach ($announcements as $announcement)
-        <div class="col-12 d-flex justify-content-center d-block d-md-none">
-            <div class="card p-3 my-3">
-                    <div class="col-12 text-center">
-                        <a  class="textmain nav-link" href="{{ route('announcements.show', $announcement) }}">{{ $announcement->title }}</a>
-                    </div>
-                <div class="row align-items-center">
-                    <div class="col-3">
-                        @if ($announcement->is_accepted == true)
-                                {{-- <p class="text-success fs-5 col-8">Accettato </p> --}}
-                                <div class="d-flex align-items-center justify-content-center">
-                                    <img src="{{ asset('img/green.png') }}" alt="verde" class="img-fluid w-50">
-                                </div>
-                            @elseif ($announcement->is_accepted === 0)
-                                {{-- <p class="text-danger small">Rifiutato</p> --}}
-                                <div class="d-flex align-items-center justify-content-center">
-                                    <img src="{{ asset('img/red.png') }}" alt="verde" class="img-fluid w-50">
-                                </div>
-                            @elseif ($announcement->is_accepted === null)
-                                {{-- <p class="text-warning small">In attesa</p> --}}
-                                <div class="d-flex align-items-center justify-content-center">
-                                    <img src="{{ asset('img/orange.png') }}" alt="verde" class="img-fluid w-50">
-                                </div>
-                            @endif
                     </div>
                     <div class="col-3 d-flex p-1">
-                        <button class="btn btn-sm btn-outline-presto me-2 my-2"
-                                wire:click="editAnnouncement({{ $announcement->id }})"
-                                @if ($announcement->is_accepted === null) disabled @endif>Modifica
-                        </button>
-                        <button class="btn btn-sm btn-danger me-2 my-2" 
-                            data-title="{{ $announcement->title }}"
+                        <a class="btn btn-sm btn-outline-presto me-2 my-2"
+                            wire:click="editAnnouncement({{ $announcement->id }})"
+                            href="#" data-kt-scroll-toggle
+                            @if ($announcement->is_accepted === null) disabled @endif>
+                                Modifica
+                        </a>
+                        <button class="btn btn-sm btn-danger me-2 my-2" data-title="{{ $announcement->title }}"
                             data-bs-toggle="modal" data-bs-target="#modal-delete">
-                                Elimina
+                            Elimina
                         </button>
                     </div>
                 </div>
@@ -119,7 +184,8 @@
                         <div class="modal-footer">
                             <button type="button" class="btn btn-outline-presto btn-sm"
                                 data-bs-dismiss="modal">Annulla</button>
-                            <button id="liveToastBtn" class="btn btn-danger btn-sm" wire:click="destroy({{ $announcement->id }})"
+                            <button id="liveToastBtn" class="btn btn-danger btn-sm"
+                                wire:click="destroy({{ $announcement->id }})"
                                 data-bs-dismiss="modal">Elimina</button>
                         </div>
                     </div>

@@ -64,10 +64,10 @@
 
         </div>
         <div class="row justify-content-center">
-            <div class="col-12 col-lg-5 mx-3">
+            <div class="col-12 col-lg-5 mx-3" id="editForm">
                 <livewire:edit-announcement />
             </div>
-            <div class="col-12 col-lg-6 mx-3 ">
+            <div class="col-12 col-lg-6 mx-3 mb-3 ">
                 <livewire:announcements-list />
             </div>
         </div>
