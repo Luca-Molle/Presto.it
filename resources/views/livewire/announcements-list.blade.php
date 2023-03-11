@@ -114,7 +114,7 @@
             
         </div> 
     @endforeach
-      {{-- {{ $announcements->links() }} --}}
+      {{ $announcements->links() }}
 
     {{-- Fine alternativa tabella annunci --}}
   

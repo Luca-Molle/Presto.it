@@ -35,8 +35,7 @@ class AnnouncementsList extends Component
     public function render()
     {
         $user = Auth::user();
-        $announcements = $user->announcements;
-        // $announcements = Announcement::where(auth()->user()->id,'=',)->paginate(5);
+        $announcements = $user->announcements()->orderByDesc('updated_at')->paginate(5);
         return view('livewire.announcements-list', compact('announcements'));
     }
 }
