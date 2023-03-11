@@ -8,7 +8,7 @@
     </div> --}}
 
     <div class="container">
-        <div class="row justify-content-evenly">
+        <div class="row justify-content-evenly mb-5">
             {{-- CAROSELLO --}}
             <div class="col-12 col-md-7 mt-4 me-5 d-flex align-items-center">
                 <div id="carouselExample" class="carousel slide mt-3">
@@ -46,7 +46,35 @@
                 <p class="card-text">{{ $announcement->description }}</p>
                 <p class="card-footer mt-2">Pubblicato il: {{ $announcement->created_at->format('d/m/Y') }}</p>
                 {{-- inserire sito web e foto utente --}}
-                <p class="card-footer fw-bold">Venditore: {{ $announcement->user->name ?? '' }}</p>
+                <p class="card-footer btn ">Venditore: <span class="text-decoration-underline fw-bold " type="button"
+                        data-bs-toggle="collapse" data-bs-target="#info" aria-expanded="false" aria-controls="info">
+                        {{ $announcement->user->name ?? '' }}</span>
+                </p>
+                <div class="collapse my-3 " id="info">
+                    <div class="card w-75 tab-presto  ">
+                        <p class="mx-2 mt-2 fw-bold"> Info Venditore</p>
+                        <p class="mx-2"> Address: <span
+                                class="textmain d-flex justify-content-end fw-bold mx-2">{{ $announcement->user->address ?? '' }}</span>
+                        </p>
+                        <p class="mx-2">City:<span
+                                class="textmain d-flex justify-content-end fw-bold mx-2">{{ $announcement->user->city ?? '' }}</span>
+                        </p>
+                        <p class="mx-2">e-mail:<span
+                                class="textmain d-flex justify-content-end fw-bold mx-2">{{ $announcement->user->email ?? '' }}</span>
+                        </p>
+                        <p class="mx-2">Phone Number:<span
+                                class="textmain d-flex justify-content-end fw-bold mx-2">{{ $announcement->user->phone ?? '' }}</span>
+                        </p>
+                        <p class="mx-2">Web Site:<span class=" d-flex justify-content-end fw-bold mx-2"><a
+                                    class="textmain" href="{{ $announcement->user->site ?? '' }}">
+                                    {{ $announcement->user->site ?? '' }}</a></span>
+                        </p>
+                    </div>
+                </div>
+
+                <p class="card-footer "><img class="img-fluid" src="{{ asset('img/local.png') }}" alt="img error">
+                    {{ $announcement->user->city ?? '' }}</p>
+
                 {{-- FINE DESCRIZIONE ANNUNCIO --}}
 
                 {{-- FORM COLLAPSE CONTATTO VENDITORE  --}}
@@ -69,7 +97,7 @@
                 {{-- FINE SEZIONE ALERT ERROR/SUCCESS --}}
 
                 <div class="collapse my-3" id="collapseExample">
-                    <div class="card card-body ">
+                    <div class="card card-body tab-presto  ">
                         <form action="/richiesta/info/annuncio" class="column g-3" method="POST">
                             @csrf
                             <div class="col-12 mt-2">
