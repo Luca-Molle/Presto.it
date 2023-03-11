@@ -18,7 +18,9 @@
                     <div class="w-50 m-2">
                         <div class="mb-3 ">
                             <label for="name" class="form-label">Nome completo</label>
-                            <input disabled name="name" type="text" class="form-control" id="name" aria-describedby="name" @if (auth()->user()) value="{{ auth()->user()->name }}"
+                            <input disabled name="name" type="text" class="form-control" id="name"
+                                aria-describedby="name"
+                                @if (auth()->user()) value="{{ auth()->user()->name }}"
                             @else
                             placeholder="Nome" @endif>
                         </div>
@@ -30,13 +32,15 @@
                             <label for="" class="form-label">Numero di telefono</label>
                             <input name="phone" type="text" class="form-control" value="{{ old('phone') }}">
                         </div>
-                        
+
                     </div>
                     <div class="w-50 m-2">
 
                         <div class="mb-3">
                             <label for="exampleInputEmail" class="form-label">Email address</label>
-                            <input disabled name="email" type="email" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" @if (auth()->user()) value="{{ auth()->user()->email }}"
+                            <input disabled name="email" type="email" class="form-control" id="exampleInputEmail"
+                                aria-describedby="emailHelp"
+                                @if (auth()->user()) value="{{ auth()->user()->email }}"
                             @else
                             placeholder="E-mail" @endif>
                         </div>
@@ -70,5 +74,5 @@
             </div>
         </div>
     </div>
-    
+
 </x-layout>
