@@ -2,9 +2,38 @@
 
     <div class="container">
         <div class="row">
-            <div class="container text-center col-6 fs-5 ">
+            <div class="container col-6  ">
+                <div class="row">
+                    <div class="col-6 ">
 
-                <small>Copyright {{ date('y') }}&copy; Presto.it</small>
+                        <p><a class="textmain nav-link fw-bold" href="{{ route('welcome') }}">Home</a></p>
+                        <p> <a class="textmain nav-link fw-bold"
+                                href="{{ route('index.announcements') }}">{{ __('ui.announcementsNav') }}</a>
+                        </p>
+                        @guest
+                            <a href="{{ route('work.with.us') }}"
+                                class="nav-link fw-bold textmain">{{ __('ui.workWithUs') }}</a>
+                        @else
+                            @if (Auth::user()->is_revisor)
+                                <p>
+                                    <a href="{{ route('work.with.us') }}"
+                                        class="nav-link fw-bold textmain d-none">{{ __('ui.workWithUs') }}</a>
+                                </p>
+                            @else
+                                <a href="{{ route('work.with.us') }}"
+                                    class="nav-link fw-bold textmain">{{ __('ui.workWithUs') }}</a>
+                            @endif
+                        @endguest
+                    </div>
+                    <div class="col-6 text-center justify-content-center row">
+                        <p class="textmain nav-link fw-bold fs-5">Seguici sui social</p>
+                        <div class="col-3"><a href="#"><i class="bi bi-instagram text-white fs-3"></i></a></div>
+                        <div class="col-3"><a href="#"><i class="bi bi-facebook text-white fs-3"></i></a></div>
+                        <div class="col-3"><a href="#"><i class="bi bi-tiktok text-white fs-3"></i></a></div>
+                    </div>
+                </div>
+
+
 
             </div>
             {{-- <div class="col-6">
@@ -13,7 +42,8 @@
                 </li>
             </div> --}}
             <div class="textmain text-center col-6 ">
-                <div class="row">
+                <small class="fs-4">Copyright {{ date('y') }}&copy; Presto.it</small>
+                <div class="row fs-6">
                     <p>Developed by
                     </p>
                     <div class="col-6">
