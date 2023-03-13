@@ -27,12 +27,4 @@ if (toastTrigger2) {
   })
 }
 
-// notifica di rifiuto annuncio
-const toastTrigger3 = document.getElementById('refuseBtn')
-const toastLiveExample3 = document.getElementById('refuseToast')
-if (toastTrigger3) {
-  toastTrigger3.addEventListener('click', () => {
-    const toast = new bootstrap.Toast(toastLiveExample3)
-    toast.show()
-  })
-}
+
