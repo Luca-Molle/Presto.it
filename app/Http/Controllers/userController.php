@@ -38,9 +38,9 @@ class userController extends Controller
     public function usersAdditionalInfo(Request $request)
     {
         $this->validate($request,[
-            'address' => 'nullable',
-            'phone' => 'nullable',
-            'city' => 'nullable',
+            'address' => 'nullable|max:50',
+            'phone' => 'nullable|max:20',
+            'city' => 'required|max:15',
             'site' => 'nullable',
         ]); 
 

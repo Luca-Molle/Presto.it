@@ -1,12 +1,4 @@
 <x-layout>
-    {{-- <div class="container-fluid p-5 shadow mb-4">
-        <div class="row">
-            <div class="col-12 text-light p-5 mt-5  text-center">
-                <h1 class="display-2 text-dark text-white">Annuncio {{ $announcement->title }}</h1>
-            </div>
-        </div>
-    </div> --}}
-
     <div class="container">
         <div class="row justify-content-evenly mb-5">
             {{-- CAROSELLO --}}
@@ -48,39 +40,64 @@
                 {{-- inserire sito web e foto utente --}}
                 <p class="card-footer btn ">Venditore: <span class="text-decoration-underline fw-bold " type="button"
                         data-bs-toggle="collapse" data-bs-target="#info" aria-expanded="false" aria-controls="info">
-                        {{ $announcement->user->name ?? '' }}</span>
+                        {{ $announcement->user->name }}</span>
                 </p>
+                {{-- FINE DESCRIZIONE ANNUNCIO --}}
+
+                {{-- COLLAPSE INFO VENDITORE --}}
                 <div class="collapse my-3 " id="info">
                     <div class="card w-75 tab-presto  ">
                         <p class="mx-2 mt-2 fw-bold"> Info Venditore</p>
-                        <p class="mx-2"> Address: <span
-                                class="textmain d-flex justify-content-end fw-bold mx-2">{{ $announcement->user->address ?? '' }}</span>
-                        </p>
-                        <p class="mx-2">City:<span
-                                class="textmain d-flex justify-content-end fw-bold mx-2">{{ $announcement->user->city ?? '' }}</span>
-                        </p>
+                        @if ($announcement->user->address)
+                            <p class="mx-2"> Address: <span
+                                    class="textmain d-flex justify-content-end fw-bold mx-2">{{ $announcement->user->address }}</span>
+                            </p>
+                        @endif
+
+                        @if ($announcement->user->city)
+                            <p class="mx-2">City:<span
+                                    class="textmain d-flex justify-content-end fw-bold mx-2">{{ $announcement->user->city }}</span>
+                            </p>
+                        @endif
+
                         <p class="mx-2">e-mail:<span
-                                class="textmain d-flex justify-content-end fw-bold mx-2">{{ $announcement->user->email ?? '' }}</span>
+                                class="textmain d-flex justify-content-end fw-bold mx-2">{{ $announcement->user->email }}</span>
                         </p>
-                        <p class="mx-2">Phone Number:<span
-                                class="textmain d-flex justify-content-end fw-bold mx-2">{{ $announcement->user->phone ?? '' }}</span>
-                        </p>
-                        <p class="mx-2">Web Site:<span class=" d-flex justify-content-end fw-bold mx-2"><a
-                                    class="textmain" href="{{ $announcement->user->site ?? '' }}">
-                                    {{ $announcement->user->site ?? '' }}</a></span>
-                        </p>
+
+                        @if ($announcement->user->phone)
+                            <p class="mx-2">Phone Number:<span
+                                    class="textmain d-flex justify-content-end fw-bold mx-2">{{ $announcement->user->phone }}</span>
+                            </p>
+                        @endif
+
+                        @if ($announcement->user->site)
+                            <p class="mx-2">Web Site:<span class=" d-flex justify-content-end fw-bold mx-2"><a
+                                        class="textmain" href="{{ $announcement->user->site }}">
+                                        {{ $announcement->user->site ?? '' }}</a></span>
+                            </p>
+                        @endif
+
+
                     </div>
                 </div>
+                {{-- FINE COLLAPSE INFO VENDITORE --}}
 
-                <p class="card-footer "><img class="img-fluid" src="{{ asset('img/local.png') }}" alt="img error">
-                    {{ $announcement->user->city ?? '' }}</p>
-
-                {{-- FINE DESCRIZIONE ANNUNCIO --}}
+                {{-- TAG CITTA' --}}
+                @if ($announcement->user->city)
+                    <p class="card-footer "><img class="img-fluid" src="{{ asset('img/local.png') }}" alt="img error">
+                        {{ $announcement->user->city }}
+                    </p>
+                @endif
+                {{-- FINE TAG CITTA' --}}
 
                 {{-- FORM COLLAPSE CONTATTO VENDITORE  --}}
-                <button class="btn btn-presto" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Contatta il
-                    venditore</button>
+                <div class="col-12">
+                    <button class="btn btn-presto" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Contatta
+                        il
+                        venditore
+                    </button>
+                </div>
 
                 {{-- SEZIONE ALERT ERROR/SUCCESS --}}
                 @if (session()->has('message'))
@@ -135,10 +152,7 @@
                     </div>
                 </div>
                 {{-- FINE FORM COLLAPSE CONTATTO VENDITORE --}}
-
             </div>
-
-
         </div>
 
         {{-- Altri annunci della categoria --}}

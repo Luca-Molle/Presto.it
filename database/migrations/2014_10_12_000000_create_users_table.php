@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('city', 15)->nullable();
             $table->string('site')->nullable();
             $table->rememberToken();
-            $table->timestamps();
+            $table->timestamps(); 
         });
     }
 
