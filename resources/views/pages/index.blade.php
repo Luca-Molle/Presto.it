@@ -2,8 +2,18 @@
 
     <div class="container">
         <div class="row  align-items-between">
-            <div class=" col-4 ">
-                <h2 class="mt-5 ">Sezione filtri</h2>
+            <div class=" col-4 mt-5 position-sticky">
+
+
+                <form action="{{ route('announcements.search') }}" method="GET" class="d-flex">
+                    @csrf
+                    <label for="search-input"></label>
+                    <input type="search" name="searched" class="form-control me-2" id="search-input"
+                        placeholder="Ricerca l'annuncio" aria-label="Search">
+                    <button type="submit" class="btn btn-presto">Cerca</button>
+                </form>
+
+
             </div>
             <div class=" col-8 ">
                 @forelse ($announcements as $announcement)
