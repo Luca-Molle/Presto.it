@@ -2,8 +2,10 @@
 
 namespace App\Http\Livewire;
 
+use App\Jobs\AddWatermarkPresto;
 use App\Jobs\GoogleVisioneLabelImage;
 use App\Jobs\GoogleVisionSafeSearch;
+use App\Jobs\RemoveFaces;
 use App\Jobs\ResizeImage;
 use App\Models\Announcement;
 use App\Models\Category;
@@ -69,9 +71,13 @@ class CreateAnnouncement extends Component
                 $newFileName = "announcements/{$this->announcement->id}";
                 $newImage = $this->announcement->images()->create(['path' => $image->store($newFileName, 'public')]);
 
-                dispatch(new ResizeImage($newImage->path, 700, 500));
-                dispatch(new GoogleVisionSafeSearch($newImage->id));
-                dispatch(new GoogleVisioneLabelImage($newImage->id));
+                // chiedere perchè mi fa il resize dell'immagne tagliando il tradeMark
+                RemoveFaces::withChain([
+                    new ResizeImage($newImage->path, 700, 500),
+                    new AddWatermarkPresto($newImage->id),
+                    new GoogleVisionSafeSearch($newImage->id),
+                    new GoogleVisioneLabelImage($newImage->id),
+                ])->dispatch($newImage->id);
             }
 
             File::deleteDirectory(storage_path('/app/livewire-tmp'));
