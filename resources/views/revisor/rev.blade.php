@@ -1,44 +1,48 @@
 <x-layout>
 
 
-    <div class="container ">
+    <div class="container">
         <div class="d-flex align-items-center">
             {{-- CAROSELLO --}}
-            <div class="col-12 col-md-7 mt-4 me-5 d-flex align-items-center">
+            <div class="col-6 col-md-7 mt-4 me-5 d-flex align-items-center">
                 <div id="carouselExample" class="carousel slide mt-3">
                     @if ($announcement->images)
                         <div class="carousel-inner bg-white shadow rounded-3">
-                            @foreach ($announcement->images as $image)
-                                {{-- @dd($announcement->images) --}}
-                                <div class="carousel-item @if ($loop->first) active @endif">
-                                    <img src="{{ $image->getUrl(700, 500) }}" class="img-fluid p-5" alt="immagini">
-                                </div>
-                                
-                            @endforeach
-                        </div>
-                        @foreach ($announcement->images as $image)
-                        <div class="col-md-3 border-end">
-                            <h5 class="tc-accent mt-3">Tags</h5>
-                            <div class="p-2">
-                                @if ($image->labels)
-                                {{-- @dd($image->labels) --}}
-                                    @foreach ($image->labels as $label)
-                                        <p class="d-inline">{{ $label }}</p>
-                                    @endforeach
-                                @endif
+                            <div class="row">
+                                @foreach ($announcement->images as $image)
+                                    <div class="carousel-item @if ($loop->first) active @endif">
+                                        <div class="col-12 d-flex">
+
+                                            <div class="col-6">
+                                                <img src="{{ $image->getUrl(700, 500) }}" class="img-fluid p-5"
+                                                    alt="immagini">
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="mb-2 border-bottom">
+                                                    <h5 class="tc-accent mt-3 textmain fw-semibold">Tags</h5>
+                                                    @if ($image->labels)
+                                                        {{-- @dd($image->labels) --}}
+                                                        @foreach ($image->labels as $label)
+                                                            <p class="d-inline">{{ $label }}</p>
+                                                        @endforeach
+                                                    @endif
+                                                </div>
+                                                <div class="card-body">
+                                                    <h5 class="tc-accent textmain fw-semibold">Revisione immagini</h5>
+                                                    <p>Adulti: <span class="{{ $image->adult }}"></span></p>
+                                                    <p>Satira: <span class="{{ $image->medical }}"></span></p>
+                                                    <p>Medicina: <span class="{{ $image->spoof }}"></span></p>
+                                                    <p>Violenza: <span class="{{ $image->violence }}"></span></p>
+                                                    <p>Contento ammiccante: <span class="{{ $image->racy }}"></span>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                @endforeach
                             </div>
                         </div>
-                        <div class="col-md-3">
-                            <div class="card-body">
-                                <h5 class="tc-accent">Revisione immagini</h5>
-                                <p>Adulti: <span class="{{ $image->adult }}"></span></p>
-                                <p>Satira: <span class="{{ $image->medical }}"></span></p>
-                                <p>Medicina: <span class="{{ $image->spoof }}"></span></p>
-                                <p>Violenza: <span class="{{ $image->violence }}"></span></p>
-                                <p>Contento ammiccante: <span class="{{ $image->racy }}"></span></p>
-                            </div>
-                        </div>
-                        @endforeach
                     @endif
 
                     <button class="carousel-control-prev me-3" type="button" data-bs-target="#carouselExample"
@@ -54,7 +58,7 @@
             {{-- FINE CAROSELLO --}}
 
             {{-- DESCRIZIONE ANNUNCIO --}}
-            <div class="col-12 col-md-4 ps-3 p-3 tab-presto">
+            <div class="col-6 col-md-4 ps-3 p-3 tab-presto mt-5">
                 <p class="display-2 fs-2 mt-2"><span class="textmain fw-bold">Titolo annuncio:</span>
                     {{ $announcement->title }}</p>
                 {{-- <h4 class="card-title">{{ $announcement->title }}</h4> --}}

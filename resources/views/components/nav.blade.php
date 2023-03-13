@@ -125,10 +125,9 @@
                                 </li>
                             </ul>
                         </li>
-                        @if (App\Models\Announcement::toBeRevisionedCounter() != 0)
+                        @if (App\Models\Announcement::toBeRevisionedCounter() != 0 && Auth::user()->is_revisor)
                             {{-- <span>{{-- class=" z-n1 position-absolute top-50 start-95 translate-middle p-2 bg-danger border border-light rounded-circle" --}}
                             <li class="nav-item align-items-center d-flex">
-
                                 <img src="{{ asset('img/notifica.png') }}" alt="logo mancante" class="img-fluid col-8">
                             </li>
                         @endif

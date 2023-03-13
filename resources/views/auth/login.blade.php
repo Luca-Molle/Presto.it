@@ -10,11 +10,9 @@
             <p class="fs-4 ">Crea subito il tuo account!</p>
             <div class=" d-flex justify-content-center align-items-center">
                 <button type="submit" class="btn btn-presto shadow "><a class="nav-link"
-                        href="register">Registrati</a></button>
+                        href="{{ route('register') }}">Registrati</a></button>
             </div>
             {{-- <h1 class="fw-bold fs-1">Login</h1> --}}
-
-
             <div class="row mx-5 my-auto text-center w-50 p-2 justify-content-center ">
                 <p class="fs-3">or Login with</p>
                 <div class="col-3"><a href="/auth/redirect"><img class="img-fluid"
@@ -22,12 +20,10 @@
                             alt="icona assente"></a></div>
                 <div class="col-3"> <a href="/auth/google/login"><img class="img-fluid"
                             src="{{ asset('img/google.png') }}" alt="icona assente"></a></div>
-
             </div>
         </div>
         <div class="w-50 d-flex justify-content-center">
             <div class="card-header card maincolor">
-
                 <div class="col-12">
                     @if ($errors->any())
                         <div class="alert alert-danger">
@@ -37,7 +33,6 @@
                         </div>
                     @endif
                 </div>
-
                 <div class="row justify-content-center">
                     <div class="col-8">
                         <img src="{{ asset('img/login.png') }}" alt="logo mancante" class="img-fluid">
@@ -45,8 +40,6 @@
                 </div>
                 <form action="{{ route('login') }}" method="POST">
                     @csrf
-
-
                     <div class="mb-3">
                         <label for="email" class="form-label fs-4">Email address</label>
                         <input name="email" type="email" class="form-control" id="Email"
@@ -69,18 +62,8 @@
                     <div class="mt-3 d-flex justify-content-center align-items-center">
                         <button type="submit" class="btn btn-presto-dark shadow my-3 col-3 ">Login</button>
                     </div>
-
                 </form>
-
-
-
-
             </div>
         </div>
-
     </div>
-
-
-
-
 </x-layout>
