@@ -24,10 +24,15 @@ class RevisorController extends Controller
     public function acceptAnnouncement(Announcement $announcement)
     {
         $announcement->setAccepted(true);
+        $announcement->reject_message = '';
         return redirect()->route('revisor.index')->with('message', 'Complimenti, hai accettato l\'annuncio');
     }
-    public function rejectAnnouncement(Announcement $announcement)
+    public function rejectAnnouncement(Announcement $announcement, Request $request)
     {
+        $this->validate($request, [
+            'reject_message' => 'required|max:250', 
+        ]); 
+        $announcement->reject_message = $request->reject_message; 
         $announcement->setAccepted(false);
         return redirect()->route('revisor.index')->with('message', 'Annuncio rifiutato');
     }

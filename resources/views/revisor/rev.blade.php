@@ -91,12 +91,36 @@
                         </form>
                     </div>
                     <div class="col-6">
+                        <button class="btn btn-outline-danger" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                            Rifiuta
+                        </button>
+                    </div>
+
+                    {{-- Errori form rifiuto --}}
+                    @if ($errors->any())
+                        <div class="alert alert-danger mt-2">
+                            @foreach ($errors->all() as $error)
+                                {{ $error }}<br>
+                            @endforeach
+                        </div>
+                    @endif
+
+                    {{-- COLLAPSE RIFIUTO ANNUNCIO --}}
+                    <div class="collapse" id="collapseExample" class="card col-12">
                         <form action="{{ route('revisor.reject_announcement', $announcement) }}" method="POST">
                             @csrf
                             @method('PATCH')
-                            <button type="submit" class="btn btn-outline-danger">Rifiuta</button>
+                            <div class="bg-white p-3 rounded mt-2 ">
+                                <label for="reject_message">Messaggio di Rifiuto</label>
+                                <textarea name="reject_message" id="reject_message" cols="30" rows="5" class="form-control mt-2"></textarea>
+                                <button type="submit" class="btn btn-danger btn-sm mt-2" id="refuseBtn">
+                                    Rifiuta
+                                </button>
+                            </div>
                         </form>
-                    </div>
+                    </div> 
+                    {{-- FINE COLLAPSE RIFIUTO ANNUNCIO --}}  
+                </div>
                 </div>
 
             </div>

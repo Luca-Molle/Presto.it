@@ -59,12 +59,21 @@
     @foreach ($announcements as $announcement)
         <div class="col-12 d-flex justify-content-center d-none d-md-block mb-2 p-3 my-1 shadow bg-white">
             
-                <div class="row align-items-center">
-                    <div class="col-6 ms-3">
+                <div class="row align-items-center justify-content-between">
+                    <div class="col-5 ms-3">
                         <a class="textmain nav-link fw-bold" href="{{ route('announcements.show', $announcement) }}">
                             {{ $announcement->title }}
                         </a>
                     </div>
+
+                    @if ( $announcement->reject_message)
+                        <div class="col-1 d-flex justify-content-center">
+                            <a href="">
+                                <i class="bi bi-exclamation-circle-fill text-danger fs-5"></i>
+                            </a>
+                        </div>
+                    @endif
+
                     <div class="col-4 d-flex justify-content-end ms-5">
                         <a class="btn btn-sm btn-outline-presto " href="{{ route('categoryShow', $announcement->category) }}">
                             {{ $announcement->category->name }}
