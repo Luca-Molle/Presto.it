@@ -13,8 +13,32 @@
                                 <div class="carousel-item @if ($loop->first) active @endif">
                                     <img src="{{ $image->getUrl(700, 500) }}" class="img-fluid p-5" alt="immagini">
                                 </div>
+                                
                             @endforeach
                         </div>
+                        @foreach ($announcement->images as $image)
+                        <div class="col-md-3 border-end">
+                            <h5 class="tc-accent mt-3">Tags</h5>
+                            <div class="p-2">
+                                @if ($image->labels)
+                                {{-- @dd($image->labels) --}}
+                                    @foreach ($image->labels as $label)
+                                        <p class="d-inline">{{ $label }}</p>
+                                    @endforeach
+                                @endif
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card-body">
+                                <h5 class="tc-accent">Revisione immagini</h5>
+                                <p>Adulti: <span class="{{ $image->adult }}"></span></p>
+                                <p>Satira: <span class="{{ $image->medical }}"></span></p>
+                                <p>Medicina: <span class="{{ $image->spoof }}"></span></p>
+                                <p>Violenza: <span class="{{ $image->violence }}"></span></p>
+                                <p>Contento ammiccante: <span class="{{ $image->racy }}"></span></p>
+                            </div>
+                        </div>
+                        @endforeach
                     @endif
 
                     <button class="carousel-control-prev me-3" type="button" data-bs-target="#carouselExample"
