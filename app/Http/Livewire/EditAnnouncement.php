@@ -13,7 +13,7 @@ class EditAnnouncement extends Component
     protected $listeners = ['edit'];
     protected $rules = [
         'announcement.title' => 'required|max:50',
-        'announcement.description' => 'required|max:250', 
+        'announcement.description' => 'required', 
         'announcement.price' => 'required',
         'announcement.category' => 'required',
     ]; 
@@ -22,7 +22,7 @@ class EditAnnouncement extends Component
     public $selectedCategoryName;
 
 
-    // metodo edit, questo mi riporta le informazioni sul mio form, per la categoria abbamo dovuto salvare il nome e l'id separatamente
+    // metodo edit, questo mi riporta le informazioni sul mio form, per la categoria abbiamo dovuto salvare il nome e l'id separatamente
     public function edit($id)
     {
         $this->announcement = Announcement::find($id);
