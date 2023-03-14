@@ -9,6 +9,7 @@ use Livewire\Component;
 class EditAnnouncement extends Component
 {
     public $announcement;
+    public $images;
     protected $listeners = ['edit'];
     protected $rules = [
         'announcement.title' => 'required|max:50',

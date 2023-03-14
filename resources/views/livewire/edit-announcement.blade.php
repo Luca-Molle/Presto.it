@@ -20,7 +20,39 @@
                             @endforeach
                         </select>
                     </div>
+                    {{-- ********************************************************** LAVORANDO ***************************************************************** --}}
 
+                    {{-- <div class="col-6 mb-3">
+                        <label for="image">Inserisci le tue immagini</label>
+                        <input type="file" wire:model="temporary_immages" name="immages" id="image" multiple
+                            class="form-control shadow @error('temporary_immages.*') is-invalid @enderror"
+                            placeholder="Img">
+                        @error('temporary_immages.*')
+                            <p class="text-danger mt-2">{{ $message }}</p>
+                        @enderror
+                        @if (!empty($immages))
+                            <div class="row">
+                                <div class="col-12">
+                                    <p>Photo preview:</p>
+                                    <div class="row border border-4 border-info rounded shadow py-4">
+                                        @foreach ($immages as $key => $immage)
+                                            <div class="col my-3">
+                                                <div class=" mx-auto shadow rounded">
+                                                    <img class="img-fluid" src="{{ $immage->temporaryUrl() }}"
+                                                        alt="">
+                                                </div>
+                                                <button type="button"
+                                                    class="btn btn-danger shadow d-block text-center mt-2 mx-auto"
+                                                    wire:click="removeImage({{ $key }})">Cancella</button>
+                                            </div>
+                                        @endforeach
+                                    </div>
+                                </div>
+                            </div>
+                        @endif
+                    </div> --}}
+
+                    {{-- ************************************************************************************************************************************** --}}
                     <div>
                         <label for="title">Titolo annuncio</label>
                         <input type="text" name="title" id="title"
