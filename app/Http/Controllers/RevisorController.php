@@ -25,8 +25,10 @@ class RevisorController extends Controller
     {
         $announcement->setAccepted(true);
         $announcement->reject_message = '';
+        $announcement->save();
         return redirect()->route('revisor.index')->with('message', 'Complimenti, hai accettato l\'annuncio');
     }
+
     public function rejectAnnouncement(Announcement $announcement, Request $request)
     {
         $this->validate($request, [
@@ -48,4 +50,5 @@ class RevisorController extends Controller
         Artisan::call('presto:makeUserRevisor', ["email" => $user->email]); 
         return redirect()->route('welcome')->with('success', 'L\'utente è diventato revisore');
     }
+
 }
