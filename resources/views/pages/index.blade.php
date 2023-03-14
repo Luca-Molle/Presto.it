@@ -25,7 +25,7 @@
                             </div>
                             <div class="col-4 ms-4">
                                 <h4 class="fw-bold">{{ $announcement->title }}</h6>
-                                    <h5 class="textmain text-end fw-bold">€ {{ $announcement->price }}</h5>
+                                    <h5 class="textmain text-start fs-3 fw-bold">€ {{ $announcement->price }}</h5>
                                     <p class="mt-5 card-footer">Pubblicato il:
                                         {{ $announcement->created_at->format('d/m/Y') }}
                                     </p>
