@@ -69,14 +69,14 @@
                                 <input type="text" id="name" name="name" class="form-control"
                                     @if (auth()->user()) value="{{ auth()->user()->name }}"
                                 @else
-                                    placeholder="Nome" @endif>>
+                                    placeholder="Nome" @endif>
                             </div>
                             <div class="col-12 my-2">
                                 <label for="email" class="fs-4">Email</label>
                                 <input type="email" id="email" name="email" class="form-control"
                                     @if (auth()->user()) value="{{ auth()->user()->email }}"
                                 @else
-                                    placeholder="E-mail" @endif>>
+                                    placeholder="E-mail" @endif>
                             </div>
                             <div class="col-12 my-2">
                                 <label for="message" class="fs-4">Parlaci di te!</label>

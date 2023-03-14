@@ -6,13 +6,35 @@
                 <p class="fs-2">Il tuo spazio per gestire gli annunci e le tue informazioni</p>
             </div>
             <div class="col-2 m-5">
-                <a href=""><img class="img-fluid" src="{{ asset('img/utente.png') }}" alt="">
+                <a  data-bs-toggle="collapse" 
+                    href="#collapseProfileImage" 
+                    role="button" 
+                    aria-expanded="false" 
+                    aria-controls="collapseProfileImage">
+                        @if (auth()->user()->profile_image)
+                            <img src="" alt="avatar">
+                        @else
+                            <img class="img-fluid" src="{{ asset('img/utente.png') }}" alt="">
+                        @endif
+                        
                 </a>
+                {{-- Collapse modifica immagine profilo --}}
+                <div class="col-12 collapse" id="collapseProfileImage">
+                    <form action="{{ route('user.profile.image.update') }}" method="POST">
+                        <label for="image" class="mt-2">Seleziona immagine</label>
+                        <input type="file" name="image" id="image"                            
+                        class="form-control shadow mt-2">
+                        <button type="submit" class="btn btn-sm btn-presto mt-2">
+                            Salva
+                        </button>
+                </div>
+                {{-- Fine collapse modifica immagine profilo --}}
             </div>
         </div>
+
         <div class="row">
             <p class="fs-3 text-center">Completa il tuo profilo! Fatti conoscere ai tuoi possibili acquirenti!</p>
-            
+
             @if (session()->has('success'))
                 <div class=" col-3 alert alert-success mt-2 mx-auto text-center">{{ session('success') }}</div>
             @endif
@@ -32,25 +54,22 @@
                         <div class="mb-3 ">
                             <label for="name" class="form-label">Nome completo</label>
                             <input disabled name="name" type="text" class="form-control" id="name"
-                                aria-describedby="name"
-                                value="{{ auth()->user()->name }}">
+                                aria-describedby="name" value="{{ auth()->user()->name }}">
                         </div>
                         <div class="mb-3">
                             <label for="" class="form-label">Indirizzo</label>
-                            <input name="address" type="text" class="form-control" 
-                            @if (auth()->user()->address) value="{{ auth()->user()->address }}"
+                            <input name="address" type="text" class="form-control"
+                                @if (auth()->user()->address) value="{{ auth()->user()->address }}"
                             @else
-                                placeholder="Indirizzo" 
-                            @endif>
-                            
+                                placeholder="Indirizzo" @endif>
+
                         </div>
                         <div class="mb-3">
                             <label for="" class="form-label">Numero di telefono</label>
                             <input name="phone" type="text" class="form-control"
-                            @if (auth()->user()->phone) value="{{ auth()->user()->phone }}"
+                                @if (auth()->user()->phone) value="{{ auth()->user()->phone }}"
                             @else
-                                placeholder="Telefono" 
-                            @endif>
+                                placeholder="Telefono" @endif>
                         </div>
 
                     </div>
@@ -59,26 +78,22 @@
                         <div class="mb-3">
                             <label for="exampleInputEmail" class="form-label">Email address</label>
                             <input disabled name="email" type="email" class="form-control" id="exampleInputEmail"
-                                aria-describedby="emailHelp"
-                            value="{{ auth()->user()->email }}">
+                                aria-describedby="emailHelp" value="{{ auth()->user()->email }}">
                         </div>
                         <div class="mb-3">
                             <label for="" class="form-label">Città</label>
                             <input name="city" type="text" class="form-control"
-                            @if (auth()->user()->city) value="{{ auth()->user()->city }}"
+                                @if (auth()->user()->city) value="{{ auth()->user()->city }}"
                             @else
-                                placeholder="Città" 
-                            @endif
-                            >
+                                placeholder="Città" @endif>
                         </div>
 
                         <div class="mb-3">
                             <label for="" class="form-label">Web Site</label>
-                            <input name="site" type="text" class="form-control" 
-                            @if (auth()->user()->site) value="{{ auth()->user()->site }}"
+                            <input name="site" type="text" class="form-control"
+                                @if (auth()->user()->site) value="{{ auth()->user()->site }}"
                             @else
-                                placeholder="Sito web" 
-                            @endif>
+                                placeholder="Sito web" @endif>
                         </div>
                         <div class=" mt-4 justify-content-end d-flex">
                             <button class="btn btn-presto" type="submit" id="userSubmitBtn">Salva</button>
@@ -86,6 +101,7 @@
                     </div>
                 </div>
             </form>
+
             {{-- <div class=" d-flex mt-4">
                 <a href="/forgot-password"><button class=" btn btn-presto">Reset password</button></a>
             </div> --}}

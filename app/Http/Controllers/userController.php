@@ -53,4 +53,31 @@ class userController extends Controller
             ]);
         return redirect()->back()->with('success', 'Informazioni aggiornate');
     }
+
+    public function storeProfileImage(Request $request)
+    {
+        $this->validate($request, ['image' => 'required']);
+
+        $user = auth()->user(); 
+
+        if ($request->hasFile('image') && $request->file('image')->isValid()) {
+
+            $filename = uniqid('img_') . auth()->user()->id;
+            dd( $filename); 
+            $path = $request->image->storeAs('/public/profile-images', $filename);
+            dd($path); 
+            $user = auth()->user(); 
+            dd($user);
+            $user->profile_image = $path; 
+            dd($user->profile_image); 
+
+            $user->save; 
+            return redirect()->route('user.page')->with('success', 'Immagine profilo modificata');
+        }
+        
+       
+    
+        
+
+    }
 }
