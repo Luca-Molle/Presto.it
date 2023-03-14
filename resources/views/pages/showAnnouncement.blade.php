@@ -38,10 +38,15 @@
                 <p class="card-text">{{ $announcement->description }}</p>
                 <p class="card-footer mt-2">Pubblicato il: {{ $announcement->created_at->format('d/m/Y') }}</p>
                 {{-- inserire sito web e foto utente --}}
-                <p class="card-footer btn ">Venditore: <span class="text-decoration-underline fw-bold " type="button"
-                        data-bs-toggle="collapse" data-bs-target="#info" aria-expanded="false" aria-controls="info">
+                <p class="card-footer btn d-flex justify-content-start align-items-center ">Venditore: <span
+                        class="text-decoration-underline fw-bold " type="button" data-bs-toggle="collapse"
+                        data-bs-target="#info" aria-expanded="false" aria-controls="info">
                         {{ $announcement->user->name }}</span>
+                    <span><img src="{{ asset('img/utente.png') }} " class="avatar " alt="">
+                    </span>
                 </p>
+
+
                 {{-- FINE DESCRIZIONE ANNUNCIO --}}
 
                 {{-- COLLAPSE INFO VENDITORE --}}
