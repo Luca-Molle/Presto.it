@@ -42,7 +42,7 @@
                         class="text-decoration-underline fw-bold " type="button" data-bs-toggle="collapse"
                         data-bs-target="#info" aria-expanded="false" aria-controls="info">
                         {{ $announcement->user->name }}</span>
-                    <span><img src="{{ asset('img/utente.png') }} " class="avatar " alt="">
+                    <span><img src="{{ asset('img/banner-bg.png') }} " class="avatar " alt="">
                     </span>
                 </p>
 

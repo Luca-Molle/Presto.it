@@ -193,6 +193,8 @@ body {
     margin-left: 50px;
     border: solid 2px var(--darkmain);
     border-radius: 50%;
+    object-fit: cover;
+
 }
 
 /* tabella custom  */
