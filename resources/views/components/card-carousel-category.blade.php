@@ -3,7 +3,7 @@
         <div class="card-body">
             <h5 class="card-title category-logo ">{{ $category->name }}</h5>
             </h5>
-            <p class="card-text">Compra e vendi qualisasi tipo di oggetto</p>
+            <p class="card-text">{{__('ui.textRand15')}}</p>
             <a href="{{ route('categoryShow', $category) }}" class="btn btn-presto-dark ">Esplora</a>
         </div>
     </div>

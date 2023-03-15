@@ -75,7 +75,7 @@ return [
     'price1' => 'price',
 
      //modifica annuncio
-     'editAnn' => 'Edit Announcements',
+    'editAnn' => 'Edit Announcements',
 
     //preview
     'preview' => 'Preview image',
@@ -83,7 +83,15 @@ return [
     //avviso di eliminazione
     'DeleteAnn' => 'Ad deleted successfully',
     //safe
-    'safe' => 'Save'
+    'safe' => 'Save',
 
-];
-     
+    //auth 
+
+    'recuperoPassword' => 'Recupero password',
+
+    'Confirm' => 'Confirm', 
+
+
+    //card carousel
+    'textRand15' => 'Buy and sell any type of item',
+];   

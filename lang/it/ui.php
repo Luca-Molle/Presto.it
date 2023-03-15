@@ -89,4 +89,17 @@ return [
     //safe
     'safe' => 'Salva',
 
+
+    //auth 
+
+    'recuperoPassword' => 'Recupero password',
+
+    'Confirm' => 'Conferma',
+    
+
+
+
+    //card carousel
+    'textRand15' => 'Compra e vendi qualisasi tipo di oggetto',
+
 ];

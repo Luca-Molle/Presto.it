@@ -83,4 +83,13 @@ return [
 
     //safe
     'safe' => 'Sauvegarder',
+
+    //auth 
+
+    'recuperoPassword' => 'Recupero password',
+
+    'Confirm' => 'Confirmer',
+
+    //card carousel
+    'textRand15' => 'Achetez et vendez tout type objet',
 ];

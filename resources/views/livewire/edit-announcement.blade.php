@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row ">
         <div class="col-12 mt-5 ">
-            <h4 class="text-center fw-bold fs-2 textmain">{{__('uni.editAnn')}}</h4>
+            <h4 class="text-center fw-bold fs-2 textmain">{{__('ui.editAnn')}}</h4>
             <form wire:submit.prevent="update">
                 <div class="row g-3">
 
@@ -10,7 +10,7 @@
                             @if ($selctedCategoryId == null) disabled @endif>
                             <option value="{{ $selctedCategoryId }}">
                                 @if ($selctedCategoryId == null)
-                                    {{__('categoriesNav')}}
+                                    {{__('ui.categoriesNav')}}
                                 @else
                                     {{ $selectedCategoryName }}
                                 @endif
@@ -23,7 +23,7 @@
                     {{-- ********************************************************** LAVORANDO ***************************************************************** --}}
 
                     <div class="col-12 mb-3">
-                        <label for="image">Inserisci le tue immagini</label>
+                        <label for="image">{{__('ui.textRand6')}}</label>
                         <input type="file" wire:model="temporary_images" name="images" id="image" multiple
                             class="form-control shadow @error('temporary_images.*') is-invalid @enderror"
                             placeholder="Img">
@@ -33,7 +33,7 @@
                         @if (!empty($old_images))
                             <div class="row">
                                 <div class="col-12">
-                                    <p>{{__('uni.preview')}}</p>
+                                    <p>{{__('ui.preview')}}</p>
                                     <div class="row border border-4 border-info rounded shadow py-4">
                                         @foreach ($old_images as $key => $image)
                                             <div class="col my-3">
@@ -67,7 +67,7 @@
 
                     {{-- ************************************************************************************************************************************** --}}
                     <div>
-                        <label for="title">{{('uni.textRand7')}}</label>
+                        <label for="title">{{__('ui.textRand7')}}</label>
                         <input type="text" name="title" id="title"
                             class="form-control @error('title') is-invalid @enderror"
                             wire:model.lazy="announcement.title">
@@ -79,7 +79,7 @@
                     </div>
 
                     <div>
-                        <label for="description">{{('uni.textRand8')}}</label>
+                        <label for="description">{{__('ui.textRand8')}}</label>
                         <textarea type="text" name="description" id="description" rows="10"
                             class="form-control @error('description') is-invalid @enderror" wire:model.lazy="announcement.description">
                         </textarea>
@@ -91,7 +91,7 @@
                     </div>
 
                     <div class="col-6">
-                        <label for="price">{{('uni.price1')}}</label>
+                        <label for="price">{{__('ui.price1')}}</label>
                         <input type="number" name="price" id="price"
                             class="form-control @error('price') is-invalid @enderror"
                             wire:model.lazy="announcement.price">
