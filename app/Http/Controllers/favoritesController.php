@@ -14,6 +14,14 @@ class favoritesController extends Controller
         $user = auth()->user();
         $user->favoriteAnn()->detach($announcement->id);
         $user->favoriteAnn()->attach($announcement->id);
+
+        return redirect()->back();
+    }
+
+    public function delete(Announcement $announcement)
+    {
+        $user = auth()->user();
+        $user->favoriteAnn()->detach($announcement->id);
         return redirect()->back();
     }
 
