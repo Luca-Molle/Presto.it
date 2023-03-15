@@ -3,11 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class userPageController extends Controller
 {
     public function index()
     {
-        return view('announcements.userPage');
+        $users = Auth::user();
+        return view('announcements.userPage', compact('users'));
     }
 }

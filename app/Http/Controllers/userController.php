@@ -56,7 +56,7 @@ class userController extends Controller
 
     public function storeProfileImage(Request $request)
     {
-        $this->validate($request, ['image' => 'required']);
+        // $this->validate($request, ['image' => 'required']);
 
         $user = auth()->user(); 
 
@@ -74,10 +74,6 @@ class userController extends Controller
             $user->save; 
             return redirect()->route('user.page')->with('success', 'Immagine profilo modificata');
         }
-        
-       
-    
-        
 
     }
 }

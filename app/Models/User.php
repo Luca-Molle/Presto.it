@@ -47,9 +47,10 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function favorites()
+    // relazione molti a molti per tabella pivot, creazione dei preferiti.
+    public function favoriteAnn()
     {
-        return $this->belongsToMany(Favourites::class);
+        return $this->belongsToMany(Announcement::class);
     }
 
     public function announcements()

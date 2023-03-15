@@ -1,7 +1,7 @@
 <div class="container">
     <h4 class="text-center mt-5 fw-bold textmain fs-2" id="top">I Tuoi Annunci</h4>
 
- 
+
     {{-- TABELLA VISUALE PC --}}
     @foreach ($announcements as $announcement)
         <div class="col-12 d-flex justify-content-center d-none d-md-block mb-2 p-3 my-1 shadow bg-white">
@@ -16,7 +16,7 @@
                 @if ($announcement->reject_message)
                     <div class="col-1 d-flex justify-content-center">
                         <button type="button" class="btn" data-bs-toggle="modal"
-                            data-bs-target="#modal_reject_message">
+                            data-bs-target="#modal-{{ $announcement->id }}">
                             <i class="bi bi-exclamation-circle-fill text-danger fs-5"></i>
                         </button>
                     </div>
@@ -63,7 +63,7 @@
                         @if ($announcement->is_accepted === null) disabled @endif>Modifica
                     </button>
                     <button class="btn btn-sm btn-danger me-2 my-2" data-title="{{ $announcement->title }}"
-                        data-bs-toggle="modal" data-bs-target="#modal-delete">
+                        data-bs-toggle="modal" data-bs-target="#delete-{{ $announcement->id }}">
                         Elimina
                     </button>
                 </div>
@@ -123,7 +123,7 @@
         @if ($announcement->id == null)
         @else
             {{-- Modal per conferma eliminazione annuncio --}}
-            <div class="modal fade" id="modal-delete" tabindex="-1" aria-labelledby="exampleModalLabel"
+            <div class="modal fade" id="delete-{{ $announcement->id }}" tabindex="-1" aria-labelledby="exampleModalLabel"
                 aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
@@ -151,7 +151,7 @@
 
     {{-- Modale lettura messaggio di rifiuto annuncio --}}
     @foreach ($announcements as $announcement)
-        <div class="modal fade" id="modal_reject_message" tabindex="-1" aria-labelledby="exampleModalLabel"
+        <div class="modal fade" id="modal-{{ $announcement->id }}" tabindex="-1" aria-labelledby="exampleModalLabel"
             aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">

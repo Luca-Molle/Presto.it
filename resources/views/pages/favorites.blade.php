@@ -3,13 +3,9 @@
         <div class="row">
             <div class="col-12 mt-5">
                 <h2 class="fw-bold textmain">SEZIONE PREFERITI</h2>
-                <div class="col-12 d-flex">
-                    @foreach ($favorites as $favorite)
-                        @dd($favorite->users->id)
-                        
-                    @endforeach
+                <div class="row">
                             @foreach ($announcements as $announcement)
-                                <div class="col-12 col-md-5 col-lg-3 mt-4 d-flex align-self-stretch " data-aos="zoom-in">
+                                <div class="col-12 col-md-5 col-lg-3 mt-4 d-flex align-self-stretch ">
                                     <div class="d-flex flex-column rounded bg-white mb-4 shadow p-3">
 
                                         <a href="{{ route('categoryShow', $announcement->category) }}"

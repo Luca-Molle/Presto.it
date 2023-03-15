@@ -4,6 +4,8 @@
             <div class="Col-10 col-lg-8">
                 <h1 class="textmain fw-bold pt-5">Il tuo profilo</h1>
                 <p class="fs-2">Il tuo spazio per gestire gli annunci e le tue informazioni</p>
+                <a class="btn btn-sm btn-outline-presto" href="{{ route('favorites.show') }}">Preferiti</a>
+                <a class="btn btn-sm btn-outline-presto" href="{{ route('announcement.create') }}">Inserisci nuovo anuncio</a>
             </div>
             <div class="col-2 m-5">
                 <a  data-bs-toggle="collapse" 
@@ -27,13 +29,19 @@
                         <button type="submit" class="btn btn-sm btn-presto mt-2">
                             Salva
                         </button>
+                    </form>
                 </div>
                 {{-- Fine collapse modifica immagine profilo --}}
             </div>
         </div>
 
         <div class="row">
+            {{-- @dd($users) --}}
+            @if ($users->address == null)
             <p class="fs-3 text-center">Completa il tuo profilo! Fatti conoscere ai tuoi possibili acquirenti!</p>
+            @else
+            <p class="fs-3 text-center">Ciao {{ $users->name }}, ecco il tuo profilo</p>
+            @endif
 
             @if (session()->has('success'))
                 <div class=" col-3 alert alert-success mt-2 mx-auto text-center">{{ session('success') }}</div>

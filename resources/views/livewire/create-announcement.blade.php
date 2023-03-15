@@ -12,8 +12,17 @@
 
                         {{-- compilazione campi formi per creazione annuncio --}}
                         <div class="col-6">
+                            <div class="col-6 mt-3 mb-2">
+                                <select wire:model.defer="category" id="category" class="form-select shadow"
+                                    aria-label="Default select example">
+                                    <option value="">Scegli la categoria</option>
+                                    @foreach ($categories as $category)
+                                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
                             {{-- caricamento immagini --}}
-                            <div class="col-6 mb-3">
+                            <div class="col-12 mb-3">
                                 <label for="image">Inserisci le tue immagini</label>
                                 <input type="file" wire:model="temporary_immages" name="immages" id="image"
                                     multiple
@@ -45,20 +54,10 @@
                             </div>
 
                             {{-- dati annuncio --}}
-                            <div class="col-6 mt-3">
-                                <select wire:model.defer="category" id="category" class="form-select"
-                                    aria-label="Default select example">
-                                    <option value="">Scegli la categoria</option>
-                                    @foreach ($categories as $category)
-                                        <option value="{{ $category->id }}">{{ $category->name }}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-
                             <div class=" mt-3">
                                 <label for="title">Titolo annuncio</label>
                                 <input type="text" name="title" id="title"
-                                    class="form-control @error('title') is-invalid @enderror" wire:model.lazy="title">
+                                    class="form-control shadow @error('title') is-invalid @enderror" wire:model.lazy="title">
                                 <div class="col-4">
                                     @error('title')
                                         <div class="alert alert-danger mt-2"> {{ $message }} </div>
@@ -69,7 +68,7 @@
                             <div class=" mt-3">
                                 <label for="description">Descrizione</label>
                                 <textarea type="text" name="description" id="description" rows="10"
-                                    class="form-control @error('description') is-invalid @enderror" wire:model.lazy="description">
+                                    class="form-control shadow @error('description') is-invalid @enderror" wire:model.lazy="description">
                             </textarea>
                                 <div class="col-4 mt-3">
                                     @error('description')
@@ -81,7 +80,7 @@
                             <div class="col-3">
                                 <label for="price">Prezzo</label>
                                 <input type="number" name="price" id="price"
-                                    class="form-control @error('price') is-invalid @enderror" wire:model.lazy="price">
+                                    class="form-control shadow @error('price') is-invalid @enderror" wire:model.lazy="price">
                                 <div class="col-4">
                                     @error('price')
                                         <div class="alert alert-danger mt-2"> {{ $message }} </div>

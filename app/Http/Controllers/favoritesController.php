@@ -8,19 +8,20 @@ use Illuminate\Http\Request;
 
 class favoritesController extends Controller
 {
-
-    public function store(Favourites $favourites, Announcement $announcement)
+    // salvataggio per bottone salva tra i preferiti, utilizzato metodo favoriteAnn con relazione molti a molti presente nel modello User
+    public function store(Announcement $announcement)
     {
-        $favourites->announcement_id = $announcement->id;
-        $favourites->setFavorite(true);
-        $favourites->save();
+        $user = auth()->user();
+        $user->favoriteAnn()->detach($announcement->id);
+        $user->favoriteAnn()->attach($announcement->id);
         return redirect()->back();
     }
 
+    // passaggio dei dati alla vista i miei preferiti
     public function index()
     {
-        $announcements = Announcement::all();
-        $favorites = Favourites::where('favorites', true)->get();
-        return view('pages.favorites', compact('announcements', 'favorites'));
+        $user = auth()->user();
+        $announcements = $user->favoriteAnn()->get();
+        return view('pages.favorites', compact('announcements'));
     }
 }
