@@ -15,7 +15,7 @@
                             <div class="col-6 mt-3 mb-2">
                                 <select wire:model.defer="category" id="category" class="form-select shadow"
                                     aria-label="Default select example">
-                                    <option value="">Scegli la categoria</option>
+                                    <option value="">{{__('ui.textRand5')}}</option>
                                     @foreach ($categories as $category)
                                         <option value="{{ $category->id }}">{{ $category->name }}</option>
                                     @endforeach
@@ -28,7 +28,7 @@
                             </div>
                             {{-- caricamento immagini --}}
                             <div class="col-12 mb-3">
-                                <label for="image">Inserisci le tue immagini</label>
+                                <label for="image">{{__('ui.textRand6')}}</label>
                                 <input type="file" wire:model="temporary_immages" name="immages" id="image"
                                     multiple
                                     class="form-control shadow @error('temporary_immages.*') is-invalid @enderror"
@@ -39,7 +39,7 @@
                                 @if (!empty($immages))
                                     <div class="row">
                                         <div class="col-12">
-                                            <p>Photo preview:</p>
+                                            <p>{{__('ui.preview')}}</p>
                                             <div class="row border border-4 border-info rounded shadow py-4">
                                                 @foreach ($immages as $key => $immage)
                                                     <div class="col my-3">
@@ -49,7 +49,7 @@
                                                         </div>
                                                         <button type="button"
                                                             class="btn btn-danger shadow d-block text-center mt-2 mx-auto"
-                                                            wire:click="removeImage({{ $key }})">Cancella</button>
+                                                            wire:click="removeImage({{ $key }})">{{__('ui.buttondelete')}}</button>
                                                     </div>
                                                 @endforeach
                                             </div>
@@ -60,7 +60,7 @@
 
                             {{-- dati annuncio --}}
                             <div class=" mt-3">
-                                <label for="title">Titolo annuncio</label>
+                                <label for="title">{{__('ui.textRand7')}}</label>
                                 <input type="text" name="title" id="title"
                                     class="form-control shadow @error('title') is-invalid @enderror" wire:model.lazy="title">
                                 <div class="col-12">
@@ -71,7 +71,7 @@
                             </div>
 
                             <div class=" mt-3">
-                                <label for="description">Descrizione</label>
+                                <label for="description">{{__('ui.textRand8')}}</label>
                                 <textarea type="text" name="description" id="description" rows="10"
                                     class="form-control shadow @error('description') is-invalid @enderror" wire:model.lazy="description">
                             </textarea>
@@ -83,7 +83,7 @@
                             </div>
 
                             <div class="col-3">
-                                <label for="price">Prezzo</label>
+                                <label for="price">{{__('ui.price1')}}</label>
                                 <input type="number" name="price" id="price"
                                     class="form-control shadow @error('price') is-invalid @enderror" wire:model.lazy="price">
                                 <div class="col-12">
@@ -94,7 +94,7 @@
                             </div>
 
                             <div class="col-6 mt-4">
-                                <button class="btn btn-presto" type="submit" id="userSubmitBtn">Crea</button>
+                                <button class="btn btn-presto" type="submit" id="userSubmitBtn">{{__('ui.textRand9')}}</button>
                             </div>
                             <div class="col-6">
                                 @if (session()->has('message'))
@@ -116,10 +116,7 @@
                         <img src="{{ asset('img/foto.png') }}" alt="logo mancante" class="img-fluid col-2 m-3 p-2">
                         <div class="col-9">
                             <p class="col-10">
-                            <p class="textmain fw-bold"> {{ __('ui.photo') }} </p>Metti bene a fuoco
-                            l'oggetto e
-                            cerca una superficie, o uno sfondo con meno distrazioni possibili. Una bella
-                            foto ti aiuterà ad attirare più persone interessate.</p>
+                            <p class="textmain fw-bold"> {{ __('ui.photo') }} </p>{{ __('ui.textRand10') }}</p>
                         </div>
 
                     </div>
@@ -127,9 +124,7 @@
                         <img src="{{ asset('img/prezzo.png') }}" alt="logo mancante" class="img-fluid col-2 p-2 m-3">
                         <div class="col-9">
                             <p class="col-10">
-                            <p class="textmain fw-bold"> {{ __('ui.price') }}</p>Se sei indeciso, dai
-                            un'occhiata al
-                            prezzo degli annunci simili al tuo.</p>
+                            <p class="textmain fw-bold"> {{ __('ui.price') }}</p>{{ __('ui.textRand11') }}</p>
                         </div>
 
                     </div>
@@ -138,9 +133,7 @@
                         <img src="{{ asset('img/chiaro.png') }}" alt="logo mancante" class="img-fluid col-2 m-3 p-2">
                         <div class="col-9">
                             <p class="col-10">
-                            <p class="textmain fw-bold"> {{ __('ui.description') }} </p> Cerca di inserire
-                            tutte le
-                            specifiche del prodotto che vuoi vendere con una descrizione chiara e completa.
+                            <p class="textmain fw-bold"> {{ __('ui.description') }} </p>{{ __('ui.textRand12') }}
                             </p>
                         </div>
 
@@ -150,10 +143,7 @@
                             class="img-fluid col-2 m-3 p-2">
                         <div class="col-9">
                             <p class="col-10">
-                            <p class="textmain fw-bold"> {{ __('ui.mail') }}</p>Interagisci con gli
-                            altri in
-                            modo chiaro e rispondi tempestivamente per concludere la vendita nel modo
-                            migliore!</p>
+                            <p class="textmain fw-bold"> {{ __('ui.mail') }}</p>{{ __('ui.textRand13') }}</p>
                         </div>
 
                     </div>

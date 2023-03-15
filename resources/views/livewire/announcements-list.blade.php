@@ -1,5 +1,5 @@
 <div class="container">
-    <h4 class="text-center mt-5 fw-bold textmain fs-2" id="top">I Tuoi Annunci</h4>
+    <h4 class="text-center mt-5 fw-bold textmain fs-2" id="top" >{{__('ui.announcementsAnn')}}</h4>
 
 
     {{-- TABELLA VISUALE PC --}}
@@ -60,11 +60,11 @@
                 <div class="col-3 d-flex p-1">
                     <button class="btn btn-sm btn-outline-presto me-2 my-2"
                         wire:click="editAnnouncement({{ $announcement->id }})"
-                        @if ($announcement->is_accepted === null) disabled @endif>Modifica
+                        @if ($announcement->is_accepted === null) disabled @endif> {{__('ui.buttonModify')}}
                     </button>
                     <button class="btn btn-sm btn-danger me-2 my-2" data-title="{{ $announcement->title }}"
                         data-bs-toggle="modal" data-bs-target="#delete-{{ $announcement->id }}">
-                        Elimina
+                        {{__('ui.buttondelete')}}
                     </button>
                 </div>
             </div>
@@ -105,11 +105,11 @@
                         <a class="btn btn-sm btn-outline-presto me-2 my-2"
                             wire:click="editAnnouncement({{ $announcement->id }})" href="#" data-kt-scroll-toggle
                             @if ($announcement->is_accepted === null) disabled @endif>
-                            Modifica
+                            {{__('ui.buttonModify')}}
                         </a>
                         <button class="btn btn-sm btn-danger me-2 my-2" data-title="{{ $announcement->title }}"
                             data-bs-toggle="modal" data-bs-target="#modal-delete">
-                            Elimina
+                            {{__('ui.buttondelete')}}
                         </button>
                     </div>
                 </div>
@@ -132,15 +132,15 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal"
                                 aria-label="Close"></button>
                         </div>
-                        <div id="modal-delete-title" class="modal-body text-start">
-                            Sei sicuro di voler rimuovere l'annuncio {{ $announcement->title }}, <br>
-                            con prezzo {{ $announcement->price }}€?
+                        <div id="modal-delete-title" class="modal-body text-start" >
+                            {{__('ui.textRand1')}} {{ $announcement->title }}, <br>
+                            {{__('ui.textRand2')}} {{ $announcement->price }}€?
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-outline-presto btn-sm"
-                                data-bs-dismiss="modal">Annulla</button>
+                                data-bs-dismiss="modal">{{__('ui.textRand3')}}</button>
                             <button id="liveToastBtn" class="btn btn-danger btn-sm"
-                                wire:click="destroy({{ $announcement->id }})" data-bs-dismiss="modal">Elimina</button>
+                                wire:click="destroy({{ $announcement->id }})" data-bs-dismiss="modal">{{__('ui.buttondelete')}}</button>
                         </div>
                     </div>
                 </div>
@@ -156,7 +156,7 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title fs-5" id="exampleModalLabel">Mesaggio di rifiuto annuncio</h5>
+                        <h5 class="modal-title fs-5" id="exampleModalLabel">{{__('ui.textRand4')}}</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal"
                             aria-label="Close"></button>
                     </div>
@@ -174,11 +174,11 @@
 <div class="toast-container position-fixed bottom-0 end-0 p-3">
     <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
         <div class="toast-header">
-            <strong class="me-auto">Notifica</strong>
+            <strong class="me-auto">{{__('ui.textNotify')}}</strong>
             <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
         </div>
         <div class="toast-body">
-            Annuncio eliminato correttamente
+            {{__('ui.DeleteAnn')}}
         </div>
     </div>
 </div>

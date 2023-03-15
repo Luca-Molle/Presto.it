@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row ">
         <div class="col-12 mt-5 ">
-            <h4 class="text-center fw-bold fs-2 textmain">Modifica Annuncio</h4>
+            <h4 class="text-center fw-bold fs-2 textmain">{{__('uni.editAnn')}}</h4>
             <form wire:submit.prevent="update">
                 <div class="row g-3">
 
@@ -10,7 +10,7 @@
                             @if ($selctedCategoryId == null) disabled @endif>
                             <option value="{{ $selctedCategoryId }}">
                                 @if ($selctedCategoryId == null)
-                                    Categorie
+                                    {{__('categoriesNav')}}
                                 @else
                                     {{ $selectedCategoryName }}
                                 @endif
@@ -23,7 +23,7 @@
                     {{-- ********************************************************** LAVORANDO ***************************************************************** --}}
 
                     <div class="col-12 mb-3">
-                        <label for="image">Inserisci le tue immagini</label>
+                        <label for="image">{{__('textRand6')}}</label>
                         <input type="file" wire:model="temporary_images" name="immages" id="image" multiple
                             class="form-control shadow @error('temporary_immages.*') is-invalid @enderror"
                             placeholder="Img">
@@ -33,7 +33,7 @@
                         @if (!empty($temporary_images))
                             <div class="row">
                                 <div class="col-12">
-                                    <p>Photo preview:</p>
+                                    <p>{{__('uni.preview')}}</p>
                                     <div class="row border border-4 border-info rounded shadow py-4">
                                         @foreach ($temporary_images as $key => $image)
                                             <div class="col my-3">
@@ -43,7 +43,7 @@
                                                 </div>
                                                 <button type="button"
                                                     class="btn btn-danger shadow d-block text-center btn-sm mt-2 mx-auto"
-                                                    wire:click="removeImage({{ $key }})">Cancella</button>
+                                                    wire:click="removeImage({{ $key }})">{{('uni.buttondelete')}}</button>
                                             </div>
                                         @endforeach
                                         @foreach ($images as $key => $image)
@@ -54,7 +54,7 @@
                                                 </div>
                                                 <button type="button"
                                                     class="btn btn-danger shadow d-block text-center btn-sm mt-2 mx-auto"
-                                                    wire:click="removeImage({{ $key }})">Cancella</button>
+                                                    wire:click="removeImage({{ $key }})">{{('uni.buttondelete')}}</button>
                                             </div>
                                         @endforeach
                                     </div>
@@ -65,7 +65,7 @@
 
                     {{-- ************************************************************************************************************************************** --}}
                     <div>
-                        <label for="title">Titolo annuncio</label>
+                        <label for="title">{{('uni.textRand7')}}</label>
                         <input type="text" name="title" id="title"
                             class="form-control @error('title') is-invalid @enderror"
                             wire:model.lazy="announcement.title">
@@ -77,7 +77,7 @@
                     </div>
 
                     <div>
-                        <label for="description">Descrizione</label>
+                        <label for="description">{{('uni.textRand8')}}</label>
                         <textarea type="text" name="description" id="description" rows="10"
                             class="form-control @error('description') is-invalid @enderror" wire:model.lazy="announcement.description">
                         </textarea>
@@ -89,7 +89,7 @@
                     </div>
 
                     <div class="col-6">
-                        <label for="price">Prezzo</label>
+                        <label for="price">{{('uni.price1')}}</label>
                         <input type="number" name="price" id="price"
                             class="form-control @error('price') is-invalid @enderror"
                             wire:model.lazy="announcement.price">
@@ -102,7 +102,7 @@
 
                     <div class="mb-3 ">
                         <button class="btn btn-presto" type="submit" id="editBtn"
-                            @if ($selctedCategoryId == null) disabled @endif>Salva</button>
+                            @if ($selctedCategoryId == null) disabled @endif>{{('uni.safe')}}</button>
 
                     </div>
 
@@ -116,11 +116,11 @@
 <div class="toast-container position-fixed bottom-0 end-0 p-3">
     <div id="editToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
         <div class="toast-header">
-            <strong class="me-auto">Conferma modifica annuncio</strong>
+            <strong class="me-auto">{{('uni.ModAnn')}}</strong>
             <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
         </div>
         <div class="toast-body">
-            Hai modificato correttamente l'annuncio!
+            {{('uni.textRand14')}}
         </div>
     </div>
 </div>
