@@ -28,11 +28,15 @@ class FrontController extends Controller
 
     public function showAnnouncement(Announcement $announcement)
     {
-        $user = auth()->user()->id;
-        $data = DB::table('announcement_user')->where('user_id', $user)->where('announcement_id', $announcement->id)->get();
-        // $announcements = $user->favoriteAnn()->get();
 
-        return view('pages.showAnnouncement', compact('announcement', 'data'));
+        if (auth()->user()) {
+            $data = DB::table('announcement_user')->where('user_id', auth()->user()->id)->where('announcement_id', $announcement->id)->get();
+            return view('pages.showAnnouncement', compact('announcement', 'data'));
+        }else {
+            return view('pages.showAnnouncement', compact('announcement'));
+        }
+
+       
     }
 
     public function searchAnnouncements(Request $request)

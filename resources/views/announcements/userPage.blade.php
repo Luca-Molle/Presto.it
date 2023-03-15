@@ -14,15 +14,18 @@
                     aria-expanded="false" 
                     aria-controls="collapseProfileImage">
                         @if (auth()->user()->profile_image)
-                            <img src="" alt="avatar">
+        
+                            <img src="{{ Storage::url(auth()->user()->profile_image) }}" class='img-fluid'
+                            alt="avatar">
                         @else
-                            <img class="img-fluid" src="{{ asset('img/utente.png') }}" alt="">
+                            <img class="img-fluid" src="{{ asset('img/utente.png') }}" alt="default">
                         @endif
                         
                 </a>
                 {{-- Collapse modifica immagine profilo --}}
                 <div class="col-12 collapse" id="collapseProfileImage">
-                    <form action="{{ route('user.profile.image.update') }}" method="POST">
+                    <form action="{{ route('user.profile.image.update') }}" method="POST" enctype="multipart/form-data">
+                        @csrf
                         <label for="image" class="mt-2">Seleziona immagine</label>
                         <input type="file" name="image" id="image"                            
                         class="form-control shadow mt-2">
@@ -40,7 +43,7 @@
             @if ($users->address == null)
             <p class="fs-3 text-center">Completa il tuo profilo! Fatti conoscere ai tuoi possibili acquirenti!</p>
             @else
-            <p class="fs-3 text-center">Ciao {{ $users->name }}, ecco il tuo profilo</p>
+            <p class="fs-3 text-center">Ciao <span class="fw-bold">{{ $users->name }}</span>, ecco il tuo profilo</p>
             @endif
 
             @if (session()->has('success'))

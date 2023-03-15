@@ -56,24 +56,20 @@ class userController extends Controller
 
     public function storeProfileImage(Request $request)
     {
-        // $this->validate($request, ['image' => 'required']);
+        $this->validate($request, ['image' => 'required|mimes:jpeg,png,jpg,gif']);
 
         $user = auth()->user(); 
-
         if ($request->hasFile('image') && $request->file('image')->isValid()) {
-
+            
             $filename = uniqid('img_') . auth()->user()->id;
-            dd( $filename); 
-            $path = $request->image->storeAs('/public/profile-images', $filename);
-            dd($path); 
-            $user = auth()->user(); 
-            dd($user);
+            $path = $request->image->storeAs('/public/profile-images', $filename . '.' . $request->image->extension());
             $user->profile_image = $path; 
-            dd($user->profile_image); 
-
-            $user->save; 
-            return redirect()->route('user.page')->with('success', 'Immagine profilo modificata');
+            $user->save(); 
+        }else {
+            return redirect()->route('user.page')->with('message', 'Errore caricamento immagine'); 
         }
 
+        return redirect()->route('user.page')->with('success', 'Immagine profilo modificata');
+       
     }
 }
