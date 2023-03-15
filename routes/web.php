@@ -41,9 +41,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/user/announcements', [userPageController::class, 'index'])->name('user.page');
     Route::get('/nuovo/annuncio', [AnnouncementController::class, 'create'])->name('announcement.create');
     Route::post('/user/update', [userController::class, 'usersAdditionalInfo'])->name('user.update');
-    Route::post('/profile-image/update', [UserController::class, 'storeProfileImage'])->name('user.profile.image.update'); 
+    Route::post('/profile-image/update', [UserController::class, 'storeProfileImage'])->name('user.profile.image.update');
     Route::get('/user/favorites', [favoritesController::class, 'index'])->name('favorites.show');
     Route::post('/add/to/favorites/{announcement}', [favoritesController::class, 'store'])->name('add.favorite');
+    Route::post('/delete/to/favorites/{announcement}', [favoritesController::class, 'delete'])->name('delete.favorite');
 });
 
 //Rotte Admin

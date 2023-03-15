@@ -23,9 +23,64 @@ return [
     //sezione consigli per inserimento annuncio
     'advisesTitle' => 'Quelques conseils pour votre annonce',
     'photo' => 'Prenez de bonnes photos',
-    'price' => 'Fai il tuo prezzo!',
+    'price' => 'Faites votre propre prix!',
     'description' => 'Rédigez une annonce claire',
     'mail' => 'Toujours répondre aux messages',
 
+   //liveware
+    'announcementsAnn' => 'Vos annonces',
 
+     //bottoni modifica e elimina
+     'buttonModify' => 'Modifier',
+     'buttondelete' => 'Supprimer',
+
+     //testo generico
+    'textRand1' => 'Voulez-vous vraiment supprimer cette annonce ',
+    'textRand2' => 'avec prix',
+    'textRand3' => 'Annuler',
+    'textRand4' => 'message de refus annonce',
+    'textRand5' => 'choisissez la catégorie',
+    'textRand6' => 'Insérez vos images',
+    'textRand7' => 'Titre de annonce',
+    'textRand8' => 'Description',
+    'textRand9' => 'créer',
+    'textRand10' =>         'Concentrez-vous bien
+                            un objet et
+                            recherchez une surface ou un arrière-plan avec le moins de distractions possible. Une belle
+                            les photos vous aideront à attirer plus de personnes intéressées.',
+
+    
+    'textRand11' =>       ' Si vous êtes indécis, allez
+                            un coup oeil
+                            prix des annonces similaires à la vôtre.',
+
+    'textRand12' =>         'Essayez d insérer
+                                tous les
+                                les spécificités du produit que vous souhaitez vendre avec une description claire et complète.',
+    
+    'textRand13' =>            'Interagir avec
+                                autres dans
+                                manière claire et réagir rapidement pour conclure la vente de la manière
+                                améliorer!',
+    'textRand14' => 'Vous avez modifié annonce avec succès !',
+                                
+    //conferma modifica annuncio
+    'ModAnn' => 'Confirmer la modification de l annonce',
+
+    //prezzo
+    'price1' => 'prix',
+
+     //modifica annuncio
+     'editAnn' => 'Modifier annonce',
+
+    //preview
+    'preview' => 'Aperçu de image',
+
+    'textNotify' => 'Notification',
+
+    //avviso di eliminazione
+    'DeleteAnn' => 'Annonce supprimée avec succès',
+
+    //safe
+    'safe' => 'Sauvegarder',
 ];
