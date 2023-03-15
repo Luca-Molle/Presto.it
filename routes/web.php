@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AnnouncementController;
 use App\Http\Controllers\authGoogleController;
+use App\Http\Controllers\favoritesController;
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\googleController;
 use App\Http\Controllers\RevisorController;
@@ -41,6 +42,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/nuovo/annuncio', [AnnouncementController::class, 'create'])->name('announcement.create');
     Route::post('/user/update', [userController::class, 'usersAdditionalInfo'])->name('user.update');
     Route::post('/profile-image/update', [UserController::class, 'storeProfileImage'])->name('user.profile.image.update'); 
+    Route::get('/user/favorites', [favoritesController::class, 'index'])->name('favorites.show');
+    Route::post('/add/to/favorites/{announcement}', [favoritesController::class, 'store'])->name('add.favorite');
 });
 
 //Rotte Admin

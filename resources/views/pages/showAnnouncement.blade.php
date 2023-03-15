@@ -27,7 +27,13 @@
             {{-- FINE CAROSELLO --}}
 
             {{-- DESCRIZIONE ANNUNCIO --}}
+            
             <div class="col-12 col-md-4 ps-3 mt-5">
+                <form action="{{ route('add.favorite', $announcement) }}" method="POST">
+                    @csrf
+                    <button type="submit" class="d-inline mx-2 btn btn-presto">
+                        Aggiungi ai preferiti</button>
+                </form>
                 <p class="display-2 textmain fw-bold fs-1 mt-2">{{ $announcement->title }}</p>
                 {{-- <h4 class="card-title">{{ $announcement->title }}</h4> --}}
                 <a href="{{ route('categoryShow', $announcement->category) }}"
