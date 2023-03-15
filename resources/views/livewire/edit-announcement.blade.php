@@ -24,18 +24,18 @@
 
                     <div class="col-12 mb-3">
                         <label for="image">Inserisci le tue immagini</label>
-                        <input type="file" wire:model="temporary_images" name="immages" id="image" multiple
-                            class="form-control shadow @error('temporary_immages.*') is-invalid @enderror"
+                        <input type="file" wire:model="temporary_images" name="images" id="image" multiple
+                            class="form-control shadow @error('temporary_images.*') is-invalid @enderror"
                             placeholder="Img">
-                        @error('temporary_immages.*')
+                        @error('temporary_images.*')
                             <p class="text-danger mt-2">{{ $message }}</p>
                         @enderror
-                        @if (!empty($temporary_images))
+                        @if (!empty($old_images))
                             <div class="row">
                                 <div class="col-12">
                                     <p>Photo preview:</p>
                                     <div class="row border border-4 border-info rounded shadow py-4">
-                                        @foreach ($temporary_images as $key => $image)
+                                        @foreach ($old_images as $key => $image)
                                             <div class="col my-3">
                                                 <div class=" mx-auto shadow rounded">
                                                     <img class="img-fluid" src="{{ $image->getUrl() }}"
@@ -43,20 +43,22 @@
                                                 </div>
                                                 <button type="button"
                                                     class="btn btn-danger shadow d-block text-center btn-sm mt-2 mx-auto"
-                                                    wire:click="removeImage({{ $key }})">Cancella</button>
+                                                    wire:click="removeOldImage({{ $key }})">Cancella</button>
                                             </div>
                                         @endforeach
-                                        @foreach ($images as $key => $image)
-                                            <div class="col my-3">
-                                                <div class=" mx-auto shadow rounded">
-                                                    <img class="img-fluid" src="{{ $image->temporaryUrl() }}"
-                                                        alt="">
+                                        
+                                            @foreach ($images as $key => $image)
+                                                <div class="col my-3">
+                                                    <div class=" mx-auto shadow rounded">
+                                                        <img class="img-fluid" src="{{ $image->temporaryUrl() }}"
+                                                            alt="">
+                                                    </div>
+                                                    <button type="button"
+                                                        class="btn btn-danger shadow d-block text-center btn-sm mt-2 mx-auto"
+                                                        wire:click="removeImage({{ $key }})">Cancella</button>
                                                 </div>
-                                                <button type="button"
-                                                    class="btn btn-danger shadow d-block text-center btn-sm mt-2 mx-auto"
-                                                    wire:click="removeImage({{ $key }})">Cancella</button>
-                                            </div>
-                                        @endforeach
+                                            @endforeach
+                                        
                                     </div>
                                 </div>
                             </div>
@@ -113,7 +115,7 @@
 </div>
 
 {{-- Componente notifica push --}}
-<div class="toast-container position-fixed bottom-0 end-0 p-3">
+{{-- <div class="toast-container position-fixed bottom-0 end-0 p-3">
     <div id="editToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
         <div class="toast-header">
             <strong class="me-auto">Conferma modifica annuncio</strong>
@@ -123,4 +125,4 @@
             Hai modificato correttamente l'annuncio!
         </div>
     </div>
-</div>
+</div> --}}

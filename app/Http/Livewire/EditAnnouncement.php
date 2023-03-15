@@ -13,6 +13,7 @@ class EditAnnouncement extends Component
     use WithFileUploads;
     public $announcement;
     public $temporary_images;
+    public $old_images;
     public $images = [];
     protected $listeners = ['edit'];
     protected $rules = [
@@ -37,20 +38,27 @@ class EditAnnouncement extends Component
     public $selectedCategoryName;
 
     // caricamento dell'immagine temporanea
-    public function updatedTemporaryImmages()
+    public function updatedTemporaryImages()
     {
-        if ($this->validate(['temporary_immages.*' => 'image|max:1024'])) {
-            foreach ($this->temporary_immages as $image) {
+        // dd('ciao');
+        if ($this->validate(['temporary_images.*' => 'image|max:1024'])) {
+            foreach ($this->temporary_images as $image) {
                 $this->images[] = $image;
-                // dd($this->images);
             }
         }
     }
 
-    // metodo rimozine immagine
     public function removeImage($key)
     {
-        unset($this->temporary_images[$key]);
+        if (in_array($key, array_keys($this->immages))) {
+            unset($this->immages[$key]);
+        }
+    }
+
+    // metodo rimozine immagine
+    public function removeOldImage($key)
+    {
+        unset($this->old_images[$key]);
     }
 
     // metodo edit, questo mi riporta le informazioni sul mio form, per la categoria abbiamo dovuto salvare il nome e l'id separatamente
@@ -59,7 +67,7 @@ class EditAnnouncement extends Component
         $this->announcement = Announcement::find($id);
         $this->selctedCategoryId = $this->announcement->category->id;
         $this->selectedCategoryName = $this->announcement->category->name;
-        $this->temporary_images = $this->announcement->images()->get();
+        $this->old_images = $this->announcement->images()->get();
         
         // dd($this->temporary_images);
     }
