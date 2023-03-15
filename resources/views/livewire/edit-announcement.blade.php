@@ -69,7 +69,7 @@
                         <input type="text" name="title" id="title"
                             class="form-control @error('title') is-invalid @enderror"
                             wire:model.lazy="announcement.title">
-                        <div class="col-4">
+                        <div class="col-12">
                             @error('announcement.title')
                                 <div class="alert alert-danger mt-2"> {{ $message }} </div>
                             @enderror
@@ -81,7 +81,7 @@
                         <textarea type="text" name="description" id="description" rows="10"
                             class="form-control @error('description') is-invalid @enderror" wire:model.lazy="announcement.description">
                         </textarea>
-                        <div class="col-4">
+                        <div class="col-12">
                             @error('announcement.description')
                                 <div class="alert alert-danger mt-2"> {{ $message }} </div>
                             @enderror
@@ -93,7 +93,7 @@
                         <input type="number" name="price" id="price"
                             class="form-control @error('price') is-invalid @enderror"
                             wire:model.lazy="announcement.price">
-                        <div class="col-4">
+                        <div class="col-12">
                             @error('announcement.price')
                                 <div class="alert alert-danger mt-2"> {{ $message }} </div>
                             @enderror

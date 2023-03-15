@@ -4,8 +4,8 @@
             <div class="Col-10 col-lg-8">
                 <h1 class="textmain fw-bold pt-5">Il tuo profilo</h1>
                 <p class="fs-2">Il tuo spazio per gestire gli annunci e le tue informazioni</p>
-                <a class="btn btn-sm btn-outline-presto" href="{{ route('favorites.show') }}">Preferiti</a>
-                <a class="btn btn-sm btn-outline-presto" href="{{ route('announcement.create') }}">Inserisci nuovo anuncio</a>
+                <a class="btn btn-sm btn-presto" href="{{ route('favorites.show') }}">Preferiti</a>
+                <a class="btn btn-sm btn-presto" href="{{ route('announcement.create') }}">Inserisci nuovo anuncio</a>
             </div>
             <div class="col-2 m-5">
                 <a  data-bs-toggle="collapse" 

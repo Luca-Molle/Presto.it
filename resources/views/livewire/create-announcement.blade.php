@@ -20,6 +20,11 @@
                                         <option value="{{ $category->id }}">{{ $category->name }}</option>
                                     @endforeach
                                 </select>
+                                <div class="col-12">
+                                    @error('category')
+                                        <div class="alert alert-danger mt-2"> {{ $message }} </div>
+                                    @enderror
+                                </div>
                             </div>
                             {{-- caricamento immagini --}}
                             <div class="col-12 mb-3">
@@ -58,7 +63,7 @@
                                 <label for="title">Titolo annuncio</label>
                                 <input type="text" name="title" id="title"
                                     class="form-control shadow @error('title') is-invalid @enderror" wire:model.lazy="title">
-                                <div class="col-4">
+                                <div class="col-12">
                                     @error('title')
                                         <div class="alert alert-danger mt-2"> {{ $message }} </div>
                                     @enderror
@@ -70,7 +75,7 @@
                                 <textarea type="text" name="description" id="description" rows="10"
                                     class="form-control shadow @error('description') is-invalid @enderror" wire:model.lazy="description">
                             </textarea>
-                                <div class="col-4 mt-3">
+                                <div class="col-12 mt-3">
                                     @error('description')
                                         <div class="alert alert-danger mt-2"> {{ $message }} </div>
                                     @enderror
@@ -81,7 +86,7 @@
                                 <label for="price">Prezzo</label>
                                 <input type="number" name="price" id="price"
                                     class="form-control shadow @error('price') is-invalid @enderror" wire:model.lazy="price">
-                                <div class="col-4">
+                                <div class="col-12">
                                     @error('price')
                                         <div class="alert alert-danger mt-2"> {{ $message }} </div>
                                     @enderror
