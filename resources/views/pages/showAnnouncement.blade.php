@@ -33,40 +33,27 @@
                 <div class="container">
                     <div class="row align-items-start">
                         <p class="display-2 textmain fw-bold fs-1 col-10">{{ $announcement->title }}</p>
-                        
+
                         @if (!auth()->user())
-                            <div class="">
-                                vuoto
+                            <div class="col-2">
+                                <button type="submit" class="btn btn-outline-danger shadow "><a class="nav-link"
+                                        href="{{ route('login') }}"><i class="bi bi-heart"></i></a></button>
                             </div>
                         @else
                             @if (count($data) > 0)
-                                <form class="col-2 " action="{{ route('delete.favorite', $announcement) }}" method="POST">
+                                <form class="col-2 " action="{{ route('delete.favorite', $announcement) }}"
+                                    method="POST">
                                     @csrf
-                                    <button type="submit" class="btn btn-danger">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                            fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
-                                            <path
-                                                d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z">
-                                            </path>
-                                        </svg>
-
+                                    <button type="submit" class="btn btn-danger"><i class="bi bi-heart"></i>
                                     </button>
                                 </form>
                             @else
                                 <form class="col-2" action="{{ route('add.favorite', $announcement) }}" method="POST">
                                     @csrf
-                                    <button type="submit" class="btn btn-outline-danger">
-
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                            fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
-                                            <path
-                                                d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z">
-                                            </path>
-                                        </svg>
-
+                                    <button type="submit" class="btn btn-outline-danger"><i class="bi bi-heart"></i>
                                     </button>
                                 </form>
-                            @endif    
+                            @endif
                         @endif
 
 
@@ -88,14 +75,11 @@
                         class="text-decoration-underline fw-bold " type="button" data-bs-toggle="collapse"
                         data-bs-target="#info" aria-expanded="false" aria-controls="info">
                         {{ $announcement->user->name }}</span>
-                    <span><img 
-                        @if (!$announcement->user->profile_image)
-                           
-                            src="{{ asset('img/banner-bg.png') }} "
+                    <span><img
+                            @if (!$announcement->user->profile_image) src="{{ asset('img/banner-bg.png') }} "
                         @else
-                            src="{{ Storage::url($announcement->user->profile_image) }}"
-                        @endif
-                        class="avatar " alt="">
+                            src="{{ Storage::url($announcement->user->profile_image) }}" @endif
+                            class="avatar " alt="">
                     </span>
                 </p>
 

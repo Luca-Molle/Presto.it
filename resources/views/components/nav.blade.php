@@ -96,6 +96,10 @@
                                 <li>
                                     <a class=" nav-link" href="{{ route('user.page') }}"> {{ __('ui.myProfile') }} </a>
                                 </li>
+                                <li>
+                                    <a class=" nav-link" href="{{ route('favorites.show') }}">Preferiti <i
+                                            class="bi bi-heart btn-danger btn"></i></a>
+                                </li>
                                 @if (Auth::user()->is_revisor)
                                     <li class="nav-item">
                                         <a href="{{ route('revisor.index') }}" aria-current="page" class="nav-link">
