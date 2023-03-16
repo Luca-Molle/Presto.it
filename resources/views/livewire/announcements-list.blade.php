@@ -156,9 +156,12 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title fs-5" id="exampleModalLabel">{{__('ui.textRand4')}}</h5>
+                        <h5 class="modal-title fw-bold fs-5 text-danger" id="exampleModalLabel">{{__('ui.textRand4')}}</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal"
                             aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body fw-b">
+                        Commento del revisore: 
                     </div>
                     <div class="modal-body">
                         {{ $announcement->reject_message }}

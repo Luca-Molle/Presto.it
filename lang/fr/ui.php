@@ -38,7 +38,7 @@ return [
     'textRand1' => 'Voulez-vous vraiment supprimer cette annonce ',
     'textRand2' => 'avec prix',
     'textRand3' => 'Annuler',
-    'textRand4' => 'message de refus annonce',
+    'textRand4' => ' Annonce refus ',
     'textRand5' => 'choisissez la catégorie',
     'textRand6' => 'Insérez vos images',
     'textRand7' => 'Titre de annonce',
@@ -89,6 +89,55 @@ return [
     'recuperoPassword' => 'Recupero password',
 
     'Confirm' => 'Confirmer',
+
+    'welcome' => 'Accueillir!',
+
+    'textRand16' => 'Faire le',
+
+    'textRand17' => 'pour accéder au contenu !',
+
+    'textRand18' => 'Pas encore inscrit?',
+    
+    'textRand19' => 'Créez votre compte maintenant !',
+
+    'textRand20' => 'se connecter avec ',
+
+    'passwordConf' => 'Confirmer le nouveau mot de passe',
+
+   'forgotPass' => 'Mot de passe oublié?',
+
+   'textRand21' => 'Créez votre compte pour commencer à vendre et à acheter dans toute le mond',
+
+   'textRand22' => 'Les avantages de',
+
+       //benefit
+    'easy' =>  'Simple',
+
+    'textRand23' =>   ' Répondez à une annonce en un clic ou appelez le
+                        vendeur',
+    
+    'Sicuro' => 'Assurer',
+
+    'textRand24' => 'Vous ne voyez que les annonces qui ont été vérifiées auparavant
+                    publication',
+
+    'Affidabile' => 'Fiable',
+
+    'textRand25' => 'Vous pouvez voir les avis et laisser vos commentaires',
+
+    'Sostenibile' => 'Durable',
+
+    'textRand26' => 'En achetant et en vendant occasion, vous gagnez de l argent, tout comme le
+    planète',
+
+    'Nome completo'  => 'Nom et prénom',
+
+    'confPassw' => 'Confirmez le mot de passe',
+
+    'Oppure' => 'Ou',
+
+    'textRand27' => 'Avez-vous déjà un compte?',
+    
 
     //card carousel
     'textRand15' => 'Achetez et vendez tout type objet',

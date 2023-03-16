@@ -34,20 +34,20 @@ return [
     'announcementsAnn' => 'Your announcements',
 
      //bottoni modifica e elimina
-     'buttonModify' => 'edit',
+     'buttonModify' => 'Edit',
      'buttondelete' => 'Delete',
 
      //testo generico
     'textRand1' => 'Are you sure you want to remove this ad',
     'textRand2' => 'With price',
-    'textRand3' => 'cancel',
-    'textRand4' => 'ad rejection message',
+    'textRand3' => 'Cancel',
+    'textRand4' => 'Annoucement rejected',
     'textNotify' => 'Notify',
     'textRand5' => 'Choose the category',
     'textRand6' => 'Add your image',
     'textRand7' => 'Announcement Title',
     'textRand8' => 'Description',
-    'textRand9' => 'create',
+    'textRand9' => 'Create',
     'textRand10' =>     'Focus well
                         an object and
                         look for a surface, or background with as few distractions as possible. A beautiful
@@ -91,6 +91,53 @@ return [
 
     'Confirm' => 'Confirm', 
 
+    'welcome' => 'Welcome!',
+
+    'textRand16' => 'Make the',
+
+    'textRand17' => 'to access the content!',
+
+    'textRand18' => 'Not registered yet?',
+
+    'textRand19' => 'Create your account now!',
+
+    'textRand20' => 'or Login with',
+
+    'passwordConf' => 'Confirm new password',
+
+    'forgotPass' => 'Forgot password?',
+
+    'textRand21' => 'Create your account to start selling and buying in the world',
+
+    'textRand22' => 'The benefits of',
+
+    //benefit
+    'easy' =>  'Easy',
+
+    'textRand23' =>   ' Reply to an ad with a click or call the
+                        salesperson',
+
+    'Sicuro' => 'Safety',
+
+    'textRand24' => 'You only see ads that have been checked before
+                    publication',
+    
+    'Affidabile' => 'Reliable',
+
+    'textRand25' => 'You can see reviews and leave your feedback',
+
+    'Sostenibile' => 'Ecologic',
+
+    'textRand26' => 'By buying and selling used you make money and so does the
+    planet',
+
+    'Nome completo'  => 'Full name',
+
+    'confPassw' => 'Confirm password',
+
+    'Oppure' => 'Or',
+
+    'textRand27' => 'Do you already have an account?',
 
     //card carousel
     'textRand15' => 'Buy and sell any type of item',

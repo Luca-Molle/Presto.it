@@ -6,6 +6,12 @@
                 <p class="fs-2">Il tuo spazio per gestire gli annunci e le tue informazioni</p>
                 <a class="btn btn-sm btn-presto" href="{{ route('favorites.show') }}">Preferiti</a>
                 <a class="btn btn-sm btn-presto" href="{{ route('announcement.create') }}">Inserisci nuovo anuncio</a>
+                @if (Auth::user()->is_revisor)
+                    <a class="btn btn-sm btn-presto" href="{{ route('revisor.index') }}">Pannello del revisore</a>
+                @else
+                    <a class="btn btn-sm btn-presto" href="{{ route('work.with.us') }}">Lavora con noi </a>
+                @endif
+
             </div>
             <div class="col-2 m-5">
                 <a data-bs-toggle="collapse" href="#collapseProfileImage" role="button" aria-expanded="false"
@@ -35,12 +41,21 @@
         </div>
 
         <div class="row">
-            {{-- @dd($users) --}}
-            @if ($users->address == null)
-                <p class="fs-3 text-center">Completa il tuo profilo! Fatti conoscere ai tuoi possibili acquirenti!</p>
-            @else
-                <p class="fs-3 text-center">Ciao <span class="fw-bold">{{ $users->name }}</span>, ecco il tuo profilo
+            <div class="col-12">
+                <p class="fs-3 text-center mt-2">Ciao <span class="fw-bold">{{ $users->name }}</span>, ecco il tuo
+                    profilo
                 </p>
+            </div>
+
+            @if (!($users->address && $users->city && $users->phone && $users->site))
+                <div class="col-12 text-center">
+                    <p class="fs-5 text-center">Completa il tuo profilo! Fatti conoscere ai tuoi possibili acquirenti!
+                    </p>
+                </div>
+            @else
+                <div class="col-12 text-center">
+                    <p class="fs-5 text-center text-success">Profilo completo!</p>
+                </div>
             @endif
 
             @if (session()->has('success'))
