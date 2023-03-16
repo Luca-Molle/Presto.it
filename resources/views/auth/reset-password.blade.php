@@ -4,7 +4,7 @@
             @csrf
             <div class="column g-3 pt-2">
                 <div class="col-6 mx-auto">
-                    <h1 class="mt-5">Conferma nuova password</h1>
+                    <h1 class="mt-5">{{__('ui.passwordConf')}}</h1>
 
                     <div class="col-12 mb-2">
                         <label for="email">Email</label>
@@ -23,7 +23,7 @@
                     @enderror
 
                     <div class="col-12 mb-2">
-                        <label for="password-confirmation">Conferma Password</label>
+                        <label for="password-confirmation">{{__('ui.passwordConf')}}</label>
                         <input type="password" id="password-confirmation" name="password_confirmation"
                             class="form-control mt-1">
                     </div>
@@ -34,7 +34,7 @@
                     <input type="hidden" name="token" value="{{ request()->route('token') }}">
 
                     <div class="col-12 mb-2">
-                        <button class="btn btn-outline-secondary">Conferma</button>
+                        <button class="btn btn-outline-secondary">{{__('ui.Confirm')}}</button>
                     </div>
 
                     @if (session('status'))

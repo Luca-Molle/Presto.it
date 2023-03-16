@@ -2,19 +2,19 @@
 
     <div class="d-flex justify-content-center  container textmain mb-5 ">
         <div class="container text-center d-flex align-items-center flex-column mt-5 w-50">
-            <h1 class="mx-auto pacifico">Benvenuto!</h1>
-            <p class="fs-2 mt-auto">Effettua il <span class="fw-bold">Login</span> a <a class="text-logo fs-3"
-                    href="{{ route('welcome') }}">Presto.it</a> <br>per accedere ai contenuti!
+            <h1 class="mx-auto pacifico">{{__('ui.welcome')}}</h1>
+            <p class="fs-2 mt-auto">{{__('ui.textRand16')}} <span class="fw-bold">Login</span> a <a class="text-logo fs-3"
+                    href="{{ route('welcome') }}">Presto.it</a> <br>{{__('ui.textRand17')}}
             </p>
-            <p class="fs-3 mt-3">Non sei ancora registrato?</p>
-            <p class="fs-4 ">Crea subito il tuo account!</p>
+            <p class="fs-3 mt-3">{{__('ui.textRand18')}}</p>
+            <p class="fs-4 ">{{__('ui.textRand19')}}</p>
             <div class=" d-flex justify-content-center align-items-center">
                 <button type="submit" class="btn btn-presto shadow "><a class="nav-link"
-                        href="{{ route('register') }}">Registrati</a></button>
+                        href="{{ route('register') }}">{{__('ui.SignIn')}}</a></button>
             </div>
             {{-- <h1 class="fw-bold fs-1">Login</h1> --}}
             <div class="row mx-5 my-auto text-center w-50 p-2 justify-content-center ">
-                <p class="fs-3">or Login with</p>
+                <p class="fs-3">{{__('ui.textRand20')}}</p>
                 <div class="col-3"><a href="/auth/redirect"><img class="img-fluid"
                             src="https://cdn4.iconfinder.com/data/icons/iconsimple-logotypes/512/github-512.png"
                             alt="icona assente"></a></div>
@@ -41,7 +41,7 @@
                 <form action="{{ route('login') }}" method="POST">
                     @csrf
                     <div class="mb-3">
-                        <label for="email" class="form-label fs-4">Email address</label>
+                        <label for="email" class="form-label fs-4">Email</label>
                         <input name="email" type="email" class="form-control" id="Email"
                             aria-describedby="emailHelp" value="{{ old('email') }}">
                         {{-- <div id="emailHelp" class="form-text">

@@ -104,7 +104,7 @@
 
                     <div class="mb-3 ">
                         <button class="btn btn-presto" type="submit" id="editBtn"
-                            @if ($selctedCategoryId == null) disabled @endif>{{('uni.safe')}}</button>
+                            @if ($selctedCategoryId == null) disabled @endif>{{('ui.safe')}}</button>
 
                     </div>
 

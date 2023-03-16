@@ -42,7 +42,7 @@ return [
     'textRand1' => 'Sei sicuro di voler rimuovere questo annuncio',
     'textRand2' => 'con prezzo',
     'textRand3' => 'Annulla',
-    'textRand4' => 'messaggio di rifiuto annuncio',
+    'textRand4' => 'Annuncio rifiutato',
     'textNotify' => 'Notifica',
     'textRand5' => 'scegli la categoria',
     'textRand6' => 'Inserisci le tue immagini',
@@ -78,7 +78,7 @@ return [
     //modifica annuncio
     'editAnn' => 'Modifica Annuncio',
     //prezzo
-    'price1' => 'prezzo',
+    'price1' => 'Prezzo',
 
     //preview 
     'preview' => 'Anteprima immagine',
@@ -95,11 +95,26 @@ return [
     'recuperoPassword' => 'Recupero password',
 
     'Confirm' => 'Conferma',
+
+    'welcome' => 'Benvenuto!',
     
+    'textRand16' => 'Effettua il',
+
+    'textRand17' => 'per accedere ai contenuti!',
+
+    'textRand18' => 'Non sei ancora registrato?',
+
+    'textRand19' => 'Crea subito il tuo account!',
+
+    'textRand20' => 'accedi con',
+
+    'passwordConf' => 'Conferma nuova password',
 
 
 
     //card carousel
     'textRand15' => 'Compra e vendi qualisasi tipo di oggetto',
+    
+
 
 ];

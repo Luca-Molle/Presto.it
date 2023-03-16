@@ -38,7 +38,7 @@ return [
     'textRand1' => 'Voulez-vous vraiment supprimer cette annonce ',
     'textRand2' => 'avec prix',
     'textRand3' => 'Annuler',
-    'textRand4' => 'message de refus annonce',
+    'textRand4' => ' Annonce refus ',
     'textRand5' => 'choisissez la catégorie',
     'textRand6' => 'Insérez vos images',
     'textRand7' => 'Titre de annonce',
@@ -89,6 +89,21 @@ return [
     'recuperoPassword' => 'Recupero password',
 
     'Confirm' => 'Confirmer',
+
+    'welcome' => 'Accueillir!',
+
+    'textRand16' => 'Faire le',
+
+    'textRand17' => 'pour accéder au contenu !',
+
+    'textRand18' => 'Pas encore inscrit?',
+    
+    'textRand19' => 'Créez votre compte maintenant !',
+
+    'textRand20' => 'se connecter avec ',
+
+    'passwordConf' => 'Confirmer le nouveau mot de passe',
+   
 
     //card carousel
     'textRand15' => 'Achetez et vendez tout type objet',
