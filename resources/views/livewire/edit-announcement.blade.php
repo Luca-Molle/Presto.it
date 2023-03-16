@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row ">
         <div class="col-12 mt-5 ">
-            <h4 class="text-center fw-bold fs-2 textmain">{{__('ui.editAnn')}}</h4>
+            <h4 class="text-center fw-bold fs-2 textmain">{{ __('ui.editAnn') }}</h4>
             <form wire:submit.prevent="update">
                 <div class="row g-3">
 
@@ -10,7 +10,7 @@
                             @if ($selctedCategoryId == null) disabled @endif>
                             <option value="{{ $selctedCategoryId }}">
                                 @if ($selctedCategoryId == null)
-                                    {{__('ui.categoriesNav')}}
+                                    {{ __('ui.categoriesNav') }}
                                 @else
                                     {{ $selectedCategoryName }}
                                 @endif
@@ -23,7 +23,7 @@
                     {{-- ********************************************************** LAVORANDO ***************************************************************** --}}
 
                     <div class="col-12 mb-3">
-                        <label for="image">{{__('ui.textRand6')}}</label>
+                        <label for="image">{{ __('ui.textRand6') }}</label>
                         <input type="file" wire:model="temporary_images" name="images" id="image" multiple
                             class="form-control shadow @error('temporary_images.*') is-invalid @enderror"
                             placeholder="Img">
@@ -33,41 +33,45 @@
                         @if (!empty($old_images))
                             <div class="row">
                                 <div class="col-12">
-                                    <p>{{__('ui.preview')}}</p>
+                                    <p>{{ __('ui.preview') }}</p>
                                     <div class="row border border-4 border-info rounded shadow py-4">
                                         @foreach ($old_images as $key => $image)
                                             <div class="col my-3">
                                                 <div class=" mx-auto shadow rounded">
-                                                    <img class="img-fluid" src="{{ $image->getUrl() }}"
-                                                        alt="">
+                                                    <img class="img-fluid" src="{{ $image->getUrl() }}" alt="">
                                                 </div>
                                                 <button type="button"
                                                     class="btn btn-danger shadow d-block text-center btn-sm mt-2 mx-auto"
                                                     wire:click="removeOldImage({{ $key }})">Cancella</button>
                                             </div>
                                         @endforeach
-                                        
-                                            @foreach ($images as $key => $image)
-                                                <div class="col my-3">
-                                                    <div class=" mx-auto shadow rounded">
-                                                        <img class="img-fluid" src="{{ $image->temporaryUrl() }}"
-                                                            alt="">
-                                                    </div>
-                                                    <button type="button"
-                                                        class="btn btn-danger shadow d-block text-center btn-sm mt-2 mx-auto"
-                                                        wire:click="removeImage({{ $key }})">Cancella</button>
-                                                </div>
-                                            @endforeach
-                                        
                                     </div>
                                 </div>
                             </div>
+
                         @endif
+                        @if ($images)
+                            @foreach ($images as $key => $image)
+                                <div class="col my-3">
+                                    <div class=" mx-auto shadow rounded">
+                                        @if ($image)
+                                            <img class="img-fluid" src="{{ $image->temporaryUrl() }}" alt="">
+                                        @endif
+                                    </div>
+                                    <button type="button"
+                                        class="btn btn-danger shadow d-block text-center btn-sm mt-2 mx-auto"
+                                        wire:click="removeImage({{ $key }})">Cancella</button>
+                                </div>
+                            @endforeach
+                        @endif
+
+
+
                     </div>
 
                     {{-- ************************************************************************************************************************************** --}}
                     <div>
-                        <label for="title">{{__('ui.textRand7')}}</label>
+                        <label for="title">{{ __('ui.textRand7') }}</label>
                         <input type="text" name="title" id="title"
                             class="form-control @error('title') is-invalid @enderror"
                             wire:model.lazy="announcement.title">
@@ -79,7 +83,7 @@
                     </div>
 
                     <div>
-                        <label for="description">{{__('ui.textRand8')}}</label>
+                        <label for="description">{{ __('ui.textRand8') }}</label>
                         <textarea type="text" name="description" id="description" rows="10"
                             class="form-control @error('description') is-invalid @enderror" wire:model.lazy="announcement.description">
                         </textarea>
@@ -91,7 +95,7 @@
                     </div>
 
                     <div class="col-6">
-                        <label for="price">{{__('ui.price1')}}</label>
+                        <label for="price">{{ __('ui.price1') }}</label>
                         <input type="number" name="price" id="price"
                             class="form-control @error('price') is-invalid @enderror"
                             wire:model.lazy="announcement.price">
@@ -104,7 +108,7 @@
 
                     <div class="mb-3 ">
                         <button class="btn btn-presto" type="submit" id="editBtn"
-                            @if ($selctedCategoryId == null) disabled @endif>{{('uni.safe')}}</button>
+                            @if ($selctedCategoryId == null) disabled @endif>{{ 'uni.safe' }}</button>
 
                     </div>
 
