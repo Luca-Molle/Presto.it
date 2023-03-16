@@ -73,7 +73,7 @@
     @endforeach
     {{ $announcements->links() }}
     {{-- FINE TABELLA VISUALE PC --}}
-  
+
     {{-- Tabella visibile da mobile --}}
     @foreach ($announcements as $announcement)
         <div class="col-12 d-flex justify-content-center d-block d-md-none">
@@ -103,7 +103,7 @@
                     </div>
                     <div class="col-3 d-flex p-1">
                         <a class="btn btn-sm btn-outline-presto me-2 my-2"
-                            wire:click="editAnnouncement({{ $announcement->id }})" href="#" data-kt-scroll-toggle
+                            wire:click="editAnnouncement({{ $announcement->id }})" href="#top" 
                             @if ($announcement->is_accepted === null) disabled @endif>
                             {{__('ui.buttonModify')}}
                         </a>

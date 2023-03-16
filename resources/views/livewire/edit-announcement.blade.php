@@ -20,7 +20,6 @@
                             @endforeach
                         </select>
                     </div>
-                    {{-- ********************************************************** LAVORANDO ***************************************************************** --}}
 
                     <div class="col-12 mb-3">
                         <label for="image">{{ __('ui.textRand6') }}</label>
@@ -64,12 +63,7 @@
                                 </div>
                             @endforeach
                         @endif
-
-
-
                     </div>
-
-                    {{-- ************************************************************************************************************************************** --}}
                     <div>
                         <label for="title">{{ __('ui.textRand7') }}</label>
                         <input type="text" name="title" id="title"
@@ -108,7 +102,7 @@
 
                     <div class="mb-3 ">
                         <button class="btn btn-presto" type="submit" id="editBtn"
-                            @if ($selctedCategoryId == null) disabled @endif>{{ 'uni.safe' }}</button>
+                            @if ($selctedCategoryId == null) disabled @endif>{{ __('ui.safe') }}</button>
 
                     </div>
 
