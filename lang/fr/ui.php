@@ -103,7 +103,41 @@ return [
     'textRand20' => 'se connecter avec ',
 
     'passwordConf' => 'Confirmer le nouveau mot de passe',
-   
+
+   'forgotPass' => 'Mot de passe oublié?',
+
+   'textRand21' => 'Créez votre compte pour commencer à vendre et à acheter dans toute le mond',
+
+   'textRand22' => 'Les avantages de',
+
+       //benefit
+    'easy' =>  'Simple',
+
+    'textRand23' =>   ' Répondez à une annonce en un clic ou appelez le
+                        vendeur',
+    
+    'Sicuro' => 'Assurer',
+
+    'textRand24' => 'Vous ne voyez que les annonces qui ont été vérifiées auparavant
+                    publication',
+
+    'Affidabile' => 'Fiable',
+
+    'textRand25' => 'Vous pouvez voir les avis et laisser vos commentaires',
+
+    'Sostenibile' => 'Durable',
+
+    'textRand26' => 'En achetant et en vendant occasion, vous gagnez de l argent, tout comme le
+    planète',
+
+    'Nome completo'  => 'Nom et prénom',
+
+    'confPassw' => 'Confirmez le mot de passe',
+
+    'Oppure' => 'Ou',
+
+    'textRand27' => 'Avez-vous déjà un compte?',
+    
 
     //card carousel
     'textRand15' => 'Achetez et vendez tout type objet',

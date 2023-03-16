@@ -105,6 +105,40 @@ return [
 
     'passwordConf' => 'Confirm new password',
 
+    'forgotPass' => 'Forgot password?',
+
+    'textRand21' => 'Create your account to start selling and buying in the world',
+
+    'textRand22' => 'The benefits of',
+
+    //benefit
+    'easy' =>  'Easy',
+
+    'textRand23' =>   ' Reply to an ad with a click or call the
+                        salesperson',
+
+    'Sicuro' => 'Safety',
+
+    'textRand24' => 'You only see ads that have been checked before
+                    publication',
+    
+    'Affidabile' => 'Reliable',
+
+    'textRand25' => 'You can see reviews and leave your feedback',
+
+    'Sostenibile' => 'Ecologic',
+
+    'textRand26' => 'By buying and selling used you make money and so does the
+    planet',
+
+    'Nome completo'  => 'Full name',
+
+    'confPassw' => 'Confirm password',
+
+    'Oppure' => 'Or',
+
+    'textRand27' => 'Do you already have an account?',
+
     //card carousel
     'textRand15' => 'Buy and sell any type of item',
 ];   

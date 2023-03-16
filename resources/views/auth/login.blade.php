@@ -52,7 +52,7 @@
                         <label for="password" class="form-label fs-4">Password</label>
                         <input name="password" type="password" class="form-control" id="password">
                         <div class="form-text">
-                            <a class="nav-link" href="/forgot-password">Forgot password?</a>
+                            <a class="nav-link" href="/forgot-password"></a>
                         </div>
                     </div>
                     <div class="row justify-content align-items-center remember">

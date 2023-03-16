@@ -110,7 +110,39 @@ return [
 
     'passwordConf' => 'Conferma nuova password',
 
+    'forgotPass' => 'Password dimeticata?',
 
+    'textRand21' => 'Crea il tuo account per iniziare a vendere e comprare in tutta Italia',
+
+    'textRand22' => 'I vantaggi di',
+
+    //benefit
+    'easy' =>  'Semplice',
+
+    'textRand23' =>   ' Rispondi ad un annuncio con un click o chiama direttamente il
+                        venditore',
+
+    'Sicuro' => 'Sicuro',
+
+    'textRand24' => 'Consulti solo annunci che sono stati controllati prima della
+                        pubblicazione',
+
+    'Affidabile' => 'Affidabile',
+
+    'textRand25' => 'Puoi vedere le recensioni e lasciare i tuoi feedback',
+
+    'Sostenibile' => 'Sostenibile',
+
+    'textRand26' => 'Comprando e vendendo usato ci guadagni tu e anche il
+    pianeta',
+
+    'Nome completo'  => 'Nome completo',
+
+    'confPassw' => 'Conferma password',
+
+    'Oppure' => 'Oppure',
+
+    'textRand27' => 'Hai già un account?',
 
     //card carousel
     'textRand15' => 'Compra e vendi qualisasi tipo di oggetto',
