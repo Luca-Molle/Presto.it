@@ -113,7 +113,7 @@ class EditAnnouncement extends Component
             $img->delete();
         }
             if (count($this->images)) {
-                
+                // dd('ciao');
                 foreach ($this->images as $key => $image) {
                     $newFileName = "announcements/{$this->announcement->id}";
                     $newImage = $this->announcement->images()->create(['path' => $image->store($newFileName, 'public')]);
