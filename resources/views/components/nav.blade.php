@@ -3,7 +3,7 @@
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
                 <div class="contenitore-img">
-                    <img src="{{ asset('img/logo.png') }}" height="35" class="me-2" alt="immagine non disponibile">
+                    <img src="{{ asset('img/logo.jpg') }}" height="35" class="me-2" alt="immagine non disponibile">
                 </div>
 
             </a>
