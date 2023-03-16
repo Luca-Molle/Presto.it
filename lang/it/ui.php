@@ -61,20 +61,20 @@ return [
     'textRand12' => 'Cerca di inserire
                     tutte le
                     specifiche del prodotto che vuoi vendere con una descrizione chiara e completa.',
-    
+
     'textRand13' => 'Interagisci con gli
                         altri in
                         modo chiaro e rispondi tempestivamente per concludere la vendita nel modo
                         migliore!',
     'textRand14' => 'Hai modificato correttamente l annuncio!',
-                        
+
 
 
     //conferma modifica annuncio
     'ModAnn' => 'Conferma modifica annuncio',
 
 
-                    
+
     //modifica annuncio
     'editAnn' => 'Modifica Annuncio',
     //prezzo
@@ -97,7 +97,7 @@ return [
     'Confirm' => 'Conferma',
 
     'welcome' => 'Benvenuto!',
-    
+
     'textRand16' => 'Effettua il',
 
     'textRand17' => 'per accedere ai contenuti!',
@@ -146,7 +146,7 @@ return [
 
     //card carousel
     'textRand15' => 'Compra e vendi qualisasi tipo di oggetto',
-    
+
 
 
 ];
