@@ -8,27 +8,23 @@
                 <a class="btn btn-sm btn-presto" href="{{ route('announcement.create') }}">Inserisci nuovo anuncio</a>
             </div>
             <div class="col-2 m-5">
-                <a  data-bs-toggle="collapse" 
-                    href="#collapseProfileImage" 
-                    role="button" 
-                    aria-expanded="false" 
+                <a data-bs-toggle="collapse" href="#collapseProfileImage" role="button" aria-expanded="false"
                     aria-controls="collapseProfileImage">
-                        @if (auth()->user()->profile_image)
-        
-                            <img src="{{ Storage::url(auth()->user()->profile_image) }}" class='img-fluid'
-                            alt="avatar">
-                        @else
-                            <img class="img-fluid" src="{{ asset('img/utente.png') }}" alt="default">
-                        @endif
-                        
+                    @if (auth()->user()->profile_image)
+                        <img src="{{ Storage::url(auth()->user()->profile_image) }}" class='img-fluid' alt="avatar">
+                    @else
+                        <img class="img-fluid avatar2" src="{{ Avatar::create(auth()->user()->name)->toBase64() }} "
+                            alt="default">
+                    @endif
+
                 </a>
                 {{-- Collapse modifica immagine profilo --}}
                 <div class="col-12 collapse" id="collapseProfileImage">
-                    <form action="{{ route('user.profile.image.update') }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('user.profile.image.update') }}" method="POST"
+                        enctype="multipart/form-data">
                         @csrf
                         <label for="image" class="mt-2">Seleziona immagine</label>
-                        <input type="file" name="image" id="image"                            
-                        class="form-control shadow mt-2">
+                        <input type="file" name="image" id="image" class="form-control shadow mt-2">
                         <button type="submit" class="btn btn-sm btn-presto mt-2">
                             Salva
                         </button>
@@ -41,9 +37,10 @@
         <div class="row">
             {{-- @dd($users) --}}
             @if ($users->address == null)
-            <p class="fs-3 text-center">Completa il tuo profilo! Fatti conoscere ai tuoi possibili acquirenti!</p>
+                <p class="fs-3 text-center">Completa il tuo profilo! Fatti conoscere ai tuoi possibili acquirenti!</p>
             @else
-            <p class="fs-3 text-center">Ciao <span class="fw-bold">{{ $users->name }}</span>, ecco il tuo profilo</p>
+                <p class="fs-3 text-center">Ciao <span class="fw-bold">{{ $users->name }}</span>, ecco il tuo profilo
+                </p>
             @endif
 
             @if (session()->has('success'))

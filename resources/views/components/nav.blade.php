@@ -98,7 +98,7 @@
                                 </li>
                                 <li>
                                     <a class=" nav-link" href="{{ route('favorites.show') }}">Preferiti <i
-                                            class="bi bi-heart btn-danger btn"></i></a>
+                                            class="bi bi-heart btn-danger btn "></i></a>
                                 </li>
                                 @if (Auth::user()->is_revisor)
                                     <li class="nav-item">

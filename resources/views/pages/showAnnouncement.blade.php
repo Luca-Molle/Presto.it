@@ -76,7 +76,7 @@
                         data-bs-target="#info" aria-expanded="false" aria-controls="info">
                         {{ $announcement->user->name }}</span>
                     <span><img
-                            @if (!$announcement->user->profile_image) src="{{ asset('img/banner-bg.png') }} "
+                            @if (!$announcement->user->profile_image) src="{{ Avatar::create($announcement->user->name)->toBase64() }} "
                         @else
                             src="{{ Storage::url($announcement->user->profile_image) }}" @endif
                             class="avatar " alt="">

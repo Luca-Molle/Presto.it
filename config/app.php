@@ -212,4 +212,12 @@ return [
         // 'ExampleClass' => App\Example\ExampleClass::class,
     ])->toArray(),
 
+
+    Laravolt\Avatar\ServiceProvider::class,
+
+    'aliases' => Facade::defaultAliases()->merge([
+        'Avatar'    => Laravolt\Avatar\Facade::class,
+
+    ])->toArray(),
+
 ];
