@@ -29,9 +29,9 @@
                         @error('temporary_images.*')
                             <p class="text-danger mt-2">{{ $message }}</p>
                         @enderror
-                        @if (!empty($old_images))
-                            <div class="row">
-                                <div class="col-12">
+                        <div class="row">
+                            <div class="col-12">
+                                @if (!empty($old_images))
                                     <p>{{ __('ui.preview') }}</p>
                                     <div class="row border border-4 border-info rounded shadow py-4">
                                         @foreach ($old_images as $key => $image)
@@ -45,24 +45,28 @@
                                             </div>
                                         @endforeach
                                     </div>
-                                </div>
-                            </div>
 
-                        @endif
-                        @if ($images)
-                            @foreach ($images as $key => $image)
-                                <div class="col my-3">
-                                    <div class=" mx-auto shadow rounded">
-                                        @if ($image)
-                                            <img class="img-fluid" src="{{ $image->temporaryUrl() }}" alt="">
-                                        @endif
-                                    </div>
-                                    <button type="button"
-                                        class="btn btn-danger shadow d-block text-center btn-sm mt-2 mx-auto"
-                                        wire:click="removeImage({{ $key }})">Cancella</button>
+                                @endif
+                                @if ($images)
+                                <div class="row border border-4 border-info rounded shadow py-4">
+
+                                    @foreach ($images as $key => $image)
+                                        <div class="col my-3">
+                                            <div class=" mx-auto shadow rounded">
+                                                @if ($image)
+                                                    <img class="img-fluid" src="{{ $image->temporaryUrl() }}"
+                                                        alt="">
+                                                @endif
+                                            </div>
+                                            <button type="button"
+                                                class="btn btn-danger shadow d-block text-center btn-sm mt-2 mx-auto"
+                                                wire:click="removeImage({{ $key }})">Cancella</button>
+                                        </div>
+                                    @endforeach
                                 </div>
-                            @endforeach
-                        @endif
+                                @endif
+                            </div>
+                        </div>
                     </div>
                     <div>
                         <label for="title">{{ __('ui.textRand7') }}</label>

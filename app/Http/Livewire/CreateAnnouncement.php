@@ -2,7 +2,6 @@
 
 namespace App\Http\Livewire;
 
-use App\Jobs\AddWatermarkPresto;
 use App\Jobs\GoogleVisioneLabelImage;
 use App\Jobs\GoogleVisionSafeSearch;
 use App\Jobs\RemoveFaces;
@@ -74,7 +73,6 @@ class CreateAnnouncement extends Component
                 // chiedere perchè mi fa il resize dell'immagne tagliando il tradeMark
                 RemoveFaces::withChain([
                     new ResizeImage($newImage->path, 700, 500),
-                    new AddWatermarkPresto($newImage->id),
                     new GoogleVisionSafeSearch($newImage->id),
                     new GoogleVisioneLabelImage($newImage->id),
                 ])->dispatch($newImage->id);
