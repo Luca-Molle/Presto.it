@@ -4,12 +4,13 @@
             <div class="Col-10 col-lg-8">
                 <h1 class="textmain fw-bold pt-5">Il tuo profilo</h1>
                 <p class="fs-2">Il tuo spazio per gestire gli annunci e le tue informazioni</p>
-                <a class="btn btn-sm btn-presto" href="{{ route('favorites.show') }}">Preferiti</a>
-                <a class="btn btn-sm btn-presto" href="{{ route('announcement.create') }}">Inserisci nuovo anuncio</a>
+                <a class="btn btn-sm btn-presto me-2" href="{{ route('favorites.show') }}">Preferiti</a>
+                <a class="btn btn-sm btn-presto me-2" href="{{ route('announcement.create') }}">Inserisci nuovo
+                    anuncio</a>
                 @if (Auth::user()->is_revisor)
-                    <a class="btn btn-sm btn-presto" href="{{ route('revisor.index') }}">Pannello del revisore</a>
+                    <a class="btn btn-sm btn-presto " href="{{ route('revisor.index') }}">Pannello del revisore</a>
                 @else
-                    <a class="btn btn-sm btn-presto" href="{{ route('work.with.us') }}">Lavora con noi </a>
+                    <a class="btn btn-sm btn-presto " href="{{ route('work.with.us') }}">Lavora con noi </a>
                 @endif
 
             </div>
@@ -42,7 +43,7 @@
 
         <div class="row">
             <div class="col-12">
-                <p class="fs-3 text-center mt-2">Ciao <span class="fw-bold">{{ $users->name }}</span>, ecco il tuo
+                <p class="fs-3 text-center mt-4">Ciao <span class="fw-bold">{{ $users->name }}</span>, ecco il tuo
                     profilo
                 </p>
             </div>

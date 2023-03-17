@@ -73,7 +73,7 @@
     @endforeach
     {{ $announcements->links() }}
     {{-- FINE TABELLA VISUALE PC --}}
-  
+
     {{-- Tabella visibile da mobile --}}
     @foreach ($announcements as $announcement)
         <div class="col-12 d-flex justify-content-center d-block d-md-none">
@@ -103,7 +103,7 @@
                     </div>
                     <div class="col-3 d-flex p-1">
                         <a class="btn btn-sm btn-outline-presto me-2 my-2"
-                            wire:click="editAnnouncement({{ $announcement->id }})" href="#" data-kt-scroll-toggle
+                            wire:click="editAnnouncement({{ $announcement->id }})" href="#top" 
                             @if ($announcement->is_accepted === null) disabled @endif>
                             {{__('ui.buttonModify')}}
                         </a>
@@ -174,7 +174,7 @@
 
 
 {{-- Componente notifica push --}}
-<div class="toast-container position-fixed bottom-0 end-0 p-3">
+{{-- <div class="toast-container position-fixed bottom-0 end-0 p-3">
     <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
         <div class="toast-header">
             <strong class="me-auto">{{__('ui.textNotify')}}</strong>
@@ -184,4 +184,4 @@
             {{__('ui.DeleteAnn')}}
         </div>
     </div>
-</div>
+</div> --}}
