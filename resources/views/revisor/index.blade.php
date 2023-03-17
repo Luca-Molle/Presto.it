@@ -29,7 +29,7 @@
                                 <div class="col-4 d-flex">
                                     <div class=" rounded bg-white mb-4 shadow p-3  align-items-stretch">
                                         <p class="textmain fw-bold text-center">{{ $announcement->category->name }}</p>
-                                        <img src="{{ !$announcement->images()->get()->isEmpty()? Storage::url($announcement->images()->first()->path): 'https://blumagnolia.ch/wp-content/uploads/2021/05/placeholder-126.png' }}"
+                                        <img src="{{ !$announcement->images()->get()->isEmpty()? $announcement->images()->first()->getUrl(700, 500): 'https://blumagnolia.ch/wp-content/uploads/2021/05/placeholder-126.png' }}"
                                             class="img-fluid card-image rounded shadow mt-3 mb-2" alt="foto">
                                         <div>
                                             <h6 class="fw-bold ">{{ $announcement->title }}</h6>

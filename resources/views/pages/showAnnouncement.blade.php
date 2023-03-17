@@ -3,7 +3,7 @@
         <div class="row justify-content-evenly mb-5">
             {{-- CAROSELLO --}}
             <div class="col-12 col-md-7 mt-4 me-5 d-flex align-items-center">
-                <div id="carouselExample" class="carousel slide mt-3">
+                <div id="carouselExampleIndicators" class="carousel slide mt-3">
                     @if ($announcement->images)
                         <div class="carousel-inner bg-white shadow rounded-3">
                             @foreach ($announcement->images as $image)
@@ -14,13 +14,15 @@
                             @endforeach
                         </div>
                     @endif
-                    <button class="carousel-control-prev me-3" type="button" data-bs-target="#carouselExample"
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
                         data-bs-slide="prev">
-                        <span class="textmain visually-hidden fw-bold">Previous</span>
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
                     </button>
-                    <button class="carousel-control-next " type="button" data-bs-target="#carouselExample"
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
                         data-bs-slide="next">
-                        <span class="textmain visually-hidden fw-bold">Next</span>
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
                     </button>
                 </div>
             </div>
