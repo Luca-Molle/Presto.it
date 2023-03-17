@@ -26,19 +26,21 @@
                         @foreach ($announcementsToCheck as $announcement)
                             @if ($announcement->user_id == auth()->user()->id)
                             @else
-                                <div class="col-4 d-flex">
-                                    <div class="rounded bg-white mb-4 shadow p-3  align-items-stretch">
-                                        <div class="col-12">
-                                            <p class="textmain fw-bold text-center">{{ $announcement->category->name }}</p>
-                                            <img src="{{ !$announcement->images()->get()->isEmpty()? $announcement->images()->first()->getUrl(700, 500): 'https://blumagnolia.ch/wp-content/uploads/2021/05/placeholder-126.png' }}"
-                                                class="img-fluid card-image rounded shadow mt-3 mb-2" alt="foto">
-                                            <div class="flex-column ">
-                                                <h6 class="fw-bold ">{{ $announcement->title }}</h6>
-                                                    <h5 class="textmain fw-bold text-end">€ {{ $announcement->price }}</h5>
-                                                    <a class="btn btn-presto shadow mt-1 d-flex justify-content-center"
-                                                        href="{{ route('announcements.rev', $announcement) }}">Visualizza</a>
-                                            </div>
+                                <div class="col-4 d-flex align-self-stretch">
+                                    <div class="d-flex flex-column rounded bg-white mb-4 shadow p-3  ">
+
+                                        <p class="textmain fw-bold text-center">{{ $announcement->category->name }}
+                                        </p>
+
+                                        <img src="{{ !$announcement->images()->get()->isEmpty()? $announcement->images()->first()->getUrl(700, 500): 'https://blumagnolia.ch/wp-content/uploads/2021/05/placeholder-126.png' }}"
+                                            class="img-fluid card-image rounded shadow mt-3 mb-2" alt="foto">
+                                        <div class=" mt-auto ">
+                                            <h6 class="fw-bold ">{{ $announcement->title }}</h6>
+                                            <h5 class="textmain fw-bold text-end">€ {{ $announcement->price }}</h5>
+                                            <a class="btn btn-presto shadow mt-1 d-flex justify-content-center"
+                                                href="{{ route('announcements.rev', $announcement) }}">Visualizza</a>
                                         </div>
+
                                     </div>
                                 </div>
                             @endif
