@@ -2,8 +2,8 @@
     <div class="container">
         <div class="row justify-content-evenly mb-5">
             {{-- CAROSELLO --}}
-            <div class="col-12 col-md-7 mt-4 me-5 d-flex align-items-center">
-                <div id="carouselExampleIndicators" class="carousel slide mt-3">
+            <div class="col-12 col-md-7 mt-4 me-5">
+                <div id="carouselExampleIndicators" class="carousel slide mt-3 sticky-top">
                     @if ($announcement->images)
                         <div class="carousel-inner bg-white shadow rounded-3">
                             @foreach ($announcement->images as $image)

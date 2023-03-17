@@ -2,7 +2,7 @@
 
     <div class="container">
         <div class="row  align-items-between">
-            <div class=" col-4 mt-5 position-sticky">
+            <div class=" col-4 mt-5 ">
 
 
                 <form action="{{ route('announcements.search') }}" method="GET" class="d-flex">

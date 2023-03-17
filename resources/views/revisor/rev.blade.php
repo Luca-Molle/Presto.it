@@ -1,7 +1,7 @@
 <x-layout>
 
 
-    <div class="container">
+    <div class="container mb-3">
         <div class="d-flex align-items-center">
             {{-- CAROSELLO --}}
             <div class="col-6 col-md-7 mt-4 me-5 d-flex align-items-center">
@@ -47,7 +47,7 @@
 
                     <button class="carousel-control-prev me-3" type="button" data-bs-target="#carouselExample"
                         data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon maincolor rounded" aria-hidden="true"></span>
+                         <span class="carousel-control-prev-icon maincolor rounded" aria-hidden="true"></span>
                         <span class="textmain visually-hidden fw-bold">Previous</span>
                     </button>
                     <button class="carousel-control-next  " type="button" data-bs-target="#carouselExample"
@@ -60,7 +60,7 @@
             {{-- FINE CAROSELLO --}}
 
             {{-- DESCRIZIONE ANNUNCIO --}}
-            <div class="col-6 col-md-4 ps-3 p-3 tab-presto mt-5">
+            <div class="col-6 col-md-4 ps-3 p-3 tab-presto mt-5 ">
                 <p class="display-2 fs-2 mt-2"><span class="textmain fw-bold">Titolo annuncio:</span>
                     {{ $announcement->title }}</p>
                 {{-- <h4 class="card-title">{{ $announcement->title }}</h4> --}}
