@@ -33,11 +33,11 @@ return [
     //liveware
     'announcementsAnn' => 'Your announcements',
 
-     //bottoni modifica e elimina
-     'buttonModify' => 'Edit',
-     'buttondelete' => 'Delete',
+    //bottoni modifica e elimina
+    'buttonModify' => 'Edit',
+    'buttondelete' => 'Delete',
 
-     //testo generico
+    //testo generico
     'textRand1' => 'Are you sure you want to remove this ad',
     'textRand2' => 'With price',
     'textRand3' => 'Cancel',
@@ -53,7 +53,7 @@ return [
                         look for a surface, or background with as few distractions as possible. A beautiful
                         photos will help you attract more interested people.',
 
-    
+
     'textRand11' =>   ' If you are undecided, come on
                         a look at
                         price of ads similar to yours.',
@@ -61,20 +61,20 @@ return [
     'textRand12' => 'Try to insert
                         all the
                         specifics of the product you want to sell with a clear and complete description.',
-                    
+
     'textRand13' =>    'Interact with
                         others in
                         clear way and respond promptly to conclude the sale in the manner
                         improve!',
     'textRand14' => 'You have successfully edited the ad!',
-                        
+
     //conferma modifica annuncio
     'ModAnn' => 'Confirm ad change',
 
     //prezzo
-    'price1' => 'price',
+    'price1' => 'Price',
 
-     //modifica annuncio
+    //modifica annuncio
     'editAnn' => 'Edit Announcements',
 
     //preview
@@ -89,7 +89,7 @@ return [
 
     'recuperoPassword' => 'Recupero password',
 
-    'Confirm' => 'Confirm', 
+    'Confirm' => 'Confirm',
 
     'welcome' => 'Welcome!',
 
@@ -121,7 +121,7 @@ return [
 
     'textRand24' => 'You only see ads that have been checked before
                     publication',
-    
+
     'Affidabile' => 'Reliable',
 
     'textRand25' => 'You can see reviews and leave your feedback',
@@ -141,4 +141,4 @@ return [
 
     //card carousel
     'textRand15' => 'Buy and sell any type of item',
-];   
+];

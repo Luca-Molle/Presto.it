@@ -48,7 +48,7 @@ return [
     'textRand6' => 'Inserisci le tue immagini',
     'textRand7' => 'Titolo Annuncio',
     'textRand8' => 'Descrizione',
-    'textRand9' => 'crea',
+    'textRand9' => 'Crea',
     'textRand10' =>     'Metti bene a fuoco
                         un oggetto e
                         cerca una superficie, o uno sfondo con meno distrazioni possibili. Una bella
@@ -100,13 +100,13 @@ return [
 
     'textRand16' => 'Effettua il',
 
-    'textRand17' => 'per accedere ai contenuti!',
+    'textRand17' => 'Per accedere ai contenuti!',
 
     'textRand18' => 'Non sei ancora registrato?',
 
     'textRand19' => 'Crea subito il tuo account!',
 
-    'textRand20' => 'accedi con',
+    'textRand20' => 'Accedi con',
 
     'passwordConf' => 'Conferma nuova password',
 
