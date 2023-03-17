@@ -2,10 +2,10 @@
 
 
     <div class="container mb-3">
-        <div class="d-flex align-items-center">
+        <div class="row justify-content-evenly">
             {{-- CAROSELLO --}}
-            <div class="col-6 col-md-7 mt-4 me-5 d-flex align-items-center">
-                <div id="carouselExample" class="carousel slide mt-3">
+            <div class="col-6 col-md-7 mt-4 ">
+                <div id="carouselExample" class="carousel slide mt-5 sticky-top">
                     @if ($announcement->images)
                         <div class="carousel-inner bg-white shadow rounded-3">
                             <div class="row">
