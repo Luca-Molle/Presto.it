@@ -43,12 +43,12 @@
                     </div>
                     <button class="carousel-control-prev " style="width: 70px" type="button"
                         data-bs-target="#carouselExample" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon"></span>
+                        <span class="carousel-control-prev-icon rounded maincolor"></span>
                         {{-- <span class="textmain visually-hidden fw-bold">Previous</span> --}}
                     </button>
                     <button class="carousel-control-next " style="width: 70px" type="button"
                         data-bs-target="#carouselExample" data-bs-slide="next">
-                        <span class="carousel-control-next-icon"></span>
+                        <span class="carousel-control-next-icon rounded maincolor "></span>
                         {{-- <span class="textmain visually-hidden fw-bold">Next</span> --}}
                     </button>
                 </div>

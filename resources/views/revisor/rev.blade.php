@@ -47,11 +47,13 @@
 
                     <button class="carousel-control-prev me-3" type="button" data-bs-target="#carouselExample"
                         data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon maincolor rounded" aria-hidden="true"></span>
                         <span class="textmain visually-hidden fw-bold">Previous</span>
                     </button>
-                    <button class="carousel-control-next " type="button" data-bs-target="#carouselExample"
+                    <button class="carousel-control-next  " type="button" data-bs-target="#carouselExample"
                         data-bs-slide="next">
-                        <span class="textmain visually-hidden fw-bold">Next</span>
+                        <span class="carousel-control-next-icon maincolor rounded" aria-hidden="true"></span>
+                        <span class="textmain visually-hidden fw-bold ">Next</span>
                     </button>
                 </div>
             </div>
